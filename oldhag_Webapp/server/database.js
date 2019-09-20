@@ -1,4 +1,6 @@
 const db = require("./db/index.js");
+const bcrypt = require("bcrypt");
+
 const addUser = function(user) {
   return db
     .query(
@@ -28,11 +30,13 @@ const getUserWithEmail = email => {
 exports.getUserWithEmail = getUserWithEmail;
 
 const login = function(email, password) {
+  console.log('hello, tesdting');
   return getUserWithEmail(email).then(user => {
+    console.log(user);
     if (bcrypt.compareSync(password, user.password)) {
       return user;
     }
     return null;
-  });
+  }).catch(err => console.log(err));
 };
 exports.login = login;

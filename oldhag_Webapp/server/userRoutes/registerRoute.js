@@ -23,11 +23,16 @@ router.post("/", (req, res) => {
   helper
     .addUser(user)
     .then(user => {
+      console.log("user then")
+      console.log(user)
       if (!user) {
         res.send({ error: "error" });
         return;
       }
+      console.log(res);
       req.session.userId = user.id;
+      res.send({ status: "success", user: user});
+
     })
     .catch(e => res.send(e));
 });

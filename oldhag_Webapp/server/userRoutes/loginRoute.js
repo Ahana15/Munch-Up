@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const database = require("../database");
+const helper = require("../database");
 const cookieSession = require("cookie-session");
 const app = express();
 
@@ -17,10 +17,14 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { email, password } = req.body;
-  database
-    .login(email, password)
+  console.log('inside router.post!!!!');
+  // const { email, password } = req.body;
+  // console.log(req.body);
+  helper
+    .login(req.body.email, req.body.password)
     .then(user => {
+      console.log(user);
+      console.log('success');
       if (!user) {
         res.send("error");
         return;
