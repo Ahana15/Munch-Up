@@ -25,7 +25,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>Restaurant# 1</title>
+    <title>Soy Ramentic</title>
   </head>
 
   <body>
@@ -33,7 +33,7 @@
       <nav class="light-blue lighten-3">
         <div class="container">
           <div class="nav-wrapper">
-            <a href="#" class="brand-logo">The Best Restaurant</a>
+            <a href="#" class="brand-logo">Soy~Ramentic 🍜</a>
             <a href="#" data-target="mobile-nav" class="sidenav-trigger">
               <i class="material-icons">menu</i>
             </a>
@@ -41,9 +41,7 @@
               <li>
                 <a href="#home">Home</a>
               </li>
-              <li>
-                <a href="#search">Search</a>
-              </li>
+
               <li>
                 <a href="#menu">Menu</a>
               </li>
@@ -60,9 +58,7 @@
       <li>
         <a href="#home">Home</a>
       </li>
-      <li>
-        <a href="#search">Search</a>
-      </li>
+
       <li>
         <a href="#menu">Menu</a>
       </li>
@@ -72,15 +68,17 @@
     </ul>
 
     <!-- Section: Slider -->
-    <!-- <section class="slider">
+    <section class="slider">
       <ul class="slides">
         <li>
-          <img src="https://image.ibb.co/hbEMux/resort1.jpg" alt="" />
+          <img
+            src="https://images.unsplash.com/photo-1540648639573-8c848de23f0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1124&q=80"
+            alt=""
+          />
           <div class="caption center-align">
-            <h2>Take Your Dream Vacation</h2>
+            <h2>SECTION 1</h2>
             <h5 class="light grey-text text-lighten-3 hide-on-small-only">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              non illo earum cumque id est!
+              SECTION 1
             </h5>
             <a href="#" class="btn btn-large">Learn More</a>
           </div>
@@ -88,10 +86,9 @@
         <li>
           <img src="https://image.ibb.co/mn1egc/resort2.jpg" alt="" />
           <div class="caption left-align">
-            <h2>We Work With All Budgets</h2>
+            <h2>SECTION 2</h2>
             <h5 class="light grey-text text-lighten-3 hide-on-small-only">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              non illo earum cumque id est!
+              SECTION 2
             </h5>
             <a href="#" class="btn btn-large">Learn More</a>
           </div>
@@ -99,16 +96,15 @@
         <li>
           <img src="https://image.ibb.co/mbCVnH/resort3.jpg" alt="" />
           <div class="caption right-align">
-            <h2>Group & Individual Getaways</h2>
+            <h2>SECTION 3</h2>
             <h5 class="light grey-text text-lighten-3 hide-on-small-only">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-              non illo earum cumque id est!
+              SECTION 3
             </h5>
             <a href="#" class="btn btn-large">Learn More</a>
           </div>
         </li>
       </ul>
-    </section> -->
+    </section>
 
     <section class="menu">
       <ul>
@@ -127,5 +123,13 @@
     //side bar menu
     const sideNav = $(".sidenav");
     M.Sidenav.init(sideNav, {});
+    // Slider
+    const slider = document.querySelector(".slider");
+    M.Slider.init(slider, {
+      indicators: false,
+      height: 500,
+      transition: 500,
+      interval: 6000
+    });
   </script>
 </html>
