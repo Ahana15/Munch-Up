@@ -14,8 +14,21 @@ const addUser = function(user) {
 };
 exports.addUser = addUser;
 
+const getUserWithEmail = email => {
+  return db
+    .query(
+      `
+  SELECT * FROM users
+  WHERE email = $1;
+  `,
+      [email]
+    )
+    .then(res => res.rows[0]);
+};
+exports.getUserWithEmail = getUserWithEmail;
+
 const login = function(email, password) {
-  return database.getUserWithEmail(email).then(user => {
+  return getUserWithEmail(email).then(user => {
     if (bcrypt.compareSync(password, user.password)) {
       return user;
     }

@@ -2,6 +2,15 @@ const express = require("express");
 const router = express.Router();
 const helper = require("../database");
 const bcrypt = require("bcrypt");
+const cookieSession = require("cookie-session");
+const app = express();
+
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["key1"]
+  })
+);
 
 //Home Page Set Up
 router.get("/", (req, res) => {
