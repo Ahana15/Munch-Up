@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+
+    <!-- External JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Restaurant# 1</title>
+  </head>
+
+  <body>
+    <div class="navbar-fixed">
+      <nav class="light-blue lighten-3">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">The Best Restaurant</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="#home">Home</a>
+              </li>
+              <li>
+                <a href="#search">Search</a>
+              </li>
+              <li>
+                <a href="#menu">Menu</a>
+              </li>
+              <li>
+                <a href="#order">Order Now</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <ul class="sidenav" id="mobile-nav">
+      <li>
+        <a href="#home">Home</a>
+      </li>
+      <li>
+        <a href="#search">Search</a>
+      </li>
+      <li>
+        <a href="#menu">Menu</a>
+      </li>
+      <li>
+        <a href="#order">Order Now</a>
+      </li>
+    </ul>
+
+    <!-- Section: Slider -->
+    <section class="register">
+      <section class="register">
+        <form action="/register" method="POST">
+          <h1>Create an Account</h1>
+          <h2>Name</h2>
+          <input type="text" name="name" placeholder="Enter your name" />
+          <h2>Email</h2>
+          <input type="email" name="email" placeholder="Email@gmail.com" />
+          <h2>Password</h2>
+          <input type="password" name="password" placeholder="Password" />
+          <button type="submit">Register</button>
+        </form>
+      </section>
+    </section>
+  </body>
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script>
+    //side bar menu
+    const sideNav = $(".sidenav");
+    M.Sidenav.init(sideNav, {});
+  </script>
+</html>
