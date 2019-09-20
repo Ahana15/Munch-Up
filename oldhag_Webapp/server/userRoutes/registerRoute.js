@@ -1,16 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const helper = require("../database");
 const bcrypt = require("bcrypt");
-const addUser = require("../database");
+
 //Home Page Set Up
 router.get("/", (req, res) => {
   res.render("registration");
 });
 
-router.post("/register", (req, res) => {
+router.post("/", (req, res) => {
   const user = req.body;
   user.password = bcrypt.hashSync(user.password, 12);
-  database
+  helper
     .addUser(user)
     .then(user => {
       if (!user) {
