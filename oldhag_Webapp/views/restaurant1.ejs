@@ -109,11 +109,16 @@
         </li>
       </ul>
     </section> -->
-    <% for (let item in items) { %>
+
     <section class="menu">
-      <h2><%= items[item].name %></h2>
+      <ul>
+        <% for (let item of Object.values(items)) { %>
+        <li>
+          <%= item.name %>
+        </li>
+        <% } %>
+      </ul>
     </section>
-    <% } %>
   </body>
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

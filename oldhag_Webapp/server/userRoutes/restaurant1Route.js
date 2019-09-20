@@ -25,7 +25,7 @@ exports.getMenuItems = getMenuItems;
 router.get("/", (req, res) => {
   const items = getMenuItems(1, 1)
     .then(items => {
-      let holder = { items: items };
+      let holder = { items };
       console.log(holder);
       res.render("restaurant1", holder);
     })
