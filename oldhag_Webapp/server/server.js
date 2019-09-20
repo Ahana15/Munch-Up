@@ -5,6 +5,7 @@ const homeRoute = require('./userRoutes/homeRoute');
 const loginRoute = require('./userRoutes/loginRoute');
 const logoutRoute = require('./userRoutes/logoutRoute');
 const orderRoute = require('./userRoutes/orderRoute');
+const registerRoute = require('./userRoutes/registerRoute');
 const restaurantLoginRoute = require('./restaurantRoutes/restaurantLoginRoute');
 
 const express = require('express');
@@ -37,6 +38,7 @@ app.use('/', homeRoute);
 app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/order', orderRoute);
+app.use('/register', registerRoute);
 app.use('/restaurantlogin', restaurantLoginRoute);
 
 
