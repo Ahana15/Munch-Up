@@ -9,6 +9,7 @@ const registerRoute = require('./userRoutes/registerRoute');
 const restaurantLoginRoute = require('./restaurantRoutes/restaurantLoginRoute');
 
 const express = require('express');
+const path = require('path');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 
@@ -19,6 +20,7 @@ const app = express();
 //   keys: ['key1']
 // }));
 
+app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
