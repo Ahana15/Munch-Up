@@ -7,6 +7,7 @@ const logoutRoute = require('./userRoutes/logoutRoute');
 const orderRoute = require('./userRoutes/orderRoute');
 const registerRoute = require('./userRoutes/registerRoute');
 const restaurantLoginRoute = require('./restaurantRoutes/restaurantLoginRoute');
+const restaurant1Route = require('./userRoutes/restaurant1Route');
 
 const express = require('express');
 const path = require('path');
@@ -41,6 +42,8 @@ app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/order', orderRoute);
 app.use('/register', registerRoute);
+app.use('/restaurant1', restaurant1Route);
+
 app.use('/restaurantlogin', restaurantLoginRoute);
 
 

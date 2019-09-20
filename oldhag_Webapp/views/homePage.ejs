@@ -13,18 +13,27 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
 
-    <!-- Bootstrap CSS ARE WE USING BOOTSTRAP OR PURE CSS?-->
-    <!-- <link
+    <!-- Bootstrap CSS ARE WE USING BOOTSTRAP OR Material Design?-->
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
-    /> -->
+    />
+
+    //material design css
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    
 
     <!-- App CSS -->
     <link
       rel="stylesheet"
       href="/oldhag/oldhag_Webapp/public/css/homePage.css"
+      type="text/css"
     />
 
     <!-- External JS -->
@@ -33,11 +42,16 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
 
   <body>
     <div class="header">
-      <img class="icon" src="" alt="" />
+      <img
+        class="icon"
+        src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+        alt=""
+      />
     </div>
     <div class="content content_white">
       <div class="maxwidth">
@@ -202,10 +216,12 @@
         background-color: #27232f;
       }
       .header .icon {
-        width: 150px;
+        width: 100%;
+        max-width: 100%;
+        max-height: 200%;
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 40%;
         transform: translateX(-50%) translateY(-50%);
       }
 
@@ -216,7 +232,7 @@
       }
 
       .content {
-        font-family: "Fjalla One", sans-serif, 微軟正黑體;
+        font-family: "Fjalla One", sans-serif;
         padding: 50px;
       }
       .content h5 {
