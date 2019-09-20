@@ -22,6 +22,7 @@ const app = express();
 // }));
 
 app.set("view engine", "ejs");
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
@@ -60,3 +61,19 @@ app.listen(port, (err) => console.log(err || `listening on port ${port} 😎`));
 //   res.send('Home Page Hello');
 //   // res.send("🤗");
 // });
+
+
+//  twilio
+
+// const accountSid = 'ACa9aa2d9bcadd145935bac5e690d4c63a'; // Your Account SID from www.twilio.com/console
+// const authToken = '085458a61269493e6b8941a2b675ab84';   // Your Auth Token from www.twilio.com/console
+
+// const twilio = require('twilio');
+// const client = new twilio(accountSid, authToken);
+
+// client.messages.create({
+//   body: 'i know what you did...',
+//   to: '+14164347869',  // Text this number
+//   from: '+16474906192' // From a valid Twilio number
+// })
+//   .then((message) => console.log(message.sid));
