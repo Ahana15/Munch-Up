@@ -4,11 +4,11 @@ const pool = new Pool({
   user: 'vagrant',
   password: '123',
   host: 'localhost',
-  database: ''
+  database: 'template1'
 });
 
 module.exports = {
   query: (text, params) => {
-    return pool.query(text, params)
+    return pool.query(text, params);
   },
 };

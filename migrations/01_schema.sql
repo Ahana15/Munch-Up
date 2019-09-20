@@ -11,7 +11,8 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phone_number VARCHAR(255) NOT NULL
+  phone_number VARCHAR(255) NOT NULL,
+  is_owner BOOLEAN DEEFAULT FALSE
 );
 
 CREATE TABLE users_order_statuses (
@@ -46,7 +47,6 @@ CREATE TABLE restaurant_order_statuses (
   id SERIAL PRIMARY KEY NOT NULL,
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-
   restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
 );
 
