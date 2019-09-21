@@ -16,6 +16,7 @@ const addUser = function(user) {
 };
 exports.addUser = addUser;
 
+//Get user info with email
 const getUserWithEmail = email => {
   return db
     .query(
@@ -29,6 +30,8 @@ const getUserWithEmail = email => {
 };
 exports.getUserWithEmail = getUserWithEmail;
 
+
+//login
 const login = function(email, password) {
   console.log('hello, tesdting');
   return getUserWithEmail(email).then(user => {
@@ -40,3 +43,19 @@ const login = function(email, password) {
   }).catch(err => console.log(err));
 };
 exports.login = login;
+
+
+const addOrder = function(order) {
+  return db
+    .query(
+      `
+  INSERT INTO users (
+    name, email, password, phone_number)
+    VALUES (
+    $1, $2, $3, $4)
+    RETURNING *;`,
+      [user.name, user.email, user.password, user.phone_number]
+    )
+    .then(res => res.rows[0]);
+};
+exports.addUser = addUser;

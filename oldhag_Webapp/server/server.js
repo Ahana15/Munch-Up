@@ -6,8 +6,13 @@ const loginRoute = require("./userRoutes/loginRoute");
 const logoutRoute = require("./userRoutes/logoutRoute");
 const orderRoute = require("./userRoutes/orderRoute");
 const registerRoute = require("./userRoutes/registerRoute");
-const restaurantLoginRoute = require("./restaurantRoutes/restaurantLoginRoute");
 const restaurant1Route = require("./userRoutes/restaurant1Route");
+const paymentRoute = require("./userRoutes/paymentRoute");
+
+const restaurantLoginRoute = require("./restaurantRoutes/restaurantLoginRoute");
+const restaurantPage = require("./restaurantRoutes/restaurantPage")
+
+
 const database = require("./database");
 
 const express = require("express");
@@ -44,8 +49,10 @@ app.use("/logout", logoutRoute);
 app.use("/order", orderRoute);
 app.use("/register", registerRoute);
 app.use("/restaurant1", restaurant1Route);
+app.use("/payment", paymentRoute);
 
 app.use("/restaurantlogin", restaurantLoginRoute);
+app.use("/restaurantPage", restaurantPage);
 
 const port = process.env.PORT || 3000;
 app.listen(port, err => console.log(err || `listening on port ${port} 😎`));
@@ -56,17 +63,3 @@ app.listen(port, err => console.log(err || `listening on port ${port} 😎`));
 //   // res.send("🤗");
 // });
 
-//  twilio
-
-// const accountSid = 'ACa9aa2d9bcadd145935bac5e690d4c63a'; // Your Account SID from www.twilio.com/console
-// const authToken = '085458a61269493e6b8941a2b675ab84';   // Your Auth Token from www.twilio.com/console
-
-// const twilio = require('twilio');
-// const client = new twilio(accountSid, authToken);
-
-// client.messages.create({
-//   body: 'i know what you did...',
-//   to: '+14164347869',  // Text this number
-//   from: '+16474906192' // From a valid Twilio number
-// })
-//   .then((message) => console.log(message.sid));

@@ -115,32 +115,31 @@
         <div class="basket">
           <div class="basket-labels">
             <ul>
-              <li class="item item-heading">Item</li>
+              <li class="item-heading">Item</li>
               <li class="price">Price</li>
               <li class="quantity">Quantity</li>
               <li class="subtotal">Subtotal</li>
             </ul>
           </div>
-          <% for (let item of Object.values(items)) { %>
           <div class="basket-product">
-            <div class="item">
-              <div class="product-details">
-                <strong><%= item.name %>: </strong>
-                </br>
-                <div class='product-details'><%= item.description %></div>
-              </div>
+            <% for (let item of Object.values(items)) { %>
+            <div class="food-item">
+              <%= item.name %>
             </div>
-
-            <div class="price"><%= item.price /100 %></div>
+            <div class="item-price">
+              <%= item.price/100 %>
+            </div>
             <div class="quantity">
               <input type="number" value="0" min="0" class="quantity-field" />
             </div>
             <div class="subtotal">0</div>
-              <% } %>
+            <!-- </br> -->
+            <!-- <div class='product-details'><%= item.description %></div> -->
+            <% } %>
           </div>
-
         </div>
-        <div class='container'>
+
+        <div class="container">
           <aside>
             <div class="summary">
               <div class="summary-total-items">
@@ -178,9 +177,11 @@
                   0.00
                 </div>
               </div>
-              <div class="summary-checkout">
-                <button class="checkout-cta">Go to Secure Checkout</button>
-              </div>
+              <form method="" action="">
+                <div class="summary-checkout">
+                  <button class="checkout-cta">Go to Secure Checkout</button>
+                </div>
+              </form>
             </div>
           </aside>
         </div>
@@ -251,7 +252,6 @@
       updateSumItems();
     });
 
-
     /* Recalculate cart */
     function recalculateCart(onlyTotal) {
       let subtotal = 0;
@@ -263,22 +263,11 @@
             .children(".subtotal")
             .text()
         );
-        console.log(this);
+        // console.log(this);
       });
 
       /* Calculate totals */
       let total = subtotal;
-
-      // //If there is a valid promoCode, and subtotal < 10 subtract from total
-      // let promoPrice = parseFloat($(".promo-value").text());
-      // if (promoPrice) {
-      //   if (subtotal >= 10) {
-      //     total -= promoPrice;
-      //   } else {
-      //     alert("Order must be more than £10 for Promo code to apply.");
-      //     $(".summary-promo").addClass("hide");
-      //   }
-      // }
 
       /*If switch for update only total, update only total display*/
       if (onlyTotal) {
@@ -345,5 +334,56 @@
     //     updateSumItems();
     //   });
     // }
+  </script>
+
+  <script>
+    $(".checkout-cta").on("click", function(e) {
+      e.preventDefault();
+      console.log("hello, you just placed an order");
+
+      let name = $(".food-item")
+        .map(function(e) {
+          // console.log($(this).text().trim())
+          return $(this).text().trim();
+        })
+        .get();
+
+      let price = $(".item-price")
+        .map(function() {
+          return (Number($(this).text().trim()));
+        })
+        .get();
+
+      let quantity = $(".quantity-field")
+        .map(function() {
+          return Number($(this).val());
+        })
+        .get();
+
+      // console.log(name, price, quantity);
+
+
+    let output= []; //{name: , price: , quantity: }
+    // console.log(quantity);
+
+    for (let i = 0; i < name.length; ++i) {
+      let obj = {};
+      if (quantity[i] !== 0) {
+        obj.name = name[i];
+        obj.price = price[i];
+        obj.quantity = quantity[i];
+        output.push(obj);
+      }
+      // console.log(name[i])
+      // console.log(price[i])
+      // console.log(quantity[i])
+    }
+
+    console.log(output);
+
+    });
+
+    
+
   </script>
 </html>
