@@ -6,7 +6,7 @@ const getMenuItems = function(restaurant_id, menu_id) {
   return db
     .query(
       `
- SELECT items.name
+ SELECT items.name, items.description, items.price
  FROM items
  JOIN menus ON items.menu_id = menus.id
  JOIN restaurants ON restaurants.id = menus.restaurant_id

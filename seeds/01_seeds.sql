@@ -29,42 +29,42 @@ VALUES
    ('winter', 1);
 
 INSERT INTO items
-   (name, menu_id, restaurant_id )
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
 VALUES
-   ('Tan Tan Men', 2, 1);
+  ('Tan Tan Men','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1450, 2, 1);
 INSERT INTO items
-   (name, menu_id, restaurant_id )
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
 VALUES
-   ('Spicy Miso', 2, 1);
+  ('Spicy Miso','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 2, 1);
 INSERT INTO items
-   (name, menu_id, restaurant_id )
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
 VALUES
-   ('Shoyu', 2, 1);
+  ('Shoyu','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 2, 1);
 INSERT INTO items
-   (name, menu_id, restaurant_id )
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
 VALUES
-   ('Shio', 2, 1);
+  ('Shio','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 2, 1);
+INSERT INTO items
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
+VALUES
+  ('Nostalgic Shio','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 1, 1);
+INSERT INTO items
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
+VALUES
+  ('Nostalgic Shoyu','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 1, 1);
+INSERT INTO items
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
+VALUES
+  ('Miso','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 1, 1);
+INSERT INTO items
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
+VALUES
+  ('Shoyu','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 1, 1);
+INSERT INTO items
+  (name, description, thumbnail_url, price, menu_id, restaurant_id )
+VALUES
+  ('Shio','On Top: pork slice, chicken slice, bamboo shoot, arugula, white fungus, sesame Broth: chicken, beef','URL',1250, 1, 1);
 
-INSERT INTO items
-   (name, menu_id, restaurant_id )
-VALUES
-   ('Nostalgic Shio', 1, 1);
-INSERT INTO items
-   (name, menu_id, restaurant_id )
-VALUES
-   ('Nostalgic Shoyu', 1, 1);
-INSERT INTO items
-   (name, menu_id, restaurant_id )
-VALUES
-   ('Miso', 1, 1);
-INSERT INTO items
-   (name, menu_id, restaurant_id )
-VALUES
-   ('Shoyu', 1, 1);
-INSERT INTO items
-   (name, menu_id, restaurant_id )
-VALUES
-   ('Shio', 1, 1);
 
 
 
