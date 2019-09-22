@@ -11,10 +11,7 @@
 
 
   <!-- //material design css -->
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
 
 
@@ -25,70 +22,68 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav class="light-blue lighten-3">
-          <div class="container">
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo">The Best Restaurant</a>
-              <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-              </a>
-              <ul class="right hide-on-med-and-down">
-                <li>
-                  <a href="#home">Home</a>
-                </li>
-                <li>
-                  <a href="#search">Search</a>
-                </li>
-                <li>
-                  <a href="#menu">Menu</a>
-                </li>
-                <li>
-                  <a href="#order">Order Now</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+  <div class="navbar-fixed">
+    <nav class="light-blue lighten-3">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">The Best Restaurant</a>
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#search">Search</a>
+            </li>
+            <li>
+              <a href="#menu">Menu</a>
+            </li>
+            <li>
+              <a href="#order">Order Now</a>
+            </li>
+          </ul>
+        </div>
       </div>
-  
-      <ul class="sidenav" id="mobile-nav">
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#search">Search</a>
-        </li>
-        <li>
-          <a href="#menu">Menu</a>
-        </li>
-        <li>
-          <a href="#order">Order Now</a>
-        </li>
-      </ul>
+    </nav>
+  </div>
 
-      <div>
-        
-      </div>
+  <ul class="sidenav" id="mobile-nav">
+    <li>
+      <a href="#home">Home</a>
+    </li>
+    <li>
+      <a href="#search">Search</a>
+    </li>
+    <li>
+      <a href="#menu">Menu</a>
+    </li>
+    <li>
+      <a href="#order">Order Now</a>
+    </li>
+  </ul>
 
-      <table style="width:100%">
-          <tr>
-            <th>Order#</th>
-            <th>User_id</th>
-            <th>Status</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>not completed</td>
-          </tr>
+  <div>
 
-        </table>
-        
+  </div>
 
-</body>
+  <table style="width:100%">
+    <tr>
+      <th>Order#</th>
+      <th>User_id</th>
+      <th>Status</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td><%= data['item-name'] %></td>
 
-</html>
+    </tr>
+
+  </table>
+
+
 </body>
 
 </html>
