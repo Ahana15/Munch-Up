@@ -1,89 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Meta Information -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+    <!-- //material design css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
+    <!-- External JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
 
-  <!-- //material design css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <body>
+      <% include partials/_homeHeader %>
 
+    <ul class="sidenav" id="mobile-nav">
+      <li>
+        <a href="#home">Home</a>
+      </li>
+      <li>
+        <a href="#search">Search</a>
+      </li>
+      <li>
+        <a href="#menu">Menu</a>
+      </li>
+      <li>
+        <a href="#order">Order Now</a>
+      </li>
+    </ul>
 
+    <div></div>
 
-  <!-- External JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
-
-<body>
-  <div class="navbar-fixed">
-    <nav class="light-blue lighten-3">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">The Best Restaurant</a>
-          <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-            <i class="material-icons">menu</i>
-          </a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#search">Search</a>
-            </li>
-            <li>
-              <a href="#menu">Menu</a>
-            </li>
-            <li>
-              <a href="#order">Order Now</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  <ul class="sidenav" id="mobile-nav">
-    <li>
-      <a href="#home">Home</a>
-    </li>
-    <li>
-      <a href="#search">Search</a>
-    </li>
-    <li>
-      <a href="#menu">Menu</a>
-    </li>
-    <li>
-      <a href="#order">Order Now</a>
-    </li>
-  </ul>
-
-  <div>
-
-  </div>
-
-  <table style="width:100%">
-    <tr>
-      <th>Order#</th>
-      <th>User_id</th>
-      <th>Status</th>
-    </tr>
-    <tr>
-      <td></td>
-      <td><%= orders[0].user_id%></td>
-      <td><%= data['item-name'] %></td>
-
-    </tr>
-
-  </table>
-
-
-</body>
-
+    <table style="width:100%">
+      <tr>
+        <th>Order#</th>
+        <th>Food Items#</th>
+        <th>Restaurant Name</th>
+        <th>Status</th>
+      </tr>
+      <% for (let order of orders){ %>
+      <tr>
+        <td><%=order.user_order%></td>
+        <td><%=order.item_name%></td>
+        <td><%=order.restaurant_name%></td>
+        <td><%= order.status%></td>
+        <%  } %>
+      </tr>
+    </table>
+  </body>
 </html>

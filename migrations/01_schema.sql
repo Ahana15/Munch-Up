@@ -62,13 +62,15 @@ CREATE TABLE items
 CREATE TABLE orders
 (
   id SERIAL PRIMARY KEY NOT NULL,
-  created_at TIMESTAMP,
+    created_at TIMESTAMP,
   completed_at TIMESTAMP,
   item_id INTEGER REFERENCES items(id) ON DELETE CASCADE,
   quantity INTEGER NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
+  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
+  user_order VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE restaurant_order_statuses
 (
@@ -82,6 +84,7 @@ CREATE TABLE users_order_statuses
 (
   id SERIAL PRIMARY KEY NOT NULL,
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
+  user_order VARCHAR(255),
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  status BOOLEAN DEFAULT FALSE
+  status VARCHAR(255) DEFAULT 'In Progress'
 );

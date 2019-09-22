@@ -49,14 +49,16 @@ const addUsersOrderStatuses = function(order) {
   return db
     .query(
       `
-  INSERT INTO users_order_statuses (
-    order_id, user_id)
+    INSERT INTO users_order_statuses (
+    order_id, user_order, user_id)
     VALUES (
-    $1, $2)
+    $1, $2, $3)
     RETURNING *;`,
-      [order.id, order.user_id]
+      [order.id, order.user_order, order.user_id]
     )
-    .then(res => res.rows);
+    .then(res => {
+      console.log("inside addUserStatus: " ,res.rows);
+      res.rows});
 };
 exports.addUsersOrderStatuses = addUsersOrderStatuses;
 
@@ -79,24 +81,44 @@ const getMenuItems = function(restaurant_id, menu_id) {
 
 exports.getMenuItems = getMenuItems;
 
-const addOrder = function(id, quantity, user_id, restaurant_id) {
+const addOrder = function(id, quantity, user_id, restaurant_id, uniqueKey) {
   return db
     .query(
-      `INSERT INTO orders (item_id, quantity, user_id, restaurant_id)
-        VALUES ($1,$2,$3,$4 ) RETURNING *;`,
-      [id, quantity, user_id, restaurant_id]
+      `INSERT INTO orders (item_id, quantity, user_id, restaurant_id, user_order)
+        VALUES ($1,$2,$3,$4,$5 ) RETURNING *;`,
+      [id, quantity, user_id, restaurant_id, uniqueKey]
     )
     .then(res => {
+      console.log(res.rows);
       addUsersOrderStatuses(res.rows[0]);
       return res.rows;
     });
 };
 exports.addOrder = addOrder;
 
-const getOrders = function(id){
-  return db.query(`SELECT * FROM orders WHERE user_id = $1;`, [id]).then(res => res.rows);
-}
+const getOrders = function(id) {
+  return db
+    .query(`SELECT items.name as item_name, restaurants.name as restaurant_name, users_order_statuses.*, orders.*
+      FROM orders 
+        JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
+        JOIN restaurants ON (orders.restaurant_id = restaurants.id)
+        JOIN items ON (items.id = orders.item_id)
+      WHERE orders.user_id = $1;
+      
+      `, [id])
+    .then(res => res.rows);
+};
 exports.getOrders = getOrders;
+
+const generateRandomString = () => {
+  let randomString = '';
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  for (let i = 0; i < 6; i++) {
+    randomString += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return randomString;
+ };
+exports.generateRandomString = generateRandomString; 
 // const addRestaurantOrderStatuses = function(order) {
 //   return db
 //     .query(

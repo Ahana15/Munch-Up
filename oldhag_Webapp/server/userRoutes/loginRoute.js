@@ -5,6 +5,7 @@ const database = require("../database");
 
 //Login Page Set Up
 router.get("/", (req, res) => {
+
   res.render("login");
   
 });
