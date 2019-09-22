@@ -14,7 +14,10 @@ router.post("/", async (req, res) => {
   // console.log(req);
   // let name = { food: req.body };
   let templateVars = { data: req.body };
+  console.log(req.body);
+  
   res.render('userOrderStatus', templateVars);
+
 
   // helper.addUsersOrderStatuses(req.body[0]);
   // res.send('User Order Status Page Hello');

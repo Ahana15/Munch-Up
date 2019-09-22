@@ -17,16 +17,16 @@ const restaurantPage = require("./restaurantRoutes/restaurantPage")
 const database = require("./database");
 
 const express = require("express");
-const path = require("path");
+// const path = require("path");
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
 
 const app = express();
 
-// app.use(cookieSession({
-//   name: 'session',
-//   keys: ['key1']
-// }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['id']
+}));
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));

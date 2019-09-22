@@ -1,36 +1,27 @@
 const express = require("express");
 const router = express.Router();
-const helper = require("../database");
-const cookieSession = require("cookie-session");
-const app = express();
+const database = require("../database");
 
-app.use(
-  cookieSession({
-    name: "session",
-    keys: ["key1"]
-  })
-);
 
-//Home Page Set Up
+//Login Page Set Up
 router.get("/", (req, res) => {
   res.render("login");
+  
 });
 
+
 router.post("/", (req, res) => {
-  console.log('inside router.post!!!!');
-  // const { email, password } = req.body;
-  // console.log(req.body);
-  helper
+  database
     .login(req.body.email, req.body.password)
     .then(user => {
-      console.log(user);
-      console.log('success');
       if (!user) {
-        res.send("error");
+        res.send("user doesn't exist. please register");
         return;
       }
-      req.session.userId = user.id;
-      res.send("Logged in");
+      req.session.user_id = user.id;
+      req.session.user_name = user.name;
+      req.session.email = user.email;
+      res.redirect("/");
     })
     .catch(e => res.send(e));
 });

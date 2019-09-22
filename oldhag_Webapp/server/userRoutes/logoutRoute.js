@@ -3,8 +3,8 @@ const router = express.Router();
 
 //Home Page Set Up
 router.get("/", (req, res) => {
-  console.log("Logout Page");
-  res.send("Logout Page");
+  req.session = null;
+  res.redirect("/");
 });
 
 module.exports = router;

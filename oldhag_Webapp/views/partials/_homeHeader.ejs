@@ -1,0 +1,61 @@
+<header>
+  <nav
+    class="navbar navbar-expand-md navbar-dark"
+    style="background-color: #e3f2fd; border-bottom: 2px solid black"
+  >
+    <a class="navbar-brand" style="color:black; font-size: 45px" href="/urls"
+      >Home Page</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <% if(user_id) { %>
+    <div>Logged In As: <%= user_name%> </div>
+    <a
+      href="/logout"
+      class="btn btn-info border"
+      style="vertical-align: middle"
+      role="button"
+    >
+      Log-Out
+    </a>
+    <!-- <form method="POST" action="/logout">
+      <button type="submit">logout</button>
+      </form> -->
+      <% } %>
+
+    <a
+      href="/login"
+      class="btn btn-info border"
+      style="vertical-align: middle"
+      role="button"
+    >
+      Log-In
+    </a>
+    <a
+    href="/register"
+    class="btn btn-info border"
+    style="vertical-align: middle"
+    role="button"
+  >
+    Restaurant Login
+  </a>
+    <a
+      href="/register"
+      class="btn btn-info border"
+      style="vertical-align: middle"
+      role="button"
+    >
+      Register
+    </a>
+  </nav>
+</header>

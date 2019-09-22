@@ -1,104 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Meta Information -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
-
-
-  <!-- //material design css -->
-  <link
+    <!-- //material design css -->
+    <!-- Bootstrap CSS -->
+    <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
     />
 
     <link rel="stylesheet" href="/css/homePage.css" type="text/css" />
-  <!-- External JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
+    <!-- External JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
 
-<body>
-    <div class="navbar-fixed">
-        <nav class="light-blue lighten-3">
-          <div class="container">
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo">The Best Restaurant</a>
-              <a href="#" data-target="mobile-nav" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-              </a>
-              <ul class="right hide-on-med-and-down">
-                <li>
-                  <a href="#home">Home</a>
-                </li>
-                <li>
-                  <a href="#search">Search</a>
-                </li>
-                <li>
-                  <a href="#menu">Menu</a>
-                </li>
-                <li>
-                  <a href="#order">Order Now</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+  <body>
+    <% include partials/_homeHeader %>
+
+    <div class="bgimg-1">
+      <div class="caption">
+        <span class="border">Let's get started</span>
       </div>
-  
-      <ul class="sidenav" id="mobile-nav">
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#search">Search</a>
-        </li>
-        <li>
-          <a href="#menu">Menu</a>
-        </li>
-        <li>
-          <a href="#order">Order Now</a>
-        </li>
-      </ul>
+    </div>
 
-<div class="bgimg-1">
-   <div class="caption">
-     <span class="border">Let's get started</span>
-   </div>
- </div>
- <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-   <h3 style="text-align:center;">Why we do what we do...</h3>
-   <p> Make friends with food...
-     Social ordering from your favourite local restaurants and coffee shops</p>
- </div>
- <div class="bgimg-2">
-   <div class="caption">
-     <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
-   </div>
- </div>
- <div style="position:relative;">
-   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-     <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
-   </div>
- </div>
- <div class="bgimg-3">
-   <div class="caption">
-     <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
-   </div>
- </div>
- <div style="position:relative;">
-   <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-     <p>Contact us: </p>
-   </div>
- </div>
-</body>
+    <div
+      style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;"
+    >
+      <h3 style="text-align:center;">Why we do what we do...</h3>
+      <p>
+        Make friends with food... Social ordering from your favourite local
+        restaurants and coffee shops
+      </p>
+    </div>
 
-</html>
-</body>
+    <div class="bgimg-2">
+      <div class="caption">
+        <span
+          class="border"
+          style="background-color:transparent;font-size:25px;color: #f7f7f7;"
+          >LESS HEIGHT</span
+        >
+      </div>
+    </div>
 
+    <div style="position:relative;">
+      <div
+        style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;"
+      >
+        <p>
+          Scroll up and down to really get the feeling of how Parallax Scrolling
+          works.
+        </p>
+      </div>
+    </div>
+
+    <div class="bgimg-3">
+      <div class="caption">
+        <span
+          class="border"
+          style="background-color:transparent;font-size:25px;color: #f7f7f7;"
+          >SCROLL UP</span
+        >
+      </div>
+    </div>
+
+    <div style="position:relative;">
+      <div
+        style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;"
+      >
+        <p>Contact us:</p>
+      </div>
+    </div>
+  </body>
 </html>

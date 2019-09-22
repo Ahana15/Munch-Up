@@ -32,10 +32,10 @@ exports.getUserWithEmail = getUserWithEmail;
 
 //login
 const login = function(email, password) {
-  console.log("hello, tesdting");
+  // console.log("hello, testing");
   return getUserWithEmail(email)
     .then(user => {
-      console.log(user);
+      // console.log(user);
       if (bcrypt.compareSync(password, user.password)) {
         return user;
       }
