@@ -126,24 +126,24 @@ $(".checkout-cta").on("click", function (e) {
     }
   }
   // $.ajax("/userorderstatus", { method: "POST", data: output });
-  console.log(output);
+  // console.log(output);
 
 
   // await $(".beep").submit(event => {
   //   // event.preventDefault();
   //   // console.log(event);
   console.log('🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕fuckkkkkkkkkkkkkkkkkkkkkkello inside summary-checkout');
-  $.ajax("/userorderstatus",
-    {
-      type: "POST",
-      data: JSON.stringify(output),
-      contentType: 'application/json',
-      // success: function (response) {
-      // console.log(response)
-      // window.location.replace('/userorderstatus')
-      // $(location).attr('href', 'localhost:3000/userorderstatus')
-      // }
-    });
+  // $.ajax("/userorderstatus",
+  //   {
+  //     type: "POST",
+  //     data: JSON.stringify(output),
+  //     contentType: 'application/json',
+  //     // success: function (response) {
+  //     //   console.log(response)
+  //     //   window.location.replace('/userorderstatus')
+  //     // $(location).attr('href', 'localhost:3000/userorderstatus')
+  //     // }
+  //   });
   // });
 
 
