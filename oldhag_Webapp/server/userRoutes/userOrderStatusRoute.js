@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const helper = require('../database');
+const database = require('../database');
 
 //User Page Set Up
 router.get("/", (req, res) => {
@@ -14,7 +14,14 @@ router.post("/", async (req, res) => {
   // console.log(req);
   // let name = { food: req.body };
   let templateVars = { data: req.body };
-  console.log(req.body);
+  console.log(templateVars);
+  for (let item of req.body['item-quantity']){
+    if (item > 0){
+      let i = req.body['item-quantity'].indexOf(item);
+      database.addOrder(parseInt(req.body['item-id'][i]), parseInt(item), parseInt(req.session.user_id));
+      console.log("this is the test: ", typeof(parseInt(req.body['item-id'][i])), parseInt(item), parseInt(req.session.user_id));
+    }
+  }
   
   res.render('userOrderStatus', templateVars);
 

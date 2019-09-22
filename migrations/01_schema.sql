@@ -23,23 +23,8 @@ CREATE TABLE users
   is_owner BOOLEAN DEFAULT FALSE
 );
 
-CREATE TABLE users_order_statuses
-(
-  id SERIAL PRIMARY KEY NOT NULL,
-  order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  status VARCHAR(255) NOT NULL
-);
 
-CREATE TABLE orders
-(
-  id SERIAL PRIMARY KEY NOT NULL,
-  created_at TIMESTAMP,
-  completed_at TIMESTAMP,
-  item_id INTEGER REFERENCES items(id) ON DELETE CASCADE,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
-);
+
 
 CREATE TABLE restaurants
 (
@@ -54,13 +39,7 @@ CREATE TABLE restaurants
   country VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE restaurant_order_statuses
-(
-  id SERIAL PRIMARY KEY NOT NULL,
-  order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
-);
+
 
 CREATE TABLE menus
 (
@@ -73,9 +52,36 @@ CREATE TABLE items
 (
  id SERIAL PRIMARY KEY NOT NULL,
  name VARCHAR(255) NOT NULL,
- description VARCHAR(255) NOT NULL,
- thumbnail_url VARCHAR(255) NOT NULL,
+ description VARCHAR(255),
+ thumbnail_url VARCHAR(255),
  price SMALLINT NOT NULL,
  menu_id INTEGER REFERENCES menus(id) ON DELETE CASCADE,
  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
+);
+
+CREATE TABLE orders
+(
+  id SERIAL PRIMARY KEY NOT NULL,
+  created_at TIMESTAMP,
+  completed_at TIMESTAMP,
+  item_id INTEGER REFERENCES items(id) ON DELETE CASCADE,
+  quantity INTEGER NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
+);
+
+CREATE TABLE restaurant_order_statuses
+(
+  id SERIAL PRIMARY KEY NOT NULL,
+  order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
+);
+
+CREATE TABLE users_order_statuses
+(
+  id SERIAL PRIMARY KEY NOT NULL,
+  order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  status VARCHAR(255) NOT NULL
 );

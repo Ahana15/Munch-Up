@@ -120,6 +120,8 @@
                 <% for (let item of Object.values(items)) { %>
                 <tr class="food-table">
                   <td>
+                      <input type="hidden" name="item-id" value="<%= item.id %>" />
+                      <input type="hidden" name="restaurant-id" value="<%= item.restaurant_id %>" />
                     <div class="food-item">
                       <%= item.name %>
                       <input type="hidden" name="item-name" value="<%= item.name %>" />
