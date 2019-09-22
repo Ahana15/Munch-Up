@@ -40,8 +40,11 @@ const apiRouter = express.Router();
 // const userRouter = express.Router();
 // userRoutes(userRouter, database);
 // app.use('/users', userRouter);
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+
+
+
+
+
 
 app.use("/", homeRoute);
 app.use("/login", loginRoute);
