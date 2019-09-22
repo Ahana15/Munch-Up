@@ -6,10 +6,9 @@ const database = require('../database');
 
 //Home Page Set Up
 router.get("/", (req, res) => {
-  const items = database.getMenuItems(1, 1)
+  database.getMenuItems(1, 1)
     .then(items => {
-      let holder = { items };
-      res.render("restaurant1", holder);
+      res.render("restaurant1", { items });
     })
     .catch(err => console.log(err));
 });

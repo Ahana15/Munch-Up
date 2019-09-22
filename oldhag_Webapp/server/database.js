@@ -64,11 +64,11 @@ const getMenuItems = function(restaurant_id, menu_id) {
   return db
     .query(
       `
- SELECT items.id, items.name, items.description, items.price, restaurants.id
- FROM items
- JOIN menus ON items.menu_id = menus.id
- JOIN restaurants ON restaurants.id = menus.restaurant_id
- WHERE restaurants.id = $1 AND menus.id = $2;`,
+      SELECT items.id, items.name, items.description, items.price, restaurants.id as restaurant_id
+      FROM items
+      JOIN menus ON items.menu_id = menus.id
+      JOIN restaurants ON restaurants.id = menus.restaurant_id
+      WHERE restaurants.id = $1 AND menus.id = $2;`,
       [restaurant_id, menu_id]
     )
     .then(res => {
@@ -79,10 +79,18 @@ const getMenuItems = function(restaurant_id, menu_id) {
 
 exports.getMenuItems = getMenuItems;
 
-const addOrder = function (id, quantity, user_id){
-  return db.query(`INSERT INTO orders (item_id, quantity, user_id, restaurant_id)
-  VALUES ($1,$2,$3,$4 ) RETURNING *;`,[id, quantity, user_id, 1 ]).then(res => res.rows);
-}
+const addOrder = function(id, quantity, user_id, restaurant_id) {
+  return db
+    .query(
+      `INSERT INTO orders (item_id, quantity, user_id, restaurant_id)
+        VALUES ($1,$2,$3,$4 ) RETURNING *;`,
+      [id, quantity, user_id, restaurant_id]
+    )
+    .then(res => {
+      console.log(res.rows);
+      res.rows;
+    });
+};
 exports.addOrder = addOrder;
 // const getItemId = function(item, quantity){
 //   for ()
