@@ -9,6 +9,8 @@ const registerRoute = require("./userRoutes/registerRoute");
 const restaurant1Route = require("./userRoutes/restaurant1Route");
 const paymentRoute = require("./userRoutes/paymentRoute");
 const userOrderStatusRoute = require("./userRoutes/userOrderStatusRoute")
+const restaurantListRoute = require("./userRoutes/restaurantListRoute")
+
 
 const restaurantLoginRoute = require("./restaurantRoutes/restaurantLoginRoute");
 const restaurantPage = require("./restaurantRoutes/restaurantPage")
@@ -56,6 +58,7 @@ app.use("/register", registerRoute);
 app.use("/restaurant1", restaurant1Route);
 app.use("/payment", paymentRoute);
 app.use("/userorderstatus", userOrderStatusRoute);
+app.use("/restaurantlist", restaurantListRoute);
 
 app.use("/restaurantlogin", restaurantLoginRoute);
 app.use("/restaurantPage", restaurantPage);
