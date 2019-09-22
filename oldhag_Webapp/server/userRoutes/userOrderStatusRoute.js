@@ -8,13 +8,18 @@ router.get("/", (req, res) => {
   res.render('userOrderStatus');
 });
 
-router.post("/", (req, res) => {
-  console.log(req.body);
+router.post("/", async (req, res) => {
+  try {
+    console.log(req.body);
+    res.render('userOrderStatus');
+  } catch (err) {
+    console.log('inside catch')
+  }
+  // res.send('success')
+  // helper.addUsersOrderStatuses(req.body[0]);
 
-  helper.addUsersOrderStatuses(req.body[0]);
 
-
-  res.send('User Order Status Page Hello');
+  // res.send('User Order Status Page Hello');
 });
 
 module.exports = router;
