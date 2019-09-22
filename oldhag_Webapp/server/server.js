@@ -8,6 +8,7 @@ const orderRoute = require("./userRoutes/orderRoute");
 const registerRoute = require("./userRoutes/registerRoute");
 const restaurant1Route = require("./userRoutes/restaurant1Route");
 const paymentRoute = require("./userRoutes/paymentRoute");
+const userOrderStatusRoute = require("./userRoutes/userOrderStatusRoute")
 
 const restaurantLoginRoute = require("./restaurantRoutes/restaurantLoginRoute");
 const restaurantPage = require("./restaurantRoutes/restaurantPage")
@@ -29,7 +30,8 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // /api/endpoints
 const apiRouter = express.Router();
@@ -53,6 +55,7 @@ app.use("/order", orderRoute);
 app.use("/register", registerRoute);
 app.use("/restaurant1", restaurant1Route);
 app.use("/payment", paymentRoute);
+app.use("/userorderstatus", userOrderStatusRoute);
 
 app.use("/restaurantlogin", restaurantLoginRoute);
 app.use("/restaurantPage", restaurantPage);

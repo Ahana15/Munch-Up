@@ -87,8 +87,8 @@ function updateSumItems() {
   $(".total-items").text(sumItems);
 }
 
-$(".checkout-cta").on("click", function(e) {
-  e.preventDefault();
+$(".checkout-cta").on("click",  function(e) {
+  // e.preventDefault();
 
   let name = $(".food-item")
     .map(function(e) {
@@ -125,4 +125,21 @@ $(".checkout-cta").on("click", function(e) {
       output.push(obj);
     }
   }
+  // $.ajax("/userorderstatus", { method: "POST", data: output });
+  console.log(output);
+
+
+  // await $(".beep").submit(event => {
+  //   // event.preventDefault();
+  //   // console.log(event);
+    console.log('🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕fuckkkkkkkkkkkkkkkkkkkkkkello inside summary-checkout');
+     $.ajax("/userorderstatus", 
+    { type: "POST", 
+      data: JSON.stringify(output),
+      contentType: 'application/json'});
+  // });
+
+
 });
+
+

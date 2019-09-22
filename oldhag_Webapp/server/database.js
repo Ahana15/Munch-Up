@@ -30,32 +30,58 @@ const getUserWithEmail = email => {
 };
 exports.getUserWithEmail = getUserWithEmail;
 
-
 //login
 const login = function(email, password) {
-  console.log('hello, tesdting');
-  return getUserWithEmail(email).then(user => {
-    console.log(user);
-    if (bcrypt.compareSync(password, user.password)) {
-      return user;
-    }
-    return null;
-  }).catch(err => console.log(err));
+  console.log("hello, tesdting");
+  return getUserWithEmail(email)
+    .then(user => {
+      console.log(user);
+      if (bcrypt.compareSync(password, user.password)) {
+        return user;
+      }
+      return null;
+    })
+    .catch(err => console.log(err));
 };
 exports.login = login;
 
-
-const addOrder = function(order) {
+const addUsersOrderStatuses = function(order) {
   return db
     .query(
       `
-  INSERT INTO users (
-    name, email, password, phone_number)
+  INSERT INTO users_order_statuses (
+    order_id, user_id , status )
     VALUES (
-    $1, $2, $3, $4)
+    $1, $2, $3)
     RETURNING *;`,
-      [user.name, user.email, user.password, user.phone_number]
+      [order.order_id, order.user_id, order.status]
     )
-    .then(res => res.rows[0]);
+    .then(res => res.rows);
 };
-exports.addUser = addUser;
+exports.addUsersOrderStatuses = addUsersOrderStatuses;
+
+// const addRestaurantOrderStatuses = function(order) {
+//   return db
+//     .query(
+//       `
+//     INSERT INTO restaurant_order_statuses (
+//     order_id, user_id , restaurant_id )
+//     VALUES (
+//     $1, $2, $3)
+//     RETURNING *;`,
+//       [order.order_id, order.user_id, order.restaurant_id]
+//     )
+//     .then(res => res.rows);
+// };
+// exports.addRestaurantOrderStatuses = addRestaurantOrderStatuses;
+
+// const displayItemsInOrder = function(orderId) {
+//   db.query(
+//     `SELECT orders.id, items.name, items.price, orders.quantity
+//     FROM items
+//     JOIN orders ON items.id = orders.item_id
+//     WHERE order_id = $1;`,
+//     [orderId]
+//   ).then(res => res.rows);
+// };
+// exports.displayItemsInOrder = displayItemsInOrder;

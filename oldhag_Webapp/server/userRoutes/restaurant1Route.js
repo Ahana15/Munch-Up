@@ -14,7 +14,6 @@ const getMenuItems = function(restaurant_id, menu_id) {
       [restaurant_id, menu_id]
     )
     .then(res => {
-      console.log(res.rows);
       return res.rows;
     })
     .catch(err => console.log(err));
@@ -26,7 +25,6 @@ router.get("/", (req, res) => {
   const items = getMenuItems(1, 1)
     .then(items => {
       let holder = { items };
-      console.log(holder);
       res.render("restaurant1", holder);
     })
     .catch(err => console.log(err));
