@@ -13,12 +13,10 @@ router.post("/", async (req, res) => {
   // console.log(req.body);
   // console.log(req);
   // let name = { food: req.body };
-  let templateVars = { data: req.body };
   // console.log(templateVars);
 
   // console.log(req.body["restaurant-id"]);
   // console.log(req.body["item-id"]);
-
   for (let i = 0; i < req.body["item-quantity"].length; ++i) {
     if (req.body["item-quantity"][i] > 0) {
       database.addOrder(
@@ -29,8 +27,12 @@ router.post("/", async (req, res) => {
       );
     }
   }
+  database.getOrders(req.session.user_id).then((res) => {
+    return templateVars = { data: req.body, orders: res };
 
-  res.render("userOrderStatus", templateVars);
+  }).then((templateVars)=>  {
+    console.log(templateVars);
+    res.render("userOrderStatus", templateVars)});
 
   // helper.addUsersOrderStatuses(req.body[0]);
   // res.send('User Order Status Page Hello');

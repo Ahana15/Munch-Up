@@ -50,11 +50,11 @@ const addUsersOrderStatuses = function(order) {
     .query(
       `
   INSERT INTO users_order_statuses (
-    order_id, user_id , status )
+    order_id, user_id)
     VALUES (
-    $1, $2, $3)
+    $1, $2)
     RETURNING *;`,
-      [order.order_id, order.user_id, order.status]
+      [order.id, order.user_id]
     )
     .then(res => res.rows);
 };
@@ -87,17 +87,16 @@ const addOrder = function(id, quantity, user_id, restaurant_id) {
       [id, quantity, user_id, restaurant_id]
     )
     .then(res => {
-      console.log(res.rows);
-      res.rows;
+      addUsersOrderStatuses(res.rows[0]);
+      return res.rows;
     });
 };
 exports.addOrder = addOrder;
-// const getItemId = function(item, quantity){
-//   for ()
-// }
-// const addOrder = function(item){
-//   return db.query()
-// }
+
+const getOrders = function(id){
+  return db.query(`SELECT * FROM orders WHERE user_id = $1;`, [id]).then(res => res.rows);
+}
+exports.getOrders = getOrders;
 // const addRestaurantOrderStatuses = function(order) {
 //   return db
 //     .query(
