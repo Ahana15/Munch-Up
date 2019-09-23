@@ -101,13 +101,14 @@ exports.addOrder = addOrder;
 
 const getOrders = function (id) {
   return db
-    .query(`SELECT orders.user_order, items.name as item_name, restaurants.name as restaurant_name, orders.created_at, users_order_statuses.status
+    .query(`SELECT orders.user_order, items.name as item_name, restaurants.name as restaurant_name, orders.created_at, users_order_statuses.status, orders.quantity
       FROM orders 
         JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
         JOIN restaurants ON (orders.restaurant_id = restaurants.id)
         JOIN items ON (items.id = orders.item_id)
       WHERE orders.user_id = $1
-      GROUP BY orders.user_order, items.name, restaurants.name, orders.created_at, users_order_statuses.status ;
+      GROUP BY orders.user_order, items.name, restaurants.name, orders.created_at, users_order_statuses.status, orders.quantity 
+      ORDER BY orders.created_at DESC;
       
       `, [id])
     .then(res => res.rows);
@@ -116,12 +117,14 @@ exports.getOrders = getOrders;
 
 const getRestaurantOrders = function (id) {
   return db
-    .query(`SELECT items.name as item_name, users.name as user_name, users_order_statuses.*, orders.*
+    .query(`SELECT orders.user_order, items.name as item_name, users.name as user_name, orders.created_at, orders.quantity
       FROM orders 
         JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
         JOIN users ON (orders.user_id = users.id)
         JOIN items ON (items.id = orders.item_id)
-      WHERE orders.restaurant_id = $1;
+      WHERE orders.restaurant_id = $1
+      GROUP BY orders.user_order, items.name, users.name, orders.created_at, orders.quantity
+      ORDER BY orders.created_at DESC;
       
       `, [id])
     .then(res => res.rows);

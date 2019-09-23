@@ -51,6 +51,7 @@
       <tr>
         <th>Order Number</th>
         <th>Food Item</th>
+        <th>Quantity</th>
         <th>Created_At</th>
         <th>Time To Prepare</th>
         <th>Status</th>
@@ -59,6 +60,7 @@
       <tr>
         <td><%= item.user_order %></td>
         <td><%= item.item_name %></td>
+        <td><%= item.quantity %></td>
         <td><%= item.created_at %></td>
         <form method="post" action="/restaurantPage">
           <td>

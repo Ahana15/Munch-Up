@@ -16,12 +16,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    const output = $(".tableItems");
-
-    output.empty();
-    // console.log(output);
-  </script>
+ 
 </head>
 
 <body>
@@ -33,6 +28,7 @@
     <tr>
       <th>Order#</th>
       <th>Food Items#</th>
+      <th>Quantity</th>
       <th>Restaurant Name</th>
       <th>Created At</th>
       <th>Status</th>
@@ -41,6 +37,7 @@
     <tr>
       <td class="tableItems"><%=order.user_order%></td>
       <td class="tableItems"><%=order.item_name%></td>
+      <td class="tableItems"><%=order.quantity%></td>
       <td class="tableItems"><%=order.restaurant_name%></td>
       <td class="tableItems"><%=order.created_at%></td>
       <td class="tableItems"><%= order.status%></td>
