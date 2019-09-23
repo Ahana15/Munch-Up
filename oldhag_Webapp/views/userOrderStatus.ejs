@@ -29,21 +29,6 @@
   <body>
       <% include partials/_homeHeader %>
 
-    <ul class="sidenav" id="mobile-nav">
-      <li>
-        <a href="#home">Home</a>
-      </li>
-      <li>
-        <a href="#search">Search</a>
-      </li>
-      <li>
-        <a href="#menu">Menu</a>
-      </li>
-      <li>
-        <a href="#order">Order Now</a>
-      </li>
-    </ul>
-
     <div></div>
 
     <table id="table-of-items" style="width:100%">
@@ -51,6 +36,7 @@
         <th>Order#</th>
         <th>Food Items#</th>
         <th>Restaurant Name</th>
+        <th>Created At</th>
         <th>Status</th>
       </tr>
       <% for (let order of orders){ %>
@@ -58,6 +44,7 @@
         <td><%=order.user_order%></td>
         <td><%=order.item_name%></td>
         <td><%=order.restaurant_name%></td>
+        <td><%=order.created_at%></td>
         <td><%= order.status%></td>
         <%  } %>
       </tr>

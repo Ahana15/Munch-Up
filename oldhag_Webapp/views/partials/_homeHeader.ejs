@@ -19,7 +19,7 @@
     </button>
 
     <% if(user_id) { %>
-    <div>Logged In As: <%= user_name%> </div>
+    <span style="color: black">Logged In As: <%= user_name%> </span>
     <a
       href="/logout"
       class="btn btn-info border"
@@ -28,8 +28,8 @@
     >
       Log-Out
     </a>
-  
-      <% } else { %>
+
+    <% } else { %>
 
     <a
       href="/login"
@@ -40,13 +40,13 @@
       Log-In
     </a>
     <a
-    href="/restaurantlogin"
-    class="btn btn-info border"
-    style="vertical-align: middle"
-    role="button"
-  >
-    Restaurant Login
-  </a>
+      href="/restaurantlogin"
+      class="btn btn-info border"
+      style="vertical-align: middle"
+      role="button"
+    >
+      Restaurant Login
+    </a>
     <a
       href="/register"
       class="btn btn-info border"

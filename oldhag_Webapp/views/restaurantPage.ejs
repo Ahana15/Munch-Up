@@ -55,10 +55,11 @@
         <th>Time To Prepare</th>
         <th>Status</th>
       </tr>
+      <% for (let item of (orders)) { %>
       <tr>
-        <td>1</td>
-        <td>Ramen</td>
-        <td>12:00pm</td>
+        <td><%= item.user_order %></td>
+        <td><%= item.item_name %></td>
+        <td><%= item.created_at %></td>
         <form method="post" action="/restaurantPage">
           <td>
             <input type="text" name="time" value="10" />
@@ -69,6 +70,7 @@
           </td>
         </form>
       </tr>
+      <% } %>
     </table>
   </body>
 

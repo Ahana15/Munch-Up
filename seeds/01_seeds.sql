@@ -7,12 +7,20 @@ VALUES
    (
       'Soy Ramentic', 'restaurant@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', true);
 
-      INSERT INTO users
+INSERT INTO users
    (
    name, email, password, phone_number, is_owner)
 VALUES
    (
       'Devin Sanders', 'tristanjacobs@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', false);
+
+INSERT INTO users
+   (
+   name, email, password, phone_number, is_owner)
+VALUES
+   (
+      'Gary', '123@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', false);
+
 
 INSERT INTO restaurants
    (name, cuisine, unit_number, street, city, province, post_code, country, owner_id)

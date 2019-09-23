@@ -81,11 +81,15 @@ const getMenuItems = function(restaurant_id, menu_id) {
 exports.getMenuItems = getMenuItems;
 
 const addOrder = function(id, quantity, user_id, restaurant_id, uniqueKey) {
+  let currentTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+  currentTime = currentTime.split(' ').slice(0, 4).join(' ');
+  console.log(currentTime);
+  
   return db
     .query(
-      `INSERT INTO orders (item_id, quantity, user_id, restaurant_id, user_order)
-        VALUES ($1,$2,$3,$4,$5 ) RETURNING *;`,
-      [id, quantity, user_id, restaurant_id, uniqueKey]
+      `INSERT INTO orders (item_id, quantity, user_id, restaurant_id, user_order, created_at)
+        VALUES ($1,$2,$3,$4,$5,$6) RETURNING *;`,
+      [id, quantity, user_id, restaurant_id, uniqueKey, currentTime]
     )
     .then(res => {
       addUsersOrderStatuses(res.rows[0]);

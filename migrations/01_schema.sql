@@ -63,7 +63,8 @@ CREATE TABLE items
 CREATE TABLE orders
 (
   id SERIAL PRIMARY KEY NOT NULL,
-    created_at TIMESTAMP,
+  created_at TEXT,
+  -- created_at TEXT NOT NULL DEFAULT TO_CHAR(CURRENT_TIMESTAMP,'YYYY/MM/DD HH24:MI'),
   completed_at TIMESTAMP,
   item_id INTEGER REFERENCES items(id) ON DELETE CASCADE,
   quantity INTEGER NOT NULL,

@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   database
   .getRestaurantOrders(req.session.user_id)
   .then(res => {
-    return (templateVars = { data: req.body, orders: res});
+    return (templateVars = {orders: res});
   })
   .then(templateVars => {
    templateVars.user_id = req.session.user_id;

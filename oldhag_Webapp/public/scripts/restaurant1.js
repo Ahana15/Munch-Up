@@ -132,7 +132,6 @@ $(".checkout-cta").on("click", function (e) {
   // await $(".beep").submit(event => {
   //   // event.preventDefault();
   //   // console.log(event);
-  console.log('🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕🖕fuckkkkkkkkkkkkkkkkkkkkkkello inside summary-checkout');
   // $.ajax("/userorderstatus",
   //   {
   //     type: "POST",
