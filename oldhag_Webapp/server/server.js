@@ -13,7 +13,7 @@ const restaurantListRoute = require("./userRoutes/restaurantListRoute")
 
 
 const restaurantLoginRoute = require("./restaurantRoutes/restaurantLoginRoute");
-const restaurantPage = require("./restaurantRoutes/restaurantPage")
+const restaurantPageRoute = require("./restaurantRoutes/restaurantPageRoute")
 
 
 const database = require("./database");
@@ -61,7 +61,7 @@ app.use("/userorderstatus", userOrderStatusRoute);
 app.use("/restaurantlist", restaurantListRoute);
 
 app.use("/restaurantlogin", restaurantLoginRoute);
-app.use("/restaurantPage", restaurantPage);
+app.use("/restaurantpage", restaurantPageRoute);
 
 const port = process.env.PORT || 3000;
 app.listen(port, err => console.log(err || `listening on port ${port} 😎`));

@@ -88,5 +88,5 @@ CREATE TABLE users_order_statuses
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
   user_order VARCHAR(255),
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  status VARCHAR(255) DEFAULT 'In Progress'
+  status VARCHAR(255) DEFAULT 'Not Accepted'
 );

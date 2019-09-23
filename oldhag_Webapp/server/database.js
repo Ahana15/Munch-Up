@@ -1,7 +1,7 @@
 const db = require("./db/index.js");
 const bcrypt = require("bcrypt");
 
-const addUser = function (user) {
+const addUser = function(user) {
   return db
     .query(
       `
@@ -31,7 +31,7 @@ const getUserWithEmail = email => {
 exports.getUserWithEmail = getUserWithEmail;
 
 //login
-const login = function (email, password) {
+const login = function(email, password) {
   // console.log("hello, testing");
   return getUserWithEmail(email)
     .then(user => {
@@ -45,7 +45,7 @@ const login = function (email, password) {
 };
 exports.login = login;
 
-const addUsersOrderStatuses = function (order) {
+const addUsersOrderStatuses = function(order) {
   return db
     .query(
       `
@@ -57,12 +57,12 @@ const addUsersOrderStatuses = function (order) {
       [order.id, order.user_order, order.user_id]
     )
     .then(res => {
-      res.rows
+      res.rows;
     });
 };
 exports.addUsersOrderStatuses = addUsersOrderStatuses;
 
-const getMenuItems = function (restaurant_id, menu_id) {
+const getMenuItems = function(restaurant_id, menu_id) {
   return db
     .query(
       `
@@ -81,9 +81,14 @@ const getMenuItems = function (restaurant_id, menu_id) {
 
 exports.getMenuItems = getMenuItems;
 
-const addOrder = function (id, quantity, user_id, restaurant_id, uniqueKey) {
-  let currentTime = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
-  currentTime = currentTime.split(' ').slice(0, 4).join(' ');
+const addOrder = function(id, quantity, user_id, restaurant_id, uniqueKey) {
+  let currentTime = new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York"
+  });
+  currentTime = currentTime
+    .split(" ")
+    .slice(0, 4)
+    .join(" ");
   console.log(currentTime);
 
   return db
@@ -99,9 +104,10 @@ const addOrder = function (id, quantity, user_id, restaurant_id, uniqueKey) {
 };
 exports.addOrder = addOrder;
 
-const getOrders = function (id) {
+const getOrders = function(id) {
   return db
-    .query(`SELECT orders.user_order, items.name as item_name, restaurants.name as restaurant_name, orders.created_at, users_order_statuses.status, orders.quantity
+    .query(
+      `SELECT orders.user_order, items.name as item_name, restaurants.name as restaurant_name, orders.created_at, users_order_statuses.status, orders.quantity
       FROM orders 
         JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
         JOIN restaurants ON (orders.restaurant_id = restaurants.id)
@@ -110,36 +116,59 @@ const getOrders = function (id) {
       GROUP BY orders.user_order, items.name, restaurants.name, orders.created_at, users_order_statuses.status, orders.quantity 
       ORDER BY orders.created_at DESC;
       
-      `, [id])
+      `,
+      [id]
+    )
     .then(res => res.rows);
 };
 exports.getOrders = getOrders;
 
-const getRestaurantOrders = function (id) {
+const getRestaurantOrders = function(id) {
   return db
-    .query(`SELECT orders.user_order, items.name as item_name, users.name as user_name, orders.created_at, orders.quantity
+    .query(
+      `SELECT orders.user_order, items.name as item_name, users.name as user_name, orders.created_at, orders.quantity, users_order_statuses.status
       FROM orders 
         JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
         JOIN users ON (orders.user_id = users.id)
         JOIN items ON (items.id = orders.item_id)
       WHERE orders.restaurant_id = $1
-      GROUP BY orders.user_order, items.name, users.name, orders.created_at, orders.quantity
+      GROUP BY orders.user_order, items.name, users.name, orders.created_at, orders.quantity,users_order_statuses.status
       ORDER BY orders.created_at DESC;
       
-      `, [id])
+      `,
+      [id]
+    )
     .then(res => res.rows);
 };
 exports.getRestaurantOrders = getRestaurantOrders;
 
 const generateRandomString = () => {
-  let randomString = '';
-  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let randomString = "";
+  let characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   for (let i = 0; i < 6; i++) {
-    randomString += characters.charAt(Math.floor(Math.random() * characters.length));
+    randomString += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
   }
   return randomString;
 };
 exports.generateRandomString = generateRandomString;
+
+//update order status when restaurant clicks
+const updateOrderStatus = function(orderId, message) {
+  return db
+    .query(
+      `UPDATE users_order_statuses
+        SET status = $2 WHERE user_order = $1;
+  `,
+      [orderId, message]
+    )
+    .then(res => res.rows);
+};
+
+exports.updateOrderStatus = updateOrderStatus;
+
 // const addRestaurantOrderStatuses = function(order) {
 //   return db
 //     .query(
