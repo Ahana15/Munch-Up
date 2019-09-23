@@ -7,7 +7,8 @@ router.get("/", (req, res) => {
     database
       .getOrders(req.session.user_id)
       .then(res => {
-        return (templateVars = {  orders: res });
+        let ordered = database.groupOrds(res);
+        return (templateVars = {  orders: ordered });
       })
       .then(templateVars => {
         templateVars.user_id = req.session.user_id;

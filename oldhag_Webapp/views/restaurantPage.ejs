@@ -79,7 +79,6 @@
         <th>Food Item</th>
         <th>Quantity</th>
         <th>Created_At</th>
-        <th>Time To Prepare</th>
         <th>Status</th>
       </tr>
       <% for (let item of (orders)) { if (item.status === "Accepted - In Progress") { %>
@@ -106,7 +105,6 @@
         <th>Food Item</th>
         <th>Quantity</th>
         <th>Created_At</th>
-        <th>Time To Prepare</th>
         <th>Status</th>
       </tr>
       <% for (let item of (orders)) { if (item.status === "Completed") { %>
@@ -115,6 +113,7 @@
         <td><%= item.item_name %></td>
         <td><%= item.quantity %></td>
         <td><%= item.created_at %></td>
+        <td>Completed</td>
       </tr>
       <% }} %>
     </table>

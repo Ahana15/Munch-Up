@@ -107,13 +107,13 @@ exports.addOrder = addOrder;
 const getOrders = function(id) {
   return db
     .query(
-      `SELECT orders.user_order, items.name as item_name, restaurants.name as restaurant_name, orders.created_at, users_order_statuses.status, orders.quantity
+      `SELECT orders.user_order, items.name as item_name, restaurants.name as restaurant_name, orders.created_at, users_order_statuses.status, orders.quantity, items.price
       FROM orders 
         JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
         JOIN restaurants ON (orders.restaurant_id = restaurants.id)
         JOIN items ON (items.id = orders.item_id)
       WHERE orders.user_id = $1
-      GROUP BY orders.user_order, items.name, restaurants.name, orders.created_at, users_order_statuses.status, orders.quantity 
+      GROUP BY orders.user_order, items.name, restaurants.name, orders.created_at, users_order_statuses.status, orders.quantity, items.price
       ORDER BY orders.created_at DESC;
       
       `,
@@ -169,6 +169,36 @@ const updateOrderStatus = function(orderId, message) {
 
 exports.updateOrderStatus = updateOrderStatus;
 
+//Group orders based on unique key
+const groupOrds = function(orders){
+  let items = [];
+  let hold = [];
+  let i = 0;
+  let key = orders[0].user_order;
+
+  for (let order of orders){
+    // console.log(key);
+    // console.log(orders[i].user_order)
+    if (key === order.user_order ){
+      items.push(order)
+    }
+    else {
+      if (items !== []){
+        hold.push(items);
+        items = [];
+        items.push(order);
+      } else {
+        hold.push([order]);
+      }
+      key = orders[i].user_order;
+    }
+    i++;
+    // console.log('items :', items)
+    // console.log('hold :', hold)
+  }
+  return hold;
+}
+exports.groupOrds = groupOrds;
 // const addRestaurantOrderStatuses = function(order) {
 //   return db
 //     .query(

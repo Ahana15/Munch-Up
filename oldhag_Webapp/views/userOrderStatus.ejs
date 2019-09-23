@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Meta Information -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+    <!-- //material design css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
-  <!-- //material design css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <!-- External JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
+  </head>
 
-  <!-- External JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- 
-</head>
+  <body>
+    <% include partials/_homeHeader %>
 
-<body>
-  <% include partials/_homeHeader %>
+    <div>
+      <% for (let order of orders){ %>
 
-  <div></div>
-
-  <table id="table-of-items" style="width:100%">
-    <tr>
-      <th>Order#</th>
-      <th>Food Items#</th>
-      <th>Quantity</th>
-      <th>Restaurant Name</th>
-      <th>Created At</th>
-      <th>Status</th>
-    </tr>
-    <% for (let order of orders){ %>
-    <tr>
-      <td class="tableItems"><%=order.user_order%></td>
-      <td class="tableItems"><%=order.item_name%></td>
-      <td class="tableItems"><%=order.quantity%></td>
-      <td class="tableItems"><%=order.restaurant_name%></td>
-      <td class="tableItems"><%=order.created_at%></td>
-      <td class="tableItems"><%= order.status%></td>
-      <%  } %>
-    </tr>
-  </table>
-</body>
-
+      <div>
+        <!-- <div>Order#</div>
+        <div>Food Items#</div>
+        <div>Quantity</div>
+        <div>Restaurant Name</div>
+        <div>Created At</div>
+        <div>Status</div> -->
+        <button class="btn btn-default food-list">
+          <%=order[0].user_order%>
+        </button>
+      </div>
+      <div class="order-info" id="<%=order[0].user_order%>">
+        <% for (let item of order){ %>
+        <li class="tableItems"><%=item.user_order%></li>
+        <li class="tableItems"><%=item.item_name%></li>
+        <li class="tableItems"><%=item.quantity%></li>
+        <li class="tableItems"><%=item.restaurant_name%></li>
+        <li class="tableItems"><%=item.created_at%></li>
+        <li class="tableItems"><%= item.status%></li>
+        <!-- <button class="btn btn-default">
+              <%=item.user_order%>
+            </button> -->
+        <% } %>
+      </div>
+    </div>
+    <% } %>
+  </body>
 </html>
+
+<script></script>

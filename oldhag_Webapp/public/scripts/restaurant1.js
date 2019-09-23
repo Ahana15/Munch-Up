@@ -116,14 +116,14 @@ $(".checkout-cta").on("click", function (e) {
 
   let output = []; //{name: , price: , quantity: }
 
-  for (let i = 0; i < name.length; ++i) {
-    let obj = {};
-    if (quantity[i] !== 0) {
-      obj.name = name[i];
-      obj.price = price[i];
-      obj.quantity = quantity[i];
-      output.push(obj);
-    }
+  // for (let i = 0; i < name.length; ++i) {
+  //   let obj = {};
+  //   if (quantity[i] !== 0) {
+  //     obj.name = name[i];
+  //     obj.price = price[i];
+  //     obj.quantity = quantity[i];
+  //     output.push(obj);
+  //   }
   }
   // $.ajax("/userorderstatus", { method: "POST", data: output });
   // console.log(output);
