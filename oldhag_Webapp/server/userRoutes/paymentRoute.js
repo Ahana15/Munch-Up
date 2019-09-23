@@ -3,14 +3,6 @@ const router = express.Router();
 const database = require("../database");
 
 router.post("/", async (req, res) => {
-  // console.log(req.body);
-  // console.log(req);
-  // let name = { food: req.body };
-  // console.log(templateVars);
-
-  // console.log(req.body["restaurant-id"]);
-  // console.log(req.body["item-id"]);
-
   const userOrder = database.generateRandomString();
   for (let i = 0; i < req.body["item-quantity"].length; i++) {
     if (req.body["item-quantity"][i] > 0) {
@@ -25,8 +17,6 @@ router.post("/", async (req, res) => {
   }
 
   res.redirect("/userorderstatus");
-  // helper.addUsersOrderStatuses(req.body[0]);
-  // res.send('User Order Status Page Hello');
 });
 
 router.get("/", (req, res) => {
