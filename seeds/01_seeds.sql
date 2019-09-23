@@ -1,23 +1,23 @@
 
+
 INSERT INTO users
    (
    name, email, password, phone_number, is_owner)
 VALUES
    (
-      'Devin Sanders', 'tristanjacobs@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', false);
-INSERT INTO users
+      'Soy Ramentic', 'restaurant@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', true);
+
+      INSERT INTO users
    (
-   name, email, password)
+   name, email, password, phone_number, is_owner)
 VALUES
    (
-      'Iva Harrison', 'allisonjackson@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', false);
-
-
+      'Devin Sanders', 'tristanjacobs@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', false);
 
 INSERT INTO restaurants
-   (name, cuisine, unit_number, street, city, province, post_code, country)
+   (name, cuisine, unit_number, street, city, province, post_code, country, owner_id)
 VALUES
-   ('Ryus Noodle Bar', 'japanese', 1, '669 Queen St W', 'Toronto', 'Ontario', 'M6J 1E6', 'Canada');
+   ('Ryus Noodle Bar', 'japanese', 1, '669 Queen St W', 'Toronto', 'Ontario', 'M6J 1E6', 'Canada', 1);
 
 INSERT INTO menus
    (name, restaurant_id)

@@ -1,23 +1,37 @@
 const express = require("express");
 const router = express.Router();
+const database = require("../database");
 
-const twilio = require('twilio');
+router.post("/", async (req, res) => {
+  // console.log(req.body);
+  // console.log(req);
+  // let name = { food: req.body };
+  // console.log(templateVars);
 
+  // console.log(req.body["restaurant-id"]);
+  // console.log(req.body["item-id"]);
 
+  const userOrder = database.generateRandomString();
+  for (let i = 0; i < req.body["item-quantity"].length; i++) {
+    if (req.body["item-quantity"][i] > 0) {
+      database.addOrder(
+        Number(req.body["item-id"][i]),
+        Number(req.body["item-quantity"][i]),
+        Number(req.session.user_id),
+        Number(req.body["restaurant-id"][i]),
+        userOrder
+      );
+    }
+  }
 
-//Payment Page Set Up
-router.get("/", (req, res) => {
-  console.log("Payment Page");
-  res.render("payment");
+  res.redirect("/userorderstatus");
+  // helper.addUsersOrderStatuses(req.body[0]);
+  // res.send('User Order Status Page Hello');
 });
 
-module.exports = router;
-
-
-router.post('/', (req, res) => {
-  
-  res.redirect('/payment');
-})
+router.get("/", (req, res) => {
+  res.redirect("/userorderstatus");
+});
 
 //Twilio - Restuarant
 // const accountSid = 'ACa9aa2d9bcadd145935bac5e690d4c63a'; // RESTAURANT Account SID from www.twilio.com/console
@@ -29,4 +43,4 @@ router.post('/', (req, res) => {
 //   from: '+16474906192' // From Twilio(valid Twilio Number)
 // })
 //   .then((message) => console.log(message.sid));
-
+module.exports = router;

@@ -22,7 +22,12 @@ router.post("/", (req, res) => {
       req.session.user_id = user.id;
       req.session.user_name = user.name;
       req.session.email = user.email;
-      res.redirect("/");
+      if (user.is_owner){
+        res.redirect("/restaurantpage");
+      }
+      else {
+        res.redirect("/");
+      }
     })
     .catch(e => res.send(e));
 });

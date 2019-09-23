@@ -57,7 +57,6 @@ const addUsersOrderStatuses = function(order) {
       [order.id, order.user_order, order.user_id]
     )
     .then(res => {
-      console.log("inside addUserStatus: " ,res.rows);
       res.rows});
 };
 exports.addUsersOrderStatuses = addUsersOrderStatuses;
@@ -89,7 +88,6 @@ const addOrder = function(id, quantity, user_id, restaurant_id, uniqueKey) {
       [id, quantity, user_id, restaurant_id, uniqueKey]
     )
     .then(res => {
-      console.log(res.rows);
       addUsersOrderStatuses(res.rows[0]);
       return res.rows;
     });
@@ -109,6 +107,20 @@ const getOrders = function(id) {
     .then(res => res.rows);
 };
 exports.getOrders = getOrders;
+
+const getRestaurantOrders = function(id) {
+  return db
+    .query(`SELECT items.name as item_name, users.name as user_name, users_order_statuses.*, orders.*
+      FROM orders 
+        JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
+        JOIN users ON (orders.user_id = users.id)
+        JOIN items ON (items.id = orders.item_id)
+      WHERE orders.restaurant_id = $1;
+      
+      `, [id])
+    .then(res => res.rows);
+};
+exports.getRestaurantOrders = getRestaurantOrders;
 
 const generateRandomString = () => {
   let randomString = '';

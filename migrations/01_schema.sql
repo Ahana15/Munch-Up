@@ -36,7 +36,8 @@ CREATE TABLE restaurants
   city VARCHAR(255) NOT NULL,
   province VARCHAR(255) NOT NULL,
   post_code VARCHAR(255) NOT NULL,
-  country VARCHAR(255) NOT NULL
+  country VARCHAR(255) NOT NULL,
+  owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 
