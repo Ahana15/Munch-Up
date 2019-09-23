@@ -7,6 +7,7 @@ router.get("/", (req, res) => {
   database
     .getOrders(req.session.user_id)
     .then(res => {
+      console.log(res);
       return (templateVars = { data: req.body, orders: res });
     })
     .then(templateVars => {

@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
   const userOrder = database.generateRandomString();
   for (let i = 0; i < req.body["item-quantity"].length; i++) {
     if (req.body["item-quantity"][i] > 0) {
-      database.addOrder(
+      await database.addOrder(
         Number(req.body["item-id"][i]),
         Number(req.body["item-quantity"][i]),
         Number(req.session.user_id),
@@ -19,9 +19,9 @@ router.post("/", async (req, res) => {
   res.redirect("/userorderstatus");
 });
 
-router.get("/", (req, res) => {
-  res.redirect("/userorderstatus");
-});
+// router.get("/", (req, res) => {
+//   res.redirect("/userorderstatus");
+// });
 
 //Twilio - Restuarant
 // const accountSid = 'ACa9aa2d9bcadd145935bac5e690d4c63a'; // RESTAURANT Account SID from www.twilio.com/console

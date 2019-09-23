@@ -1,7 +1,7 @@
 const db = require("./db/index.js");
 const bcrypt = require("bcrypt");
 
-const addUser = function(user) {
+const addUser = function (user) {
   return db
     .query(
       `
@@ -31,7 +31,7 @@ const getUserWithEmail = email => {
 exports.getUserWithEmail = getUserWithEmail;
 
 //login
-const login = function(email, password) {
+const login = function (email, password) {
   // console.log("hello, testing");
   return getUserWithEmail(email)
     .then(user => {
@@ -45,7 +45,7 @@ const login = function(email, password) {
 };
 exports.login = login;
 
-const addUsersOrderStatuses = function(order) {
+const addUsersOrderStatuses = function (order) {
   return db
     .query(
       `
@@ -57,11 +57,12 @@ const addUsersOrderStatuses = function(order) {
       [order.id, order.user_order, order.user_id]
     )
     .then(res => {
-      res.rows});
+      res.rows
+    });
 };
 exports.addUsersOrderStatuses = addUsersOrderStatuses;
 
-const getMenuItems = function(restaurant_id, menu_id) {
+const getMenuItems = function (restaurant_id, menu_id) {
   return db
     .query(
       `
@@ -80,11 +81,11 @@ const getMenuItems = function(restaurant_id, menu_id) {
 
 exports.getMenuItems = getMenuItems;
 
-const addOrder = function(id, quantity, user_id, restaurant_id, uniqueKey) {
-  let currentTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+const addOrder = function (id, quantity, user_id, restaurant_id, uniqueKey) {
+  let currentTime = new Date().toLocaleString("en-US", { timeZone: "America/New_York" });
   currentTime = currentTime.split(' ').slice(0, 4).join(' ');
   console.log(currentTime);
-  
+
   return db
     .query(
       `INSERT INTO orders (item_id, quantity, user_id, restaurant_id, user_order, created_at)
@@ -98,21 +99,22 @@ const addOrder = function(id, quantity, user_id, restaurant_id, uniqueKey) {
 };
 exports.addOrder = addOrder;
 
-const getOrders = function(id) {
+const getOrders = function (id) {
   return db
-    .query(`SELECT items.name as item_name, restaurants.name as restaurant_name, users_order_statuses.*, orders.*
+    .query(`SELECT orders.user_order, items.name as item_name, restaurants.name as restaurant_name, orders.created_at, users_order_statuses.status
       FROM orders 
         JOIN users_order_statuses ON (orders.user_order = users_order_statuses.user_order)
         JOIN restaurants ON (orders.restaurant_id = restaurants.id)
         JOIN items ON (items.id = orders.item_id)
-      WHERE orders.user_id = $1;
+      WHERE orders.user_id = $1
+      GROUP BY orders.user_order, items.name, restaurants.name, orders.created_at, users_order_statuses.status ;
       
       `, [id])
     .then(res => res.rows);
 };
 exports.getOrders = getOrders;
 
-const getRestaurantOrders = function(id) {
+const getRestaurantOrders = function (id) {
   return db
     .query(`SELECT items.name as item_name, users.name as user_name, users_order_statuses.*, orders.*
       FROM orders 
@@ -133,8 +135,8 @@ const generateRandomString = () => {
     randomString += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return randomString;
- };
-exports.generateRandomString = generateRandomString; 
+};
+exports.generateRandomString = generateRandomString;
 // const addRestaurantOrderStatuses = function(order) {
 //   return db
 //     .query(

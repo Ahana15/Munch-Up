@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- //material design css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
 
-    <!-- External JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </head>
+  <!-- //material design css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
-  <body>
-      <% include partials/_homeHeader %>
+  <!-- External JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    const output = $(".tableItems");
 
-    <div></div>
+    output.empty();
+    // console.log(output);
+  </script>
+</head>
 
-    <table id="table-of-items" style="width:100%">
-      <tr>
-        <th>Order#</th>
-        <th>Food Items#</th>
-        <th>Restaurant Name</th>
-        <th>Created At</th>
-        <th>Status</th>
-      </tr>
-      <% for (let order of orders){ %>
-      <tr>
-        <td><%=order.user_order%></td>
-        <td><%=order.item_name%></td>
-        <td><%=order.restaurant_name%></td>
-        <td><%=order.created_at%></td>
-        <td><%= order.status%></td>
-        <%  } %>
-      </tr>
-    </table>
-  </body>
+<body>
+  <% include partials/_homeHeader %>
+
+  <div></div>
+
+  <table id="table-of-items" style="width:100%">
+    <tr>
+      <th>Order#</th>
+      <th>Food Items#</th>
+      <th>Restaurant Name</th>
+      <th>Created At</th>
+      <th>Status</th>
+    </tr>
+    <% for (let order of orders){ %>
+    <tr>
+      <td class="tableItems"><%=order.user_order%></td>
+      <td class="tableItems"><%=order.item_name%></td>
+      <td class="tableItems"><%=order.restaurant_name%></td>
+      <td class="tableItems"><%=order.created_at%></td>
+      <td class="tableItems"><%= order.status%></td>
+      <%  } %>
+    </tr>
+  </table>
+</body>
+
 </html>
-
-<script>
-  // const output = $("#table-of-items");
-  // output.empty();
-  // console.log(output);
-</script>
