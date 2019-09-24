@@ -12,7 +12,6 @@ router.get("/", (req, res) => {
       return (templateVars = { orders: ordered });
     })
     .then(templateVars => {
-      console.log(templateVars);
       templateVars.user_id = req.session.user_id;
       templateVars.user_email = req.session.email;
       templateVars.user_name = req.session.user_name;

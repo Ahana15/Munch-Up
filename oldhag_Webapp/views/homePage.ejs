@@ -31,14 +31,21 @@
   </head>
 
   <body>
-    <% include partials/_homeHeader %>
+    <% include partials/_otherHeader %>
 
     <div class="bgimg-1">
       <div class="caption">
         <% if(user_id) { %>
-        <a href="/restaurantlist">
-          <span class="border">Let's get started</span>
-        </a>
+          <% if(user_isowner) { %>
+            <a href="/restaurantpage">
+              <span class="border">Let's get started</span>
+            </a>
+          <% } else { %>
+            <a href="/restaurantlist">
+              <span class="border">Let's get started</span>
+            </a>
+          <% } %>
+        
         <% } else { %>
         <a href="/login">
           <span class="border">Let's get started</span>
