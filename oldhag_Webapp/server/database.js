@@ -5,7 +5,7 @@ const addUser = function(user) {
   return db
     .query(
       `
-  INSERT INTO users (
+    INSERT INTO users (
     name, email, password, phone_number)
     VALUES (
     $1, $2, $3, $4)
@@ -32,10 +32,8 @@ exports.getUserWithEmail = getUserWithEmail;
 
 //login
 const login = function(email, password) {
-  // console.log("hello, testing");
   return getUserWithEmail(email)
     .then(user => {
-      // console.log(user);
       if (bcrypt.compareSync(password, user.password)) {
         return user;
       }

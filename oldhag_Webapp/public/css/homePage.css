@@ -180,6 +180,8 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 30vh;
+  width: 100%;
 }
 .bgimg-1 {
   background-image: url("https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg");

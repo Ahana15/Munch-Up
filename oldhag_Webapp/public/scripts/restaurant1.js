@@ -73,4 +73,9 @@ function updateSumItems() {
     sumItems += parseInt($(this).val());
   });
   $(".total-items").text(sumItems);
+  if (sumItems === 0) {
+    $("#buyButton").attr("disabled", true);
+  } else {
+    $("#buyButton").attr("disabled", false);
+  }
 }

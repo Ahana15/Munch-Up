@@ -12,7 +12,7 @@ app.use(
   })
 );
 
-//Home Page Set Up
+//Register Page Set Up
 router.get("/", (req, res) => {
   let templateVars = {
     user_id: req.session.user_id,

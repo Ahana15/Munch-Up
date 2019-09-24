@@ -48,8 +48,5 @@ router.post("/", (req, res) => {
       (req.body.time = "Accepted - In Progress")
     );
   }
-
-  // Twilio - User;
-
   res.redirect("restaurantPage");
 });

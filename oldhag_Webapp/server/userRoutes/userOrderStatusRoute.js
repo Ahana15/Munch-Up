@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const database = require("../database");
-//User Page Set Up
+
+//User Order Status Page Set Up
 router.get("/", (req, res) => {
   database
     .getOrders(req.session.user_id)

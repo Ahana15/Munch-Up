@@ -12,7 +12,7 @@ router.post("/", (req, res) => {
     .login(req.body.email, req.body.password)
     .then(user => {
       if (!user) {
-        res.send("user doesn't exist. please register");
+        res.send("User account doesn't exist. Please register first. Thank you. :)");
         return;
       }
       req.session.user_id = user.id;

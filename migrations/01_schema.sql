@@ -6,8 +6,6 @@ DROP TABLE IF EXISTS orders
 CASCADE;
 DROP TABLE IF EXISTS restaurants
 CASCADE;
-DROP TABLE IF EXISTS restaurant_order_statuses
-CASCADE;
 DROP TABLE IF EXISTS menus
 CASCADE;
 DROP TABLE IF EXISTS items
@@ -71,15 +69,6 @@ CREATE TABLE orders
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
   user_order VARCHAR(255) NOT NULL
-);
-
-
-CREATE TABLE restaurant_order_statuses
-(
-  id SERIAL PRIMARY KEY NOT NULL,
-  order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
 );
 
 CREATE TABLE users_order_statuses

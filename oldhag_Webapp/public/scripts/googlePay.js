@@ -189,17 +189,3 @@ function handlePaymentResponse(response) {
     .getElementById("checkout")
     .insertAdjacentElement("afterend", formattedResponse);
 }
-
-// /**
-//  * Display an error message for debugging
-//  *
-//  * @param {string} text message to display
-//  */
-// function showErrorForDebugging(text) {
-//   const errorDisplay = document.createElement("code");
-//   errorDisplay.style.color = "red";
-//   errorDisplay.appendChild(document.createTextNode(text));
-//   const p = document.createElement("p");
-//   p.appendChild(errorDisplay);
-//   document.getElementById("checkout").insertAdjacentElement("afterend", p);
-// }

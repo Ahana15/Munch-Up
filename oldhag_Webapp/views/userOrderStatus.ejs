@@ -7,18 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 ​
   <!-- External CSS -->
-​
-​
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="/css/userOrderStatus.css" type="text/css" /> -->
 ​
   <!-- External JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
+  <title>Order History</title>
 </head>
 ​
 <body>
@@ -31,12 +27,6 @@
     <% for (let order of orders){ %>
 ​
     <div>
-      <!-- <div>Order#</div>
-        <div>Food Items#</div>
-        <div>Quantity</div>
-        <div>Restaurant Name</div>
-        <div>Created At</div>
-        <div>Status</div> -->
       <button class="btn btn-outline-info food-list">
         <%=order[0].user_order%>
       </button>
@@ -46,21 +36,17 @@
       <div class="order created_at"><%=order[0].created_at%></div>
       <div class="order status"><%= order[0].status%></div>
       <% for (let item of order){ %>
-      <!-- <li class="tableItems"><%=item.user_order%></li> -->
       <li class="order itemsQuants"><%=item.item_name%> : <%=item.quantity%></li>
-      <!-- <li class="tableItems"><%=item.quantity%></li> -->
-      <!-- <button class="btn btn-default">
-              <%=item.user_order%>
-            </button> -->
       <% } %>
     </div>
   </div>
   <% } %>
 </body>
+
+<script type="text/javascript" src="/scripts/userorderstatus.js"></script>
 ​
 </html>
 ​
-<script></script>
 
 
 

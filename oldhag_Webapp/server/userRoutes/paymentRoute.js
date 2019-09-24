@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const database = require("../database");
 const twilio = require("twilio");
-const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 router.post("/", async (req, res) => {
   const userOrder = database.generateRandomString();
@@ -32,9 +31,5 @@ router.post("/", async (req, res) => {
 
   res.redirect("/userorderstatus");
 });
-
-// router.get("/", (req, res) => {
-//   res.redirect("/userorderstatus");
-// });
 
 module.exports = router;

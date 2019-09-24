@@ -61,7 +61,7 @@
 
                     <td class="table-price">
                       <div class="item-price">
-                        <%= item.price/100 %>
+                        <%= (item.price/100).toFixed(2) %>
                         <input
                           type="hidden"
                           name="item-price"
@@ -119,7 +119,6 @@
                   0.00
                 </div>
               </div>
-              <!-- <form class="beep" method="POST" action="/userorderstatus"></form> -->
               <div
                 class="summary-checkout"
                 id="completeOrd"
@@ -136,7 +135,6 @@
               <div id="checkout">
                 <button id="buyButton">Checkout</button>
               </div>
-              <!-- </form> -->
             </div>
           </aside>
         </div>
@@ -145,7 +143,6 @@
   </body>
 
   <!--JavaScript at end of body for optimized loading-->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
   <script type="text/javascript" src="/scripts/restaurant1.js"></script>
   <script src="/scripts/googlePay.js"></script>
 </html>
