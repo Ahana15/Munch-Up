@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const database = require('../database');
+const database = require("../database");
 
-
-
-//Home Page Set Up
+//Restaurant - Soy-Ramentic Page Set Up
 router.get("/", (req, res) => {
-  database.getMenuItems(1, 1)
+  database
+    .getMenuItems(1, 1)
     .then(items => {
       let templateVars = {
         items,
@@ -14,10 +13,9 @@ router.get("/", (req, res) => {
         user_email: req.session.email,
         user_name: req.session.user_name
       };
-      res.render("restaurant1",templateVars);
+      res.render("restaurant1", templateVars);
     })
     .catch(err => console.log(err));
-    
 });
 
 module.exports = router;
