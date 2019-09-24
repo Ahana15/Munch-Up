@@ -19,25 +19,25 @@
 //   });
 // });
 $(document).ready(function() {
-  let shouldShow = true;
+  let isShow = {};
 
   $(".food-list").on("click", function() {
+    const idName = $(this)
+      .html()
+      .trim();
 
-    // console.log(this);
-    // console.log($(this).html().trim())
-    const idName = $(this).html().trim();
-    
-    // const ID = $(this).find($(this).html())
-    // console.log(ID);
-    console.log('id name', idName);
+    console.log(isShow[idName]);
 
+    if (isShow[idName] === undefined) {
+      isShow[idName] = true;
+    }
 
-    if (shouldShow) {
+    if (isShow[idName]) {
       $(`#${idName}`).hide();
     } else {
       $(`#${idName}`).show();
     }
 
-    shouldShow = !shouldShow;
+    isShow[idName] = !isShow[idName];
   });
 });

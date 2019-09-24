@@ -9,8 +9,7 @@ router.get("/", (req, res) => {
   database
   .getRestaurantOrders(req.session.user_id)
   .then(res => {
-    let ordered = database.groupOrds(res);
-    console.log(ordered);
+    let ordered = database.groupOrders(res);
     return (templateVars = {orders: ordered});
   })
   .then(templateVars => {

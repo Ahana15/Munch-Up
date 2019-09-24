@@ -172,7 +172,7 @@ exports.updateOrderStatus = updateOrderStatus;
 //Group orders based on unique key
 const groupOrders = function(orders) {
   let items = [];
-  let hold = [];
+  let result = [];
   let i = 0;
   let key = orders[0].user_order;
 
@@ -180,21 +180,16 @@ const groupOrders = function(orders) {
     if (key === order.user_order) {
       items.push(order);
     } else {
-      if (items !== []) {
-        hold.push(items);
-        items = [];
-        items.push(order);
-      } else {
-        hold.push([order]);
-      }
+      result.push(items);
+      items = [];
+      items.push(order);
       key = orders[i].user_order;
     }
     i++;
   }
-  if (hold.length === 0) {
-    hold.push(items);
+  if (items.length !== 0) {
+    result.push(items);
   }
-  return hold;
+  return result;
 };
 exports.groupOrders = groupOrders;
-

@@ -2,14 +2,10 @@ const express = require("express");
 const router = express.Router();
 const database = require("../database");
 
-
 //Login Page Set Up
 router.get("/", (req, res) => {
-
   res.render("login");
-  
 });
-
 
 router.post("/", (req, res) => {
   database
@@ -22,10 +18,9 @@ router.post("/", (req, res) => {
       req.session.user_id = user.id;
       req.session.user_name = user.name;
       req.session.email = user.email;
-      if (user.is_owner){
+      if (user.is_owner) {
         res.redirect("/restaurantpage");
-      }
-      else {
+      } else {
         res.redirect("/");
       }
     })
