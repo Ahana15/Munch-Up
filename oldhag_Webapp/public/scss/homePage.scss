@@ -2,14 +2,15 @@
   position: relative;
 }
 
-html, body {
+html,
+body {
   padding: 0px;
   margin: 0px;
 }
 
 .header {
   height: 300px;
-  background-color: #27232F;
+  background-color: #27232f;
 }
 .header .icon {
   width: 150px;
@@ -68,19 +69,20 @@ html, body {
   font-weight: bold;
 }
 .content .button_blue {
-  background-color: #27232F;
+  background-color: #27232f;
   color: #f3f7f7;
   font-weight: 500;
 }
 .content .button_yellow {
   background-color: #ffb336;
-  color: #27232F;
+  color: #27232f;
 }
 .content .colorchip {
   display: inline-block;
   margin-right: 30px;
 }
-.content .color_tag, .content .color_block {
+.content .color_tag,
+.content .color_block {
   display: inline-block;
   vertical-align: middle;
 }
@@ -96,7 +98,7 @@ html, body {
   background-color: #ffb336;
 }
 .content .color_block_blue {
-  background-color: #27232F;
+  background-color: #27232f;
 }
 .content .color_block_white {
   background-color: #f3f7f7;
@@ -115,7 +117,9 @@ html, body {
 .content_grey .titlehr {
   border-color: #ffb336;
 }
-.content_grey h1, .content_grey h2, .content_grey h3 {
+.content_grey h1,
+.content_grey h2,
+.content_grey h3 {
   font-weight: 500;
 }
 .content_grey .button {
@@ -128,20 +132,20 @@ html, body {
 
 .content_white {
   background-color: #f3f7f7;
-  color: #27232F;
+  color: #27232f;
 }
 .content_white .small_english {
-  color: #27232F;
+  color: #27232f;
 }
 .content_white .titlehr {
   border-color: #ffb336;
 }
 .content_white .button {
-  border-color: #27232F;
+  border-color: #27232f;
 }
 
 .content_blue {
-  background-color: #27232F;
+  background-color: #27232f;
   color: #f3f7f7;
 }
 .content_blue .small_english {
@@ -150,7 +154,9 @@ html, body {
 .content_blue .titlehr {
   border-color: #ffb336;
 }
-.content_blue h1, .content_blue h2, .content_blue h3 {
+.content_blue h1,
+.content_blue h2,
+.content_blue h3 {
   font-weight: 500;
 }
 .content_blue .button {

@@ -32,12 +32,8 @@
               <%= user_name %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <% if(user_isowner) { %>
-
-              <a class="dropdown-item" href="/restaurantpage">Orders</a>
-              <% } else { %>
               <a class="dropdown-item" href="/userorderstatus">Orders</a>
-              <% } %>
+
               <a class="dropdown-item" href="/logout">Logout</a>
               <% } else { %>
 
@@ -51,63 +47,4 @@
       </div>
     </div>
   </nav>
-
-  <!-- <nav
-      class="navbar navbar-expand-md navbar-dark"
-      style="background-color: #e3f2fd; border-bottom: 2px solid black"
-    >
-      <a class="navbar-brand" style="color:black; font-size: 45px" href="/"
-        >Ye Old Hags</a
-      >
-  
-      <% if(user_id) { %>
-      <span style="color: black">Logged In As: <%= user_name%> </span>
-      <a
-        href="/logout"
-        class="btn btn-info border"
-        style="vertical-align: middle"
-        role="button"
-      >
-        Log-Out
-      </a>
-  
-      <% if(user_isowner) { %>
-      <a
-        href="/restaurantpage"
-        class="btn btn-info border"
-        style="vertical-align: middle"
-        role="button"
-        >My Order Status</a
-      >
-  
-      <% } else { %>
-      <a
-        href="/userorderstatus"
-        class="btn btn-info border"
-        style="vertical-align: middle"
-        role="button"
-        >My Order Status</a
-      >
-      <% } %>
-  
-      <% } else { %>
-  
-      <a
-        href="/login"
-        class="btn btn-info border"
-        style="vertical-align: middle"
-        role="button"
-      >
-        Log-In
-      </a>
-      <a
-        href="/register"
-        class="btn btn-info border"
-        style="vertical-align: middle"
-        role="button"
-      >
-        Register
-      </a>
-      <% } %>
-    </nav> -->
 </header>
