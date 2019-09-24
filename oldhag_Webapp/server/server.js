@@ -8,13 +8,11 @@ const orderRoute = require("./userRoutes/orderRoute");
 const registerRoute = require("./userRoutes/registerRoute");
 const restaurant1Route = require("./userRoutes/restaurant1Route");
 const paymentRoute = require("./userRoutes/paymentRoute");
-const userOrderStatusRoute = require("./userRoutes/userOrderStatusRoute")
-const restaurantListRoute = require("./userRoutes/restaurantListRoute")
-
+const userOrderStatusRoute = require("./userRoutes/userOrderStatusRoute");
+const restaurantListRoute = require("./userRoutes/restaurantListRoute");
 
 const restaurantLoginRoute = require("./restaurantRoutes/restaurantLoginRoute");
-const restaurantPageRoute = require("./restaurantRoutes/restaurantPageRoute")
-
+const restaurantPageRoute = require("./restaurantRoutes/restaurantPageRoute");
 
 const database = require("./database");
 
@@ -25,14 +23,16 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(cookieSession({
-  name: 'session',
-  keys: ['id']
-}));
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["id"]
+  })
+);
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // /api/endpoints
@@ -44,11 +44,6 @@ const apiRouter = express.Router();
 // const userRouter = express.Router();
 // userRoutes(userRouter, database);
 // app.use('/users', userRouter);
-
-
-
-
-
 
 app.use("/", homeRoute);
 app.use("/login", loginRoute);
@@ -71,4 +66,3 @@ app.listen(port, err => console.log(err || `listening on port ${port} 😎`));
 //   res.send('Home Page Hello');
 //   // res.send("🤗");
 // });
-
