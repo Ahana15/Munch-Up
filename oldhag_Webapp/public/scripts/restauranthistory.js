@@ -19,14 +19,25 @@
 //   });
 // });
 $(document).ready(function() {
+  let shouldShow = true;
+
   $(".food-list").on("click", function() {
-    console.log(this);
-    console.log($(this).html().trim())
-    const childrenClass = $(this).html().trim();
+
+    // console.log(this);
+    // console.log($(this).html().trim())
+    const idName = $(this).html().trim();
     
     // const ID = $(this).find($(this).html())
     // console.log(ID);
-    console.log(childrenClass);
-    $(`#${childrenClass}`).toggle();
+    console.log('id name', idName);
+
+
+    if (shouldShow) {
+      $(`#${idName}`).hide();
+    } else {
+      $(`#${idName}`).show();
+    }
+
+    shouldShow = !shouldShow;
   });
 });

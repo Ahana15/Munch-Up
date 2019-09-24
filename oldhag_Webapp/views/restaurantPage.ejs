@@ -50,37 +50,33 @@
     </ul>
 
     <h2>Unaccepted orders</h2>
-    <% for (let order of orders) { %>
-      <% if (order[0].status === "Not Accepted") { %>
+    <% for (let order of orders) { %> <% if (order[0].status === "Not Accepted")
+    { %>
       <div>
+      <button class="btn btn-default food-list">
+        <%=order[0].user_order%>
+      </button>
+      <div id="<%=order[0].user_order%>">
+        <div><%= order[0].created_at %></div>
+        <form id="twilio" method="post" action="/restaurantpage">
           <div>
-            <button class="btn btn-default food-list">
-              <%=order[0].user_order%>
-            </button>
+            <input type="text" name="time" value="10" />
+            <input
+              type="hidden"
+              name="order_id"
+              value="<%= order[0].user_order%>"
+            />
+            <button type="submit" id="itemsubmission">Submit</button>
           </div>
-          <div><%= order[0].created_at %></div>
-          <%}%>
-      <form id="twilio" method="post" action="/restaurantpage">
-        <div>
-          <input type="text" name="time" value="10" />
-          <input
-            type="hidden"
-            name="order_id"
-            value="<%= order[0].user_order%>"
-          />
-          <button type="submit" id="itemsubmission">Submit</button>
-        </div>
-      </form>
-      <% for (let item of order)  { %>
-        <% if (item.status === "Not Accepted") { %>
+        </form>
+        <% for (let item of order) { %> 
         <div><%= item.item_name %> : <%= item.quantity %></div>
-        
+        <% } %>
       </div>
-      <% }}} %>
-    </div>
+      </div>
+      <% }} %>
 
-
-    <!-- <h2>Accepted orders</h2>
+    <h2>Accepted orders</h2>
       <% for (let order of orders) { %>
         <% if (order[0].status === "In Progress") { %>
         <div>
@@ -101,9 +97,9 @@
         
       </div>
       <% }}} %>
-    </div> -->
+    </div> 
 
-    <!-- 
+    
     <h2>Completed orders</h2>
 
       <% for (let order of orders) { %>
@@ -122,7 +118,7 @@
         
       </div>
       <% }}} %>
-    </div> -->
+    </div>
 
     <!-- <h2>Accepted orders</h2>
     <table>

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const helper = require("../database");
+const database = require("../database");
 const bcrypt = require("bcrypt");
 const cookieSession = require("cookie-session");
 const app = express();
@@ -14,27 +14,31 @@ app.use(
 
 //Home Page Set Up
 router.get("/", (req, res) => {
-  res.render("registration");
+  let templateVars = {
+    user_id: req.session.user_id,
+    user_email: req.session.email,
+    user_name: req.session.user_name
+  };
+  res.render("registration", templateVars);
 });
 
 router.post("/", (req, res) => {
   const user = req.body;
   user.password = bcrypt.hashSync(user.password, 12);
-  helper
+  database
     .addUser(user)
     .then(user => {
-      console.log("user then")
-      console.log(user)
       if (!user) {
         res.send({ error: "error" });
         return;
       }
-      console.log(res);
-      req.session.userId = user.id;
-      res.send({ status: "success", user: user});
-
+      req.session.user_id = user.id;
+      req.session.user_name = user.name;
+      req.session.email = user.email;
+      res.redirect("/");
+      
     })
     .catch(e => res.send(e));
-});
+  });
 
 module.exports = router;
