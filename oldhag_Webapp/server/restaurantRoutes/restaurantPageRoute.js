@@ -23,7 +23,6 @@ module.exports = router;
 
 //restaurant Page Set Up
 router.post("/", (req, res) => {
-  console.log(req.body);
   const accountSid = "AC6c33d89c431c0e398a0607ed45eed33f"; // User Account SID from www.twilio.com/console
   const authToken = "891e10ad3d7fc8e669491004901509cf"; // User Auth Token from www.twilio.com/console
   const client = new twilio(accountSid, authToken);

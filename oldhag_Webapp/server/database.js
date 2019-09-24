@@ -89,7 +89,6 @@ const addOrder = function(id, quantity, user_id, restaurant_id, uniqueKey) {
     .split(" ")
     .slice(0, 4)
     .join(" ");
-  console.log(currentTime);
 
   return db
     .query(
