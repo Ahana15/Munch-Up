@@ -137,8 +137,10 @@ function createPaymentRequest() {
     let obj = {};
     if (quantity[i] !== 0) {
       obj.label = name[i];
-      obj.amount = { currency: "CAD", value: price[i] * quantity[i] };
-      // obj.quantity = quantity[i];
+      obj.amount = {
+        currency: "CAD",
+        value: price[i] * quantity[i]
+      };
       output.push(obj);
     }
   }
@@ -151,8 +153,6 @@ function createPaymentRequest() {
         .trim()
     }
   });
-
-  console.log(output);
 
   const details = {
     total: {
