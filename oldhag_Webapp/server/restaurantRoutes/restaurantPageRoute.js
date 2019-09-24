@@ -38,7 +38,7 @@ router.post("/", (req, res) => {
   } else {
     client.messages
       .create({
-        body: `Order Accepted - Ready in ${req.body.time}`,
+        body: `Order Accepted - Ready in ${req.body.time} minutes`,
         to: "+16476568050", // Text to User
         from: "+15878096371" // From Twilio (valid Twilio Number)
       })

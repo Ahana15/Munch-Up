@@ -10,6 +10,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap CSS -->
     <link
@@ -37,70 +38,50 @@
       <div class="caption">
         <% if(user_id) { %>
           <% if(user_isowner) { %>
-            <a href="/restaurantpage">
-              <span class="border">Let's get started</span>
+            <a style="text-decoration:none" href="/restaurantpage">
+              <span class="border started">Let's get started</span>
             </a>
           <% } else { %>
-            <a href="/restaurantlist">
-              <span class="border">Let's get started</span>
+            <a style="text-decoration:none" href="/restaurantlist">
+              <span class="border started">Let's get started</span>
             </a>
           <% } %>
         
         <% } else { %>
-        <a href="/login">
-          <span class="border">Let's get started</span>
+        <a style="text-decoration:none" href="/login">
+          <span class="border started">Let's get started</span>
         </a>
         <% } %>
       </div>
     </div>
 
-    <div
-      style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;"
-    >
-      <h3 style="text-align:center;">Why we do what we do...</h3>
-      <p>
-        Make friends with food... Social ordering from your favourite local
-        restaurants and coffee shops
-      </p>
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+      <h3 style="text-align:center; margin-bottom: 28px;  "> Why we do what we do</h3>
+      <p style="text-align:center; font-size: 20px;"><i class="fa fa-history"></i>
+        Save time and skip the line</p>
+      <p style="text-align:center; font-size: 20px;"><i class="fa fa-users"></i> Make friends with foods</p>
+      <p style="text-align:center; font-size: 20px; "><i class="fa fa-laptop"></i> Smooth online experience</p>
     </div>
-
     <div class="bgimg-2">
-      <div class="caption">
-        <span
-          class="border"
-          style="background-color:transparent;font-size:25px;color: #f7f7f7;"
-          >LESS HEIGHT</span
-        >
-      </div>
     </div>
-
     <div style="position:relative;">
-      <div
-        style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;"
-      >
+      <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <p> Our history</p>
         <p>
-          Scroll up and down to really get the feeling of how Parallax Scrolling
-          works.
+          In 1882, Toronto bread salesman Gary Chen, who got his start at the age of 12 as a baker's apprentice, went into
+          business for himself when he bought a bread route from his employer. Fast forward today over 1 company and 65
+          fake users are a part of our service
         </p>
       </div>
     </div>
-
     <div class="bgimg-3">
-      <div class="caption">
-        <span
-          class="border"
-          style="background-color:transparent;font-size:25px;color: #f7f7f7;"
-          >SCROLL UP</span
-        >
-      </div>
     </div>
-
     <div style="position:relative;">
-      <div
-        style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;"
-      >
-        <p>Contact us:</p>
+      <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <p>Contact us: 647-666-6969</p>
+        <p>Address: 662 King St W #101, Toronto, ON M5V 1M7</p>
       </div>
     </div>
   </body>
-</html>
+  </html>
+   

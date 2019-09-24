@@ -18,17 +18,17 @@ router.post("/", async (req, res) => {
     }
   }
 
-  // // Twilio - Restuarant
-  // const accountSid = "ACa9aa2d9bcadd145935bac5e690d4c63a"; // RESTAURANT Account SID from www.twilio.com/console
-  // const authToken = "085458a61269493e6b8941a2b675ab84"; // RESTAURANT Auth Token from www.twilio.com/console
-  // const client = new twilio(accountSid, authToken);
-  // client.messages
-  //   .create({
-  //     body: "A customer places an order........ ",
-  //     to: "+14164347869", // Text to Restaurant
-  //     from: "+16474906192" // From Twilio(valid Twilio Number)
-  //   })
-  //   .then(message => console.log(message.sid));
+  // Twilio - Restuarant
+  const accountSid = "ACa9aa2d9bcadd145935bac5e690d4c63a"; // RESTAURANT Account SID from www.twilio.com/console
+  const authToken = "085458a61269493e6b8941a2b675ab84"; // RESTAURANT Auth Token from www.twilio.com/console
+  const client = new twilio(accountSid, authToken);
+  client.messages
+    .create({
+      body: "A customer has placed an order. Please confirm. Thank you!",
+      to: "+14164347869", // Text to Restaurant
+      from: "+16474906192" // From Twilio(valid Twilio Number)
+    })
+    .then(message => console.log(message.sid));
 
   res.redirect("/userorderstatus");
 });

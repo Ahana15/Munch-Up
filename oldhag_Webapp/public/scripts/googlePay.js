@@ -39,7 +39,7 @@ function onBuyClicked() {
     .then(function(response) {
       // Dismiss payment dialog.
       response.complete("success");
-      handlePaymentResponse(response);
+      // handlePaymentResponse(response);
       $("#checkout").css("visibility", "hidden");
       $("#completeOrd").css("display", "block");
     })

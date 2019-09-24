@@ -2,13 +2,14 @@
 * {
   position: relative;
 }
-
+.navbar-brand{
+  font-family: 'Lato', sans-serif;
+}
 html,
 body {
   padding: 0px;
   margin: 0px;
 }
-
 .header {
   height: 300px;
   background-color: #27232f;
@@ -20,13 +21,11 @@ body {
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-
 .maxwidth {
   max-width: 768px;
   margin-left: auto;
   margin-right: auto;
 }
-
 .content {
   font-family: "Fjalla One", sans-serif;
   padding: 50px;
@@ -107,7 +106,6 @@ body {
 .content .color_block_grey {
   background-color: #333;
 }
-
 .content_grey {
   background-color: #333;
   color: #f3f7f7;
@@ -130,7 +128,6 @@ body {
 .content_grey .button_yellow {
   font-weight: bold;
 }
-
 .content_white {
   background-color: #f3f7f7;
   color: #27232f;
@@ -144,7 +141,6 @@ body {
 .content_white .button {
   border-color: #27232f;
 }
-
 .content_blue {
   background-color: #27232f;
   color: #f3f7f7;
@@ -167,7 +163,6 @@ body {
 .content_blue .button_yellow {
   font-weight: bold;
 }
-
 /* parallax scrolling */
 body,
 html {
@@ -188,7 +183,7 @@ html {
 }
 .bgimg-1 {
   background-image: url("https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg");
-  min-height: 100%;
+  min-height: 400px;
 }
 .bgimg-2 {
   background-image: url("https://www.killingthyme.net/wp-content/uploads/2015/10/Easy-Homemade-Ramen.jpg");
@@ -219,6 +214,16 @@ h3 {
   font: 20px "Lato", sans-serif;
   color: #111;
 }
+
+.caption {
+  transition: transform 0.2s;
+}
+
+.caption:hover {
+  transform: scale(1.15);
+}
+
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
   .bgimg-1,
