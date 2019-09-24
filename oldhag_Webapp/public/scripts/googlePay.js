@@ -22,12 +22,12 @@ if (window.PaymentRequest) {
       }
     })
     .catch(function(err) {
-      showErrorForDebugging(
+      console.log(
         "canMakePayment() error! " + err.name + " error: " + err.message
       );
     });
 } else {
-  showErrorForDebugging("PaymentRequest API not available.");
+  console.log("PaymentRequest API not available.");
 }
 
 /**
@@ -40,11 +40,11 @@ function onBuyClicked() {
       // Dismiss payment dialog.
       response.complete("success");
       handlePaymentResponse(response);
+      $("#checkout").css("visibility", "hidden");
+      $("#completeOrd").css("display", "block");
     })
     .catch(function(err) {
-      showErrorForDebugging(
-        "show() error! " + err.name + " error: " + err.message
-      );
+      console.log("show() error! " + err.name + " error: " + err.message);
     });
 }
 
@@ -190,16 +190,16 @@ function handlePaymentResponse(response) {
     .insertAdjacentElement("afterend", formattedResponse);
 }
 
-/**
- * Display an error message for debugging
- *
- * @param {string} text message to display
- */
-function showErrorForDebugging(text) {
-  const errorDisplay = document.createElement("code");
-  errorDisplay.style.color = "red";
-  errorDisplay.appendChild(document.createTextNode(text));
-  const p = document.createElement("p");
-  p.appendChild(errorDisplay);
-  document.getElementById("checkout").insertAdjacentElement("afterend", p);
-}
+// /**
+//  * Display an error message for debugging
+//  *
+//  * @param {string} text message to display
+//  */
+// function showErrorForDebugging(text) {
+//   const errorDisplay = document.createElement("code");
+//   errorDisplay.style.color = "red";
+//   errorDisplay.appendChild(document.createTextNode(text));
+//   const p = document.createElement("p");
+//   p.appendChild(errorDisplay);
+//   document.getElementById("checkout").insertAdjacentElement("afterend", p);
+// }
