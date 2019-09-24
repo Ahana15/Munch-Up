@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
       to: "+14164347869", // Text to Restaurant
       from: "+16474906192" // From Twilio(valid Twilio Number)
     })
-    .then(message => console.log(message.sid));
+    .then(message => (message.sid));
 
   res.redirect("/userorderstatus");
 });

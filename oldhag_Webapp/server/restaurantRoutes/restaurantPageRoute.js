@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
         to: "+16476568050", // Text to User
         from: "+15878096371" // From Twilio (valid Twilio Number)
       })
-      .then(message => console.log(message.sid));
+      .then(message => (message.sid));
     database.updateOrderStatus(req.body["completed_order_id"], "Completed");
   } else {
     client.messages
@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
         to: "+16476568050", // Text to User
         from: "+15878096371" // From Twilio (valid Twilio Number)
       })
-      .then(message => console.log(message.sid));
+      .then(message => (message.sid));
     database.updateOrderStatus(
       req.body.order_id,
       (req.body.time = "Accepted - In Progress")
