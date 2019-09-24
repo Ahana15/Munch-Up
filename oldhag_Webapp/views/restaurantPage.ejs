@@ -49,7 +49,7 @@
       </li>
     </ul>
 
-    <h2>Unaccepted orders</h2>
+    <h2>Unaccepted Orders</h2>
     <% for (let order of orders) { %> <% if (order[0].status === "Not Accepted")
     { %>
     <div>
@@ -76,7 +76,7 @@
     </div>
     <% }} %>
 
-    <h2>Accepted orders</h2>
+    <h2>Accepted Orders</h2>
     <% for (let order of orders) { %> <% if (order[0].status === "Accepted - In Progress")
     { %>
     <div>
@@ -100,31 +100,28 @@
     </div>
     <% }} %>
 
-    <!-- <h2>Accepted orders</h2>
-      <% for (let order of orders) { %>
-        <% if (order[0].status === "In Progress") { %>
-        <div>
-            <div>
-              <button class="btn btn-default food-list">
-                <%=order[0].user_order%>
-              </button>
-            </div>
-            <div><%= order[0].created_at %></div>
-            <%}%>
-            <form id="twiliocomplete" method="post" action="/restaurantpage">
-              <input type="hidden" name="completed_order_id" value="<%= order[0].user_order%>" />
-            <button type="submit" id="itemsubmission">Complete</button>
-            </form>
-        <% for (let item of order)  { %>
-        <% if (item.status === "Not Accepted") { %>
+
+    <h2>Completed Orders</h2>
+    <% for (let order of orders) { %> <% if (order[0].status === "Completed")
+    { %>
+    <div>
+      <button class="btn btn-default food-list">
+        <%=order[0].user_order%>
+      </button>
+      <div id="<%=order[0].user_order%>">
+        <div><%= order[0].created_at %></div>
+        <% for (let item of order) { %>
         <div><%= item.item_name %> : <%= item.quantity %></div>
-        
+        <% } %>
       </div>
-      <% }}} %>
-    </div> 
+    </div>
+    <% }} %>
+
+
+
 
     
-    <h2>Completed orders</h2>
+    <!-- <h2>Completed orders</h2>
 
       <% for (let order of orders) { %>
         <% if (order[0].status === "Completed") { %>
@@ -142,7 +139,7 @@
         
       </div>
       <% }}} %>
-    </div> -->
+    </div>  -->
 
     <!-- <h2>Accepted orders</h2>
     <table>

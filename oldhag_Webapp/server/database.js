@@ -174,8 +174,10 @@ const groupOrders = function(orders) {
   let items = [];
   let result = [];
   let i = 0;
-  let key = orders[0].user_order;
+  if (orders === []) return result;
 
+
+  let key = orders[0].user_order;
   for (let order of orders) {
     if (key === order.user_order) {
       items.push(order);

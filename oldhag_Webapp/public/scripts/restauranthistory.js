@@ -26,8 +26,6 @@ $(document).ready(function() {
       .html()
       .trim();
 
-    console.log(isShow[idName]);
-
     if (isShow[idName] === undefined) {
       isShow[idName] = true;
     }
