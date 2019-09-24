@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
-
-    <!-- //material design css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-
-    <!-- External JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
-  </head>
-
-  <body>
-    <% include partials/_homeHeader %>
-
+​
+<head>
+  <!-- Meta Information -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+​
+  <!-- External CSS -->
+​
+​
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="/css/userOrderStatus.css" type="text/css" /> -->
+​
+  <!-- External JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
+</head>
+​
+<body>
+  <% include partials/_homeHeader %>
+  <span class="page-header"><i class="fa fa-history"></i>
+    <h4>Your Past Orders <h4></h4>
+  </span>
+​
+  <div>
+    <% for (let order of orders){ %>
+​
     <div>
-      <% for (let order of orders){ %>
-      <div>
-        <!-- <div>Order#</div>
+      <!-- <div>Order#</div>
         <div>Food Items#</div>
         <div>Quantity</div>
         <div>Restaurant Name</div>
         <div>Created At</div>
         <div>Status</div> -->
-        <button class="btn btn-default food-list">
-          <%=order[0].user_order%>
-        </button>
-      </div>
-      <div class="order-info" id="<%=order[0].user_order%>">
-          <li class="order restaurant"><%=order[0].restaurant_name%></li>
-          <li class="order created_at"><%=order[0].created_at%></li>
-          <li class="order status"><%= order[0].status%></li>
-        <% for (let item of order){ %>
-        <!-- <li class="tableItems"><%=item.user_order%></li> -->
-        <li class="order itemsQuants"><%=item.item_name%> : <%=item.quantity%></li>
-        <!-- <li class="tableItems"><%=item.quantity%></li> -->
-        <!-- <button class="btn btn-default">
+      <button class="btn btn-outline-info food-list">
+        <%=order[0].user_order%>
+      </button>
+    </div>
+    <div class="order-info" id="<%=order[0].user_order%>">
+      <div class="order restaurant"><%=order[0].restaurant_name%></div>
+      <div class="order created_at"><%=order[0].created_at%></div>
+      <div class="order status"><%= order[0].status%></div>
+      <% for (let item of order){ %>
+      <!-- <li class="tableItems"><%=item.user_order%></li> -->
+      <li class="order itemsQuants"><%=item.item_name%> : <%=item.quantity%></li>
+      <!-- <li class="tableItems"><%=item.quantity%></li> -->
+      <!-- <button class="btn btn-default">
               <%=item.user_order%>
             </button> -->
-        <% } %>
-      </div>
+      <% } %>
     </div>
-    <% } %>
-  </body>
+  </div>
+  <% } %>
+</body>
+​
 </html>
-
+​
 <script></script>
+
+
+
+
+

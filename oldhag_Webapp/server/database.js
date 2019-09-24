@@ -170,20 +170,17 @@ const updateOrderStatus = function(orderId, message) {
 exports.updateOrderStatus = updateOrderStatus;
 
 //Group orders based on unique key
-const groupOrds = function(orders){
+const groupOrders = function(orders) {
   let items = [];
   let hold = [];
   let i = 0;
   let key = orders[0].user_order;
 
-  for (let order of orders){
-    // console.log(key);
-    // console.log(orders[i].user_order)
-    if (key === order.user_order ){
-      items.push(order)
-    }
-    else {
-      if (items !== []){
+  for (let order of orders) {
+    if (key === order.user_order) {
+      items.push(order);
+    } else {
+      if (items !== []) {
         hold.push(items);
         items = [];
         items.push(order);
@@ -193,34 +190,11 @@ const groupOrds = function(orders){
       key = orders[i].user_order;
     }
     i++;
-    // console.log('items :', items)
-    // console.log('hold :', hold)
+  }
+  if (hold.length === 0) {
+    hold.push(items);
   }
   return hold;
-}
-exports.groupOrds = groupOrds;
-// const addRestaurantOrderStatuses = function(order) {
-//   return db
-//     .query(
-//       `
-//     INSERT INTO restaurant_order_statuses (
-//     order_id, user_id , restaurant_id )
-//     VALUES (
-//     $1, $2, $3)
-//     RETURNING *;`,
-//       [order.order_id, order.user_id, order.restaurant_id]
-//     )
-//     .then(res => res.rows);
-// };
-// exports.addRestaurantOrderStatuses = addRestaurantOrderStatuses;
+};
+exports.groupOrders = groupOrders;
 
-// const displayItemsInOrder = function(orderId) {
-//   db.query(
-//     `SELECT orders.id, items.name, items.price, orders.quantity
-//     FROM items
-//     JOIN orders ON items.id = orders.item_id
-//     WHERE order_id = $1;`,
-//     [orderId]
-//   ).then(res => res.rows);
-// };
-// exports.displayItemsInOrder = displayItemsInOrder;
