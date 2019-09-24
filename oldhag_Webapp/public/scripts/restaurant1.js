@@ -74,3 +74,45 @@ function updateSumItems() {
   });
   $(".total-items").text(sumItems);
 }
+
+$("#checkout").on("click", function(e) {
+  // e.preventDefault();
+
+  let name = $(".food-item")
+    .map(function(e) {
+      return $(this)
+        .text()
+        .trim();
+    })
+    .get();
+
+  let price = $(".item-price")
+    .map(function() {
+      return Number(
+        $(this)
+          .text()
+          .trim()
+      );
+    })
+    .get();
+
+  let quantity = $(".quantity-field")
+    .map(function() {
+      return Number($(this).val());
+    })
+    .get();
+
+  let output = []; //{name: , price: , quantity: }
+
+  for (let i = 0; i < name.length; ++i) {
+    let obj = {};
+    if (quantity[i] !== 0) {
+      obj.name = name[i];
+      obj.price = price[i];
+      obj.quantity = quantity[i];
+      output.push(obj);
+    }
+  }
+
+  console.log(output);
+});
