@@ -174,7 +174,10 @@ const groupOrders = function(orders) {
   let items = [];
   let result = [];
   let i = 0;
-  if (orders === []) return result;
+
+  if (orders.length === 0) {
+    return result; 
+  }
 
 
   let key = orders[0].user_order;
