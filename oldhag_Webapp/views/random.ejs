@@ -34,9 +34,9 @@
 
     <title>Soy Ramentic</title>
   </head>
-  ​
+
   <body>
-    <% include partials/_userHeader %>
+    <% include partials/_otherHeader %>
 
     <h2>Unaccepted Orders</h2>
     <% for (let order of orders) { %> <% if (order[0].status === "Not Accepted")
@@ -66,23 +66,21 @@
     <% }} %>
 
     <h2>Accepted Orders</h2>
-    <% for (let order of orders) { %> <% if (order[0].status === "Accepted - In Progress")
-    { %>
+    <% for (let order of orders) { %> <% if (order[0].status === "Accepted - In
+    Progress") { %>
     <div>
       <button class="btn btn-default food-list">
         <%=order[0].user_order%>
       </button>
       <div id="<%=order[0].user_order%>">
         <div><%= order[0].created_at %></div>
-        <form id="twilio" method="post" action="/restaurantpage">
-          <div>
-            <input
-              type="hidden"
-              name="completed_order_id"
-              value="<%= order[0].user_order%>"
-            />
-            <button type="submit" id="itemsubmission">Complete</button>
-          </div>
+        <form id="twiliocomplete" method="post" action="/restaurantpage">
+          <input
+            type="hidden"
+            name="completed_order_id"
+            value="<%= order[0].user_order%>"
+          />
+          <button type="submit" id="itemsubmission">Complete</button>
         </form>
         <% for (let item of order) { %>
         <div><%= item.item_name %> : <%= item.quantity %></div>
@@ -108,7 +106,5 @@
     <% }} %>
   </body>
 
-  <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
-  ​
+  <script type="text/javascript" src="/scripts/restauranthistory.js"></script>
 </html>
-​
