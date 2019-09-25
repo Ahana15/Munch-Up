@@ -24,7 +24,7 @@
     />
 
     <!-- External JS -->
-    
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -32,42 +32,49 @@
     ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <!-- custom css styling -->
+    <link rel="stylesheet" href="/css/userorder.css" type="text/css" />
 
-  <title>Order History</title>
-</head>
-​
-<body>
-  <% include partials/_otherHeader %>
-  <span class="page-header"><i class="fa fa-history"></i>
-    <h4>Your Past Orders <h4></h4>
-  </span>
-​
-  <div>
-    <% for (let order of orders){ %>
-​
-    <div>
-      <button class="btn btn-outline-info food-list">
-        <%=order[0].user_order%>
-      </button>
-    </div>
-    <div class="order-info" id="<%=order[0].user_order%>">
-      <div class="order restaurant"><%=order[0].restaurant_name%></div>
-      <div class="order created_at"><%=order[0].created_at%></div>
-      <div class="order status"><%= order[0].status%></div>
-      <% for (let item of order){ %>
-      <li class="order itemsQuants"><%=item.item_name%> : <%=item.quantity%></li>
+    <title>Order History</title>
+  </head>
+  ​
+  <body>
+    <% include partials/_userHeader %>
+    <!-- <i class="fa fa-clock"></i> -->
+    <div class="container">
+      <!-- <div> -->
+      <i class="fas fa-clock"></i>
+
+      <h4>Your Past Orders</h4>
+      <% for (let order of orders){ %> ​
+      <div class="orderHold">
+        <button class="btn btn-outline-info food-list">
+          <%=order[0].user_order%>
+        </button>
+        <div class="order restaurant"><%=order[0].restaurant_name%></div>
+        <div class="order created_at"><%=order[0].created_at%></div>
+        <div class="order status"><%= order[0].status%></div>
+      </div>
+      <div class="order-info" id="<%=order[0].user_order%>">
+        <table class="itemTable">
+          <tr>
+            <th class="items">Item Name</th>
+            <th class="quants">Quantity</th>
+          </tr>
+          <% for (let item of order){ %>
+          <tr>
+            <td class="items"><%=item.item_name%></td>
+            <td class="quants"><%=item.quantity%></td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
       <% } %>
+      <!-- </div> -->
     </div>
-  </div>
-  <% } %>
-</body>
+  </body>
 
-<script type="text/javascript" src="/scripts/userorderstatus.js"></script>
-​
+  <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
+  ​
 </html>
 ​
-
-
-
-
-
