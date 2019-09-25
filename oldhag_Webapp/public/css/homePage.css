@@ -5,11 +5,11 @@
 .navbar-brand{
   font-family: 'Lato', sans-serif;
 }
-html,
+/* html,
 body {
   padding: 0px;
   margin: 0px;
-}
+} */
 .header {
   height: 300px;
   background-color: #27232f;
@@ -217,11 +217,11 @@ h3 {
   color: #111;
 }
 
-.caption {
+.testing {
   transition: transform 0.2s;
 }
 
-.caption:hover {
+.testing:hover {
   transform: scale(1.15);
 }
 

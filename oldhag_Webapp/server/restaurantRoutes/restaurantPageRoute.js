@@ -6,17 +6,40 @@ const database = require("../database");
 //restaurant Page Set Up
 router.get("/", (req, res) => {
   database
-    .getRestaurantOrders(req.session.user_id)
-    .then(res => {
-      let ordered = database.groupOrders(res);
-      return (templateVars = { orders: ordered });
+    .getUserWithEmail(req.session.email)
+    .then(user => {
+      return (templateVars = {
+        user_id: req.session.user_id,
+        user_email: req.session.email,
+        user_name: req.session.user_name,
+        user_isowner: user.is_owner
+      });
     })
     .then(templateVars => {
-      templateVars.user_id = req.session.user_id;
-      templateVars.user_email = req.session.email;
-      templateVars.user_name = req.session.user_name;
-      res.render("restaurantPage", templateVars);
+      database
+        .getRestaurantOrders(templateVars.user_id)
+        .then(result => {
+          let ordered = database.groupOrders(result);
+          templateVars.orders = ordered;
+        })
+        .then(() => {
+          res.render("restaurantPage", templateVars);
+        });
     });
+
+  // database
+  //   .getRestaurantOrders(req.session.user_id)
+  //   .then(res => {
+  //     let ordered = database.groupOrders(res);
+  //     return (templateVars = { orders: ordered });
+  //   })
+  //   .then(templateVars => {
+  //     templateVars.user_id = req.session.user_id;
+  //     templateVars.user_email = req.session.email;
+  //     templateVars.user_name = req.session.user_name;
+  //     console.log(templateVars);
+  //     res.render("restaurantPage", templateVars);
+  //   });
 });
 
 module.exports = router;
