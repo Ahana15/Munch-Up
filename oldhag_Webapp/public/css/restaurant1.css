@@ -9,6 +9,7 @@
     justify-content: center;
     box-shadow:  2px 1px 8px #888888;
     border-radius: 3%;
+    margin-left: 2%;
   }
   #checkout-summary {
     display: flex;
@@ -138,11 +139,10 @@ line-height: 1.52;
 
 }
 
-#buyButton {
 
+.fa-shopping-cart{
+  color: #AAACB0;
+ 
 }
-
-
-
 
 
