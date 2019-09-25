@@ -55,14 +55,14 @@ body{
 
 .searchbar{
   position: fixed;
-  top: 75px;
+  top: 100px;
   right: 20px;
   z-index:999;
 }
 
 .top {
   position: fixed;
-  bottom: 50px;
+  bottom: 30px;
   right: 50px;
   z-index:999;
 }
