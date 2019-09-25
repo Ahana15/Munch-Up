@@ -1,41 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- External JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+  ​
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/Login.css" type="text/css" />
 
-    <title>Restaurant# 1</title>
-  </head>
+  <!-- External JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-  <body>
-    <section class="register">
-      <section class="login">
-        <form action="/login" method="POST">
-          <h1>Login</h1>
-          <h2>Email</h2>
-          <input type="email" name="email" placeholder="Email@gmail.com" />
-          <h2>Password</h2>
-          <input type="password" name="password" placeholder="Password" />
-          <button type="submit">Login</button>
-        </form>
-        <a href="/register"><button>Don't have an account? Register</button></a>
-      </section>
-    </section>
-  </body>
+  <title>Login</title>
+</head>
+
+<body>
+  <% include partials/_otherHeader %>
+  <div class="container beeeeeep">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+
+            <form class="form-signin" action="/login" method="POST">
+              <div class="form-label-group">
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address"
+                  required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
+              <div class="form-label-group">
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+                  required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #931621;"
+                type="submit">Sign
+                in</button>
+            </form>
+            <a class="form-signin " style="text-decoration:none" href="/register">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase register-button"
+                style="background-color: #931621;" type="submit">Register</button> </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
