@@ -7,10 +7,9 @@ const restaurant1Route = require("./userRoutes/restaurant1Route");
 const paymentRoute = require("./userRoutes/paymentRoute");
 const userOrderStatusRoute = require("./userRoutes/userOrderStatusRoute");
 const restaurantListRoute = require("./userRoutes/restaurantListRoute");
-
+const restaurant2Route = require("./userRoutes/restaurant2Route");
 //Restaurant Side Routes
 const restaurantPageRoute = require("./restaurantRoutes/restaurantPageRoute");
-
 
 const express = require("express");
 const cookieSession = require("cookie-session");
@@ -30,7 +29,6 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 app.use("/", homeRoute);
 app.use("/login", loginRoute);
 app.use("/logout", logoutRoute);
@@ -39,10 +37,9 @@ app.use("/restaurant1", restaurant1Route);
 app.use("/payment", paymentRoute);
 app.use("/userorderstatus", userOrderStatusRoute);
 app.use("/restaurantlist", restaurantListRoute);
+app.use("/restaurant2", restaurant2Route);
 
 app.use("/restaurantpage", restaurantPageRoute);
-
-
 
 const port = process.env.PORT || 3000;
 app.listen(port, err => console.log(err || `listening on port ${port} 😎`));
