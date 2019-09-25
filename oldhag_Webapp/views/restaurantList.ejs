@@ -35,6 +35,14 @@
   ​
   <body>
     <% include partials/_userHeader %>
+    <form class="searchbar" method="POST" action="/restaurantlist">
+      <input
+        type="search"
+        name="search"
+        id="search"
+        placeholder="Search Restaurants"
+      />
+    </form>
     <div class="bgimg-1">
       <a class="caption" style="text-decoration:none" href="/restaurant1"
         ><p class="caption">
@@ -51,5 +59,4 @@
     </div>
     ​
   </body>
-  ​
 </html>

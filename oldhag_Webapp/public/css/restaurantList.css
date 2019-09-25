@@ -44,6 +44,13 @@
   transition: transform .2s;
 }
 
+.searchbar{
+  position: absolute;
+  top: 75px;
+  right: 20px;
+  z-index:999;
+}
+
 Collapse
 
 
