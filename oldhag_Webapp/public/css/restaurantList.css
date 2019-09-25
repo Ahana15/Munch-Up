@@ -1,5 +1,9 @@
+body{
+  background: black;
+}
 .bgimg-1 {
   background-image: url("images/ramen.jpg");
+  margin:10px auto;
   min-height: 400px;
   display: flex;
   justify-content: center;
@@ -9,7 +13,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: transform .2s;
+  transition: transform .2s, opacity .2s;
 }
 .caption {
   display: flex;
@@ -30,8 +34,13 @@
   color: white;
 }
 
+.bgimg-1:hover, .bgimg-2:hover{
+  opacity: 1;
+}
+
 .bgimg-2 {
   background-image: url("images/pizza.png");
+  margin: 10px auto;
   min-height: 400px;
   display: flex;
   justify-content: center;
@@ -41,15 +50,33 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: transform .2s;
+  transition: transform .2s, opacity .2s;
 }
 
 .searchbar{
-  position: absolute;
+  position: fixed;
   top: 75px;
   right: 20px;
   z-index:999;
 }
+
+.top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index:999;
+}
+.top button{
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 100%;
+}
+.searchbar input {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 Collapse
 

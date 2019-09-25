@@ -10,7 +10,16 @@ router.get("/", (req, res) => {
   res.render("restaurantList", templateVars);
 });
 
-router.post("/", (req, res) => {});
+router.post("/", (req, res) => {
+  let string = req.body.search;
+  if (string.includes("soy") || string.includes("ramen")) {
+    res.redirect("/restaurantlist/#soy");
+  } else if (string.includes("pizza")) {
+    res.redirect("/restaurantlist/#pizza");
+  } else {
+    res.redirect("/restaurantlist");
+  }
+});
 
 router;
 module.exports = router;
