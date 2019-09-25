@@ -1,0 +1,148 @@
+  .main-menu{
+    display: flex;
+    margin-top: 7%;
+    justify-content: space-around;
+  }
+  .basket{
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    box-shadow:  2px 1px 8px #888888;
+    border-radius: 3%;
+    margin-left: 2%;
+  }
+  #checkout-summary {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    /* border: 1px solid rgba(0,0,0,.3); */
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  #small-checkout{
+    display: flex;
+    margin: 10%;
+    justify-content: center;
+    /* border: 1px solid rgba(0,0,0,.3); */
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow:  5px 10px 8px #888888;
+    border-radius: 10%;
+
+  }
+    
+
+.food-description{
+  display: block;
+    float: left;
+    color: #B1B1B1;
+    font-family: Satisfy,'Open Sans',arial;
+    font-size: 1rem;
+}
+
+.food-table {
+  width: 50%;
+  
+  padding: 15px;
+  position: relative;
+}
+
+.food-item {
+  float: left;
+  font-family: Montserrat,arial;
+  letter-spacing: 1px;
+  color: #931621;
+}
+
+.name-description{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;   
+}
+ .menu-line {
+  bottom: 6px;
+  border-bottom: 1px dotted rgba(0,0,0,.3);
+  margin-left: -1.4rem;
+  margin-right: -20.4rem;
+ }
+
+  .item-price {
+    text-align: center;
+    
+  font-weight: 600;
+  right: 0;
+  top: 0;
+  line-height: 1.52;
+    color: #717f86;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.quantity-field {
+ 
+  text-align: center;
+font-weight: 600;
+right: 0;
+top: 0;
+line-height: 1.52;
+  color: #717f86;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  border: 0em;
+  width: 25%;
+}
+.quantity, .price, .subtotal, .item-heading {
+  text-align: center;
+  font-family: 'Be Vietnam', sans-serif;
+}
+/* .price{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.subtotal{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+} */
+.item-subtotal{
+font-weight: 600;
+text-align: center;
+line-height: 1.52;
+  color: #717f86;
+  font-size: 16px;
+  font-family: 'Be Vietnam', sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+
+@media (min-width: 20px) and (max-width: 450px) {
+  .food-description{
+    font-size: 10px;
+  }
+  
+   
+}
+
+.summary-total-items, .summary-subtotal{
+  border-top: 1px solid rgba(97, 4, 4, 0.3);
+}
+.summary-total-items, .summary-subtotal, .summary-tax, .summary-total, #checkout{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2%;
+  font-family: 'Be Vietnam', sans-serif;
+
+}
+
+
+.fa-shopping-cart{
+  color: #AAACB0;
+ 
+}
+
+
