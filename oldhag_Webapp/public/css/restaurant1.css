@@ -1,8 +1,21 @@
-  .main-menu {
+  .main-menu{
     display: flex;
-    justify-content: center;
-    margin-top: 5%;
+    margin-top: 7%;
   }
+  .basket{
+    display: flex;
+    flex: 2;
+  }
+  #checkout-summary {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0,.3);
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+  }
+    
 
 .food-description{
   display: block;
@@ -96,5 +109,9 @@ line-height: 1.52;
   
    
 }
+.main-menu
+
+
+
 
 
