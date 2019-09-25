@@ -1,0 +1,49 @@
+body,
+html {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin-top: 100px;
+  display: flex; }
+  body .container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center; }
+
+.container h4 {
+  text-align: center; }
+
+.order {
+  display: inline-block; }
+
+.orderHold {
+  margin: 10px 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-top: 2px solid black;
+  padding-top: 10px; }
+
+.itemTable {
+  margin-bottom: 20px;
+  width: 100%; }
+
+.items {
+  text-align: left;
+  padding-left: 30%; }
+
+.quants {
+  padding-right: 30%; }
+
+.food-list {
+  width: 200px;
+  text-align: center; }
+
+.order-info {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%; }

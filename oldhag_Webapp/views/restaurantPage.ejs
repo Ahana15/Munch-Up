@@ -24,13 +24,15 @@
     />
 
     <!-- External JS -->
-
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- custom css styling -->
+    <link rel="stylesheet" href="/css/userorder.css" type="text/css" />
 
     <title>Soy Ramentic</title>
   </head>
@@ -66,8 +68,8 @@
     <% }} %>
 
     <h2>Accepted Orders</h2>
-    <% for (let order of orders) { %> <% if (order[0].status === "Accepted - In Progress")
-    { %>
+    <% for (let order of orders) { %> <% if (order[0].status === "Accepted - In
+    Progress") { %>
     <div>
       <button class="btn btn-default food-list">
         <%=order[0].user_order%>

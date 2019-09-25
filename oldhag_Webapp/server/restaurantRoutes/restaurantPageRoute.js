@@ -26,20 +26,6 @@ router.get("/", (req, res) => {
           res.render("restaurantPage", templateVars);
         });
     });
-
-  // database
-  //   .getRestaurantOrders(req.session.user_id)
-  //   .then(res => {
-  //     let ordered = database.groupOrders(res);
-  //     return (templateVars = { orders: ordered });
-  //   })
-  //   .then(templateVars => {
-  //     templateVars.user_id = req.session.user_id;
-  //     templateVars.user_email = req.session.email;
-  //     templateVars.user_name = req.session.user_name;
-  //     console.log(templateVars);
-  //     res.render("restaurantPage", templateVars);
-  //   });
 });
 
 module.exports = router;

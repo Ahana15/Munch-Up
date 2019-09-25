@@ -24,7 +24,6 @@
     />
 
     <!-- External JS -->
-
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -40,12 +39,9 @@
   ​
   <body>
     <% include partials/_userHeader %>
-    <!-- <i class="fa fa-clock"></i> -->
     <div class="container">
-      <!-- <div> -->
-      <i class="fas fa-clock"></i>
+        <h4>Your Past Orders</h4>
 
-      <h4>Your Past Orders</h4>
       <% for (let order of orders){ %> ​
       <div class="orderHold">
         <button class="btn btn-outline-info food-list">
@@ -70,7 +66,6 @@
         </table>
       </div>
       <% } %>
-      <!-- </div> -->
     </div>
   </body>
 
