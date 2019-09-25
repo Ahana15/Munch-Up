@@ -1,10 +1,12 @@
   .main-menu{
     display: flex;
     margin-top: 7%;
+    justify-content: space-around;
   }
   .basket{
     display: flex;
-    flex: 2;
+    flex: 3;
+    justify-content: center
   }
   #checkout-summary {
     display: flex;
@@ -14,6 +16,16 @@
     align-items: center;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
+  }
+  #small-checkout{
+    display: flex;
+    margin: 10%;
+    justify-content: center;
+    border: 1px solid rgba(0,0,0,.3);
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+
   }
     
 
@@ -41,13 +53,14 @@
 
 .name-description{
   display: flex;
-  flex-direction: column;   
+  flex-direction: column;
+  padding: 2%;   
 }
  .menu-line {
   bottom: 6px;
   border-bottom: 1px dotted rgba(0,0,0,.3);
-  margin-left: 1.6rem;
-    margin-right: -19.4rem;
+  margin-left: -1.4rem;
+  margin-right: -20.4rem;
  }
 
   .item-price {
@@ -75,7 +88,7 @@ line-height: 1.52;
   font-family: 'Open Sans', sans-serif;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   border: 0em;
-  width: 14%;
+  width: 25%;
 }
 .quantity{
   text-align: center;
@@ -99,7 +112,9 @@ line-height: 1.52;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-
+.table-price .table-quantity .table-price .table-subtotal .name-description{
+  padding: 2%;
+}
 
 
 @media (min-width: 20px) and (max-width: 450px) {
@@ -109,7 +124,7 @@ line-height: 1.52;
   
    
 }
-.main-menu
+
 
 
 

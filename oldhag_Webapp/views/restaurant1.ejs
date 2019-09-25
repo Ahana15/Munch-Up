@@ -84,42 +84,43 @@
           </table>
         </div>
       </div>
+      <div id="checkout-summary">
+        <div class="container" id="small-checkout">
+          <aside>
+            <div class="summary"> Summary Checkout
+              <div class="summary-total-items">
+                <span class="total-items"></span> Items in your Bag
+              </div>
 
-      <div class="container" id="checkout-summary">
-        <aside>
-          <div class="summary"> Summary Checkout
-            <div class="summary-total-items">
-              <span class="total-items"></span> Items in your Bag
-            </div>
+              <div class="summary-subtotal">
+                <div class="subtotal-title">Subtotal</div>
+                <div class="subtotal-value final-value" id="basket-subtotal">
+                  0.00
+                </div>
+              </div>
+              <div class="summary-tax">
+                <div class="tax-title">Tax</div>
+                <div class="tax-value final-value " id="basket-tax">
+                  0.00
+                </div>
+              </div>
 
-            <div class="summary-subtotal">
-              <div class="subtotal-title">Subtotal</div>
-              <div class="subtotal-value final-value" id="basket-subtotal">
-                0.00
+              <div class="summary-total">
+                <div class="total-title">Total</div>
+                <div class="total-value final-value" id="basket-total">
+                  0.00
+                </div>
+              </div>
+              <div class="summary-checkout" id="completeOrd" style="display: none">
+                <p>Order Has Been Sent</p>
+                <input type="submit" form="userorderdetails" class="checkout-cta" value="Go To Orders!" />
+              </div>
+              <div id="checkout">
+                <button id="buyButton">Checkout</button>
               </div>
             </div>
-            <div class="summary-tax">
-              <div class="tax-title">Tax</div>
-              <div class="tax-value final-value " id="basket-tax">
-                0.00
-              </div>
-            </div>
-
-            <div class="summary-total">
-              <div class="total-title">Total</div>
-              <div class="total-value final-value" id="basket-total">
-                0.00
-              </div>
-            </div>
-            <div class="summary-checkout" id="completeOrd" style="display: none">
-              <p>Order Has Been Sent</p>
-              <input type="submit" form="userorderdetails" class="checkout-cta" value="Go To Orders!" />
-            </div>
-            <div id="checkout">
-              <button id="buyButton">Checkout</button>
-            </div>
-          </div>
-        </aside>
+          </aside>
+        </div>
       </div>
     </div>
   </main>
