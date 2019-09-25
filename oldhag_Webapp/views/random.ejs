@@ -108,3 +108,121 @@
 
   <script type="text/javascript" src="/scripts/restauranthistory.js"></script>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
+    <!-- External JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- custom css styling -->
+    <link rel="stylesheet" href="/css/userorder.css" type="text/css" />
+
+    <title>Soy Ramentic</title>
+  </head>
+  ​
+  <!-- <body>
+    <% include partials/_otherHeader %>
+
+    <h2>Unaccepted Orders</h2>
+    <% for (let order of orders) { %> <% if (order[0].status === "Not Accepted")
+    { %>
+    <div>
+      <button class="btn btn-default food-list">
+        <%=order[0].user_order%>
+      </button>
+      <div id="<%=order[0].user_order%>">
+        <div><%= order[0].created_at %></div>
+        <form id="twilio" method="post" action="/restaurantpage">
+          <div>
+            <input type="text" name="time" value="10" />
+            <input
+              type="hidden"
+              name="order_id"
+              value="<%= order[0].user_order%>"
+            />
+            <button type="submit" id="itemsubmission">Submit</button>
+          </div>
+        </form>
+        <% for (let item of order) { %>
+        <div><%= item.item_name %> : <%= item.quantity %></div>
+        <% } %>
+      </div>
+    </div>
+    <% }} %>
+
+    <h2>Accepted Orders</h2>
+    <% for (let order of orders) { %> <% if (order[0].status === "Accepted - In
+    Progress") { %>
+    <div>
+      <button class="btn btn-default food-list">
+        <%=order[0].user_order%>
+      </button>
+      <div id="<%=order[0].user_order%>">
+        <div><%= order[0].created_at %></div>
+        <form id="twilio" method="post" action="/restaurantpage">
+          <div>
+            <input
+              type="hidden"
+              name="completed_order_id"
+              value="<%= order[0].user_order%>"
+            />
+            <button type="submit" id="itemsubmission">Complete</button>
+          </div>
+        </form>
+        <% for (let item of order) { %>
+        <div><%= item.item_name %> : <%= item.quantity %></div>
+        <% } %>
+      </div>
+    </div>
+    <% }} %>
+
+    <h2>Completed Orders</h2>
+    <% for (let order of orders) { %> <% if (order[0].status === "Completed") {
+    %>
+    <div>
+      <button class="btn btn-default food-list">
+        <%=order[0].user_order%>
+      </button>
+      <div id="<%=order[0].user_order%>">
+        <div><%= order[0].created_at %></div>
+        <% for (let item of order) { %>
+        <div><%= item.item_name %> : <%= item.quantity %></div>
+        <% } %>
+      </div>
+    </div>
+    <% }} %>
+  </body>
+
+  <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
+  ​
+</html> -->
+​

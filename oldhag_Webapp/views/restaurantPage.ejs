@@ -34,15 +34,27 @@
     <!-- custom css styling -->
     <link rel="stylesheet" href="/css/userorder.css" type="text/css" />
 
-    <title>Soy Ramentic</title>
+    <title>Order History</title>
   </head>
   ​
   <body>
     <% include partials/_otherHeader %>
+    
+    <% let notAccepted = []  %>
+    <% let inProgress = []  %>
+    <% let completedOrder = [] %>
 
+    <% for (let order of orders) { %>
+      <% if (order[0].status === "Not Accepted") { %>
+        <% notAccepted.push(order)%>
+      <% } else if (order[0].status === "Accepted - In Progress") { %>
+        <% inProgress.push(order)%>
+      <% }  else { %>
+      <% completedOrder.push(order)%>
+    <% }} %>
+    
     <h2>Unaccepted Orders</h2>
-    <% for (let order of orders) { %> <% if (order[0].status === "Not Accepted")
-    { %>
+    <% for (let order of notAccepted) { %> 
     <div>
       <button class="btn btn-default food-list">
         <%=order[0].user_order%>
@@ -65,11 +77,10 @@
         <% } %>
       </div>
     </div>
-    <% }} %>
+    <% } %>
 
     <h2>Accepted Orders</h2>
-    <% for (let order of orders) { %> <% if (order[0].status === "Accepted - In
-    Progress") { %>
+    <% for (let order of inProgress) { %>
     <div>
       <button class="btn btn-default food-list">
         <%=order[0].user_order%>
@@ -91,11 +102,10 @@
         <% } %>
       </div>
     </div>
-    <% }} %>
+    <% } %>
 
     <h2>Completed Orders</h2>
-    <% for (let order of orders) { %> <% if (order[0].status === "Completed") {
-    %>
+    <% for (let order of completedOrder) { %>
     <div>
       <button class="btn btn-default food-list">
         <%=order[0].user_order%>
@@ -107,7 +117,7 @@
         <% } %>
       </div>
     </div>
-    <% }} %>
+    <% } %>
   </body>
 
   <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
