@@ -22,9 +22,27 @@ body, .container {
 }
 
 .container h4 {
+  width: 100%;
   text-align: center;
   margin-top: 3%;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  border-bottom: 2px solid black;
 }
+
+.container h4:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+
+}
+
+#unaccepted-table-items, #accepted-table-items, #completed-table-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  width: 100%;
+}
+
 
 .orderHold {
   display: flex;
@@ -38,7 +56,7 @@ body, .container {
   width: 100%;
   align-items: center;
   padding-bottom: 10px;
-  border-bottom: 2px solid rgba(42, 45, 46, 0.452);
+  /* border-bottom: 2px solid rgba(42, 45, 46, 0.452); */
   margin-top: 20px;
 }
 
@@ -52,7 +70,9 @@ body, .container {
   justify-content: space-around;
   align-items: flex-start;
   margin-bottom: 20px;
-  padding-top: 10px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+
 }
 
 .itemtable {
@@ -102,7 +122,7 @@ input {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  border: 2px solid rgba(42, 170, 202, 0.959);
+  /* border: 2px solid rgba(42, 170, 202, 0.959); */
   margin: 20px;
 }
 

@@ -55,43 +55,45 @@
       
     <div class="container">
       <div class="unaccepted">
-        <h4>Unaccepted Orders</h4>
-        <% for (let order of notAccepted) { %>
-        <div class="orderHold">
-          <div class="header">
-            <button class="btn btn-outline-info food-list">
-              <%=order[0].user_order%>
-            </button>
-            <div class="order-user-name"><%= order[0].user_name %></div>
-            <div class="order-created-time"><%= order[0].created_at %></div>
-          </div>
-          <div class="item-detail" id="<%=order[0].user_order%>">
-            <table class="itemtable">
-              <tr class="table-header">
-                <th class="items">Item Name</th>
-                <th class="quants">Quantity</th>
-              </tr>
-              <% for (let item of order) { %>
-              <tr>
-                <td class="items"><%=item.item_name%></td>
-                <td class="quants"><%=item.quantity%></td>
-              </tr>
-              <% } %>
-            </table>
+        <h4 id="unaccepted-header">Unaccepted Orders</h4>
+        <div id="unaccepted-table-items">
+          <% for (let order of notAccepted) { %>
+          <div class="orderHold">
+            <div class="header">
+              <button class="btn btn-outline-info food-list">
+                <%=order[0].user_order%>
+              </button>
+              <div class="order-user-name"><%= order[0].user_name %></div>
+              <div class="order-created-time"><%= order[0].created_at %></div>
+            </div>
+            <div class="item-detail" id="<%=order[0].user_order%>">
+              <table class="itemtable">
+                <tr class="table-header">
+                  <th class="items">Item Name</th>
+                  <th class="quants">Quantity</th>
+                </tr>
+                <% for (let item of order) { %>
+                <tr>
+                  <td class="items"><%=item.item_name%></td>
+                  <td class="quants"><%=item.quantity%></td>
+                </tr>
+                <% } %>
+              </table>
 
-            <div class="time-input-section">
-              <div class="input-header">Preparation Time</div>
-              <form id="twilio" method="post" action="/restaurantpage">
-                <div>
-                  <input type="text" name="time" value="10" />
-                  <input
-                    type="hidden"
-                    name="order_id"
-                    value="<%= order[0].user_order%>"
-                  />
-                  <button type="submit" id="itemsubmission">Submit</button>
-                </div>
-              </form>
+              <div class="time-input-section">
+                <div class="input-header">Preparation Time</div>
+                <form id="twilio" method="post" action="/restaurantpage">
+                  <div>
+                    <input type="text" name="time" value="10" />
+                    <input
+                      type="hidden"
+                      name="order_id"
+                      value="<%= order[0].user_order%>"
+                    />
+                    <button type="submit" id="itemsubmission">Submit</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -99,42 +101,44 @@
       </div>
 
       <div class="accepted">
-        <h4>Accepted Orders</h4>
-        <% for (let order of inProgress) { %>
-        <div class="orderHold">
-          <div class="header">
-            <button class="btn btn-outline-info food-list">
-              <%=order[0].user_order%>
-            </button>
-            <div class="order-user-name"><%= order[0].user_name %></div>
-            <div class="order-created-time"><%= order[0].created_at %></div>
-          </div>
+        <h4 id="accepted-header">Accepted Orders</h4>
+        <div id="accepted-table-items">
+          <% for (let order of inProgress) { %>
+          <div class="orderHold">
+            <div class="header">
+              <button class="btn btn-outline-info food-list">
+                <%=order[0].user_order%>
+              </button>
+              <div class="order-user-name"><%= order[0].user_name %></div>
+              <div class="order-created-time"><%= order[0].created_at %></div>
+            </div>
 
-          <div class="item-detail" id="<%=order[0].user_order%>">
-            <table class="itemtable">
-              <tr class="table-header">
-                <th class="items">Item Name</th>
-                <th class="quants">Quantity</th>
-              </tr>
-              <% for (let item of order) { %>
-              <tr>
-                <td class="items"><%=item.item_name%></td>
-                <td class="quants"><%=item.quantity%></td>
-              </tr>
-              <% } %>
-            </table>
+            <div class="item-detail" id="<%=order[0].user_order%>">
+              <table class="itemtable">
+                <tr class="table-header">
+                  <th class="items">Item Name</th>
+                  <th class="quants">Quantity</th>
+                </tr>
+                <% for (let item of order) { %>
+                <tr>
+                  <td class="items"><%=item.item_name%></td>
+                  <td class="quants"><%=item.quantity%></td>
+                </tr>
+                <% } %>
+              </table>
 
-            <div class="time-input-section">
-              <form id="twilio" method="post" action="/restaurantpage">
-                <div>
-                  <input
-                    type="hidden"
-                    name="completed_order_id"
-                    value="<%= order[0].user_order%>"
-                  />
-                  <button type="submit" id="itemsubmission">Complete</button>
-                </div>
-              </form>
+              <div class="time-input-section">
+                <form id="twilio" method="post" action="/restaurantpage">
+                  <div>
+                    <input
+                      type="hidden"
+                      name="completed_order_id"
+                      value="<%= order[0].user_order%>"
+                    />
+                    <button type="submit" id="itemsubmission">Complete</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -142,38 +146,40 @@
       </div>
 
       <div class="completed">
-        <h4>Completed Orders</h4>
-        <% for (let order of completedOrder) { %>
-        <div class="orderHold">
-          <div class="header">
-            <button class="btn btn-outline-info food-list">
-              <%=order[0].user_order%>
-            </button>
-            <div class="order-user-name"><%= order[0].user_name %></div>
-            <div class="order-created-time"><%= order[0].created_at %></div>
-          </div>
+        <h4 id="completed-header">Completed Orders</h4>
+        <div id="completed-table-items">
+          <% for (let order of completedOrder) { %>
+          <div class="orderHold">
+            <div class="header">
+              <button class="btn btn-outline-info food-list">
+                <%=order[0].user_order%>
+              </button>
+              <div class="order-user-name"><%= order[0].user_name %></div>
+              <div class="order-created-time"><%= order[0].created_at %></div>
+            </div>
 
-          <div class="item-detail" id="<%=order[0].user_order%>">
-            <table class="itemtable">
-              <tr class="table-header">
-                <th class="items">Item Name</th>
-                <th class="quants">Quantity</th>
-              </tr>
-              <% for (let item of order) { %>
-              <tr>
-                <td class="items"><%=item.item_name%></td>
-                <td class="quants"><%=item.quantity%></td>
-              </tr>
-              <% } %>
-            </table>
+            <div class="item-detail" id="<%=order[0].user_order%>">
+              <table class="itemtable">
+                <tr class="table-header">
+                  <th class="items">Item Name</th>
+                  <th class="quants">Quantity</th>
+                </tr>
+                <% for (let item of order) { %>
+                <tr>
+                  <td class="items"><%=item.item_name%></td>
+                  <td class="quants"><%=item.quantity%></td>
+                </tr>
+                <% } %>
+              </table>
+            </div>
           </div>
+          <% } %>
         </div>
-        <% } %>
       </div>
     </div>
   </body>
 
-  <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
+  <script type="text/javascript" src="/scripts/restauranthistory.js"></script>
   ​
 </html>
 ​
