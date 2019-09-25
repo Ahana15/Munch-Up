@@ -14,12 +14,18 @@ app.use(
 
 //Register Page Set Up
 router.get("/", (req, res) => {
-  let templateVars = {
-    user_id: req.session.user_id,
-    user_email: req.session.email,
-    user_name: req.session.user_name
-  };
-  res.render("registration", templateVars);
+  if (!req.session.user_id) {
+    let templateVars = {
+      user_id: req.session.user_id,
+      user_email: req.session.email,
+      user_name: req.session.user_name,
+      user_isowner: null
+    };
+    res.render("registration", templateVars);
+  } else {
+    res.redirect("/");
+  }
+
 });
 
 router.post("/", (req, res) => {
@@ -36,9 +42,9 @@ router.post("/", (req, res) => {
       req.session.user_name = user.name;
       req.session.email = user.email;
       res.redirect("/");
-      
+
     })
     .catch(e => res.send(e));
-  });
+});
 
 module.exports = router;

@@ -4,7 +4,19 @@ const database = require("../database");
 
 //Login Page Set Up
 router.get("/", (req, res) => {
-  res.render("login");
+  if (req.session.user_id) {
+    res.redirect("/");
+  } else {
+    let templateVars = {
+      user_id: req.session.user_id,
+      user_email: req.session.email,
+      user_name: req.session.user_name,
+      user_isowner: null
+    };
+    res.render("login", templateVars);
+
+  }
+
 });
 
 router.post("/", (req, res) => {
