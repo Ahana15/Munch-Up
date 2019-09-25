@@ -1,18 +1,24 @@
+body{
+  background: black;
+}
 .bgimg-1 {
-  background-image: url("https://cdn-menu11.crunch11.com/background/JAPANESE-RAMEN-1.jpg");
+  background-image: url("images/ramen.jpg");
+  margin:10px auto;
   min-height: 400px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: transform .2s, opacity .2s;
 }
 .caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   text-align: center;
   color: #000;
   text-decoration:none;background-color:transparent;
@@ -20,20 +26,58 @@
   color: #f7f7f7;
   transition: transform .2s;
 }
+.caption p{
+  align-self: center;
+}
 .caption:hover{
   transform: scale(1.15);
   color: white;
 }
+
+.bgimg-1:hover, .bgimg-2:hover{
+  opacity: 1;
+}
+
 .bgimg-2 {
-  background-image: url("http://junior.rockyspizzeria.mx/wp-content/uploads/2017/08/Ollies-Pizza-Background-3.png");
+  background-image: url("images/pizza.png");
+  margin: 10px auto;
   min-height: 400px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: transform .2s, opacity .2s;
 }
+
+.searchbar{
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index:999;
+}
+
+.top {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  z-index:999;
+}
+.top button{
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 100%;
+}
+.searchbar input {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
 Collapse
 
 

@@ -65,7 +65,7 @@ body .container {
 }
 
 
-@media screen and (max-device-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -74,11 +74,15 @@ body .container {
     width: 100%;
   }
   .orderHold {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding-top: 20px;
+    margin-top: 5px;
   }
   .order {
     width: 100%;
+    padding-top: 3px;
   }
 }

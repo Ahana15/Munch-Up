@@ -35,17 +35,33 @@
   ​
   <body>
     <% include partials/_userHeader %>
-    <div class="bgimg-1">
+    <div id="pagetop"></div>
+    <form class="searchbar" method="POST" action="/restaurantlist">
+      <input
+        type="search"
+        name="search"
+        id="search"
+        placeholder="Search Restaurants"
+      />
+      <input class="btn-primary" type="submit" value="Search" />
+    </form>
+    <a class="top" href="#pagetop"
+      ><button class="btn-primary">&#8679;</button></a
+    >
+    <div class="bgimg-1" id="soy">
       <a class="caption" style="text-decoration:none" href="/restaurant1"
-        >Soy~Ramentic</a
+        ><p class="caption">
+          Soy~Ramentic
+        </p></a
       >
     </div>
-    <div class="bgimg-2">
+    <div class="bgimg-2" id="pizza">
       <a class="caption" style="text-decoration:none" href="/restaurant2"
-        >Slice, Slice Baby</a
+        ><p>
+          Slice, Slice Baby
+        </p></a
       >
     </div>
     ​
   </body>
-  ​
 </html>

@@ -1,49 +1,150 @@
 body,
 html {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
+
+* {
+  /* border: 1px solid black */
+}
 
 body {
   margin-top: 100px;
-  display: flex; }
-  body .container {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center; }
+  display: flex;
+}
+
+body, .container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
 
 .container h4 {
-  text-align: center; }
+  width: 100%;
+  text-align: center;
+  margin-top: 3%;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  border-bottom: 2px solid black;
+}
 
-.order {
-  display: inline-block; }
+.container h4:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+
+}
+
+#unaccepted-table-items, #accepted-table-items, #completed-table-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  width: 100%;
+}
+
 
 .orderHold {
-  margin: 10px 0;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 10px;
+  /* border-bottom: 2px solid rgba(42, 45, 46, 0.452); */
+  margin-top: 20px;
+}
+
+.btn-outline-info, .order-user-name, .order-created-time {
+  width: 30%;
+}
+
+.item-detail {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  border-top: 2px solid black;
-  padding-top: 10px; }
-
-.itemTable {
+  align-items: flex-start;
   margin-bottom: 20px;
-  width: 100%; }
+  padding: 10px;
+  border-bottom: 1px solid black;
+
+}
+
+.itemtable {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.table-header {
+  border-bottom: 2px solid rgba(42, 45, 46, 0.452);
+}
 
 .items {
   text-align: left;
-  padding-left: 30%; }
+  padding-right: 30px;
+}
 
 .quants {
-  padding-right: 30%; }
+  text-align: center;
+}
 
-.food-list {
-  width: 200px;
-  text-align: center; }
 
-.order-info {
+.time-input-section {
   display: flex;
-  justify-content: flex-start;
-  width: 100%; }
+  flex-wrap: wrap;
+  width: 30%;
+  justify-content: center;
+}
+
+.input-header {
+  font-weight: bold;
+  border-bottom: 2px solid rgba(42, 45, 46, 0.452);
+}
+
+input {
+  width: 30%;
+  margin-top: 5px;
+}
+
+#itemsubmission {
+  cursor: pointer;
+}
+
+.unaccepted, .accepted, .completed{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  /* border: 2px solid rgba(42, 170, 202, 0.959); */
+  margin: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .container h4 {
+    width: 100%;
+  }
+  .orderHold {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 20px;
+    margin-top: 5px;
+  }
+  .order {
+    width: 100%;
+    padding-top: 3px;
+  }
+}

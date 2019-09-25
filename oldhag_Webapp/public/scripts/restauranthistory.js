@@ -1,21 +1,20 @@
 $(document).ready(function() {
-  let isShow = {};
-
   $(".food-list").on("click", function() {
-    const idName = $(this)
+    const childrenClass = $(this)
       .html()
       .trim();
-
-    if (isShow[idName] === undefined) {
-      isShow[idName] = true;
-    }
-
-    if (isShow[idName]) {
-      $(`#${idName}`).hide();
-    } else {
-      $(`#${idName}`).show();
-    }
-
-    isShow[idName] = !isShow[idName];
+    $(`#${childrenClass}`).toggle();
   });
+
+  $("#completed-header").on("click", function() {
+    $("#completed-table-items").toggle();
+  })
+
+  $("#unaccepted-header").on("click", function() {
+    $("#unaccepted-table-items").toggle();
+  })
+
+  $("#accepted-header").on("click", function() {
+    $("#accepted-table-items").toggle();
+  })
 });
