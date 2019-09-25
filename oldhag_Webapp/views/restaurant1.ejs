@@ -21,6 +21,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
   <!-- External JS -->
 
@@ -38,7 +39,7 @@
       <div class="basket">
         <div class="basket-labels">
           <table>
-            <tr>
+            <tr class="animated duration-5s fadeInUp">
               <th class="item-heading">Item</th>
               <th class="price">Price</th>
               <th class="quantity ">Quantity</th>
@@ -85,9 +86,9 @@
         </div>
       </div>
       <div id="checkout-summary">
-        <div class="container" id="small-checkout">
+        <div class="container animated duration-3s fadeInRight" id="small-checkout">
           <aside>
-            <div class="summary"> Summary Checkout
+            <div class="summary "> <i class="fa fa-shopping-cart"></i> Summary Checkout
               <div class="summary-total-items">
                 <span class="total-items"></span> Items in your Bag
               </div>
@@ -116,7 +117,7 @@
                 <input type="submit" form="userorderdetails" class="checkout-cta" value="Go To Orders!" />
               </div>
               <div id="checkout">
-                <button id="buyButton">Checkout</button>
+                <button class="btn btn-outline-secondary" id="buyButton">Checkout</button>
               </div>
             </div>
           </aside>

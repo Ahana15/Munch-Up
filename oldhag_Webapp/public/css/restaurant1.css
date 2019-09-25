@@ -6,13 +6,15 @@
   .basket{
     display: flex;
     flex: 3;
-    justify-content: center
+    justify-content: center;
+    box-shadow:  2px 1px 8px #888888;
+    border-radius: 3%;
   }
   #checkout-summary {
     display: flex;
     flex: 1;
     justify-content: center;
-    border: 1px solid rgba(0,0,0,.3);
+    /* border: 1px solid rgba(0,0,0,.3); */
     align-items: center;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
@@ -21,10 +23,12 @@
     display: flex;
     margin: 10%;
     justify-content: center;
-    border: 1px solid rgba(0,0,0,.3);
+    /* border: 1px solid rgba(0,0,0,.3); */
     align-items: center;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
+    box-shadow:  5px 10px 8px #888888;
+    border-radius: 10%;
 
   }
     
@@ -112,19 +116,31 @@ line-height: 1.52;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.table-price .table-quantity .table-price .table-subtotal .name-description{
-  padding: 2%;
-}
 
 
 @media (min-width: 20px) and (max-width: 450px) {
-  .food-descriptio{
+  .food-description{
     font-size: 10px;
   }
   
    
 }
 
+.summary-total-items, .summary-subtotal{
+  border-top: 1px solid rgba(97, 4, 4, 0.3);
+}
+.summary-total-items, .summary-subtotal, .summary-tax, .summary-total, #checkout{ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 2%;
+  font-family: 'Open Sans', sans-serif; 
+
+}
+
+#buyButton {
+
+}
 
 
 
