@@ -1,18 +1,20 @@
 .bgimg-1 {
-  background-image: url("https://cdn-menu11.crunch11.com/background/JAPANESE-RAMEN-1.jpg");
+  background-image: url("images/ramen.jpg");
   min-height: 400px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: transform .2s;
 }
 .caption {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   text-align: center;
   color: #000;
   text-decoration:none;background-color:transparent;
@@ -20,20 +22,28 @@
   color: #f7f7f7;
   transition: transform .2s;
 }
+.caption p{
+  align-self: center;
+}
 .caption:hover{
   transform: scale(1.15);
   color: white;
 }
+
 .bgimg-2 {
-  background-image: url("http://junior.rockyspizzeria.mx/wp-content/uploads/2017/08/Ollies-Pizza-Background-3.png");
+  background-image: url("images/pizza.png");
   min-height: 400px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   opacity: 0.65;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: transform .2s;
 }
+
 Collapse
 
 
