@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  let isShow = {};
-
   $(".food-list").on("click", function() {
     const idName = $(this)
       .html()
@@ -15,7 +13,6 @@ $(document).ready(function() {
     } else {
       $(`#${idName}`).show();
     }
-
     isShow[idName] = !isShow[idName];
   });
 });

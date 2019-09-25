@@ -19,6 +19,7 @@ router.get("/", (req, res) => {
       database
         .getRestaurantOrders(templateVars.user_id)
         .then(result => {
+          // console.log(result);
           let ordered = database.groupOrders(result);
           templateVars.orders = ordered;
         })

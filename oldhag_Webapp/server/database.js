@@ -129,7 +129,7 @@ const getRestaurantOrders = function(id) {
         JOIN users ON (orders.user_id = users.id)
         JOIN items ON (items.id = orders.item_id)
       WHERE orders.restaurant_id = $1
-      GROUP BY orders.user_order, items.name, users.name, orders.created_at, orders.quantity,users_order_statuses.status
+      GROUP BY orders.created_at, orders.user_order, items.name, users.name, orders.quantity,users_order_statuses.status
       ORDER BY orders.created_at DESC;
       
       `,
