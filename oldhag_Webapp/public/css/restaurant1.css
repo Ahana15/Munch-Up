@@ -94,25 +94,25 @@ line-height: 1.52;
   border: 0em;
   width: 25%;
 }
-.quantity{
+.quantity, .price, .subtotal, .item-heading {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Be Vietnam', sans-serif;
 }
-.price{
+/* .price{
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
 .subtotal{
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-}
+} */
 .item-subtotal{
 font-weight: 600;
 text-align: center;
 line-height: 1.52;
   color: #717f86;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Be Vietnam', sans-serif;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -134,7 +134,7 @@ line-height: 1.52;
   flex-direction: row;
   justify-content: space-around;
   padding: 2%;
-  font-family: 'Open Sans', sans-serif; 
+  font-family: 'Be Vietnam', sans-serif;
 
 }
 
