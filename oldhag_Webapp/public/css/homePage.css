@@ -319,14 +319,3 @@ h2 {
   opacity: 1;
   transform: translateX(0%);
 }
-
-.sliding-right {
-  opacity: 0;
-  transform: translateX(100%);
-  transition-duration: 1s;
-}
-
-.showing {
-  opacity: 1;
-  transform: translateX(0%);
-}
