@@ -233,3 +233,21 @@ h3 {
     background-attachment: scroll;
   }
 }
+
+h2 {
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+  width: 20%;
+}
+
+
+.testing {
+  opacity:0;
+  transform: translateX(-50%);
+  transition-duration: 1s;
+}
+
+.showing {
+  opacity:1;
+  transform: translateX(0%);
+}
