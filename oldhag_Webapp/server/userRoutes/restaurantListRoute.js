@@ -16,6 +16,10 @@ router.post("/", (req, res) => {
     res.redirect("/restaurantlist/#soy");
   } else if (string.includes("pizza")) {
     res.redirect("/restaurantlist/#pizza");
+  } else if (string.includes("cod")) {
+    res.redirect("/restaurantlist/#cod");
+  } else if (string.includes("pasta")) {
+    res.redirect("/restaurantlist/#pasta");
   } else {
     res.redirect("/restaurantlist");
   }

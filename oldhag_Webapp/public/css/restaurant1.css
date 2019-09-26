@@ -167,8 +167,8 @@ main {
 
 #map {
   border-radius: 10px;
-  height: 300px;
-  width: 300px;
+  height: 280px;
+  width: 280px;
   box-shadow: 2px 1px 8px #888888;
 }
 /* * {

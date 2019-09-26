@@ -4,7 +4,7 @@ const database = require("../database");
 
 router.get("/", (req, res) => {
   database
-    .getMenuItems(2, 3)
+    .getMenuItems(3, 4)
     .then(items => {
       let templateVars = {
         items,
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
         user_email: req.session.email,
         user_name: req.session.user_name
       };
-      res.render("restaurant2", templateVars);
+      res.render("restaurant3", templateVars);
     })
     .catch(err => console.log(err));
 });

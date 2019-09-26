@@ -8,6 +8,8 @@ const paymentRoute = require("./userRoutes/paymentRoute");
 const userOrderStatusRoute = require("./userRoutes/userOrderStatusRoute");
 const restaurantListRoute = require("./userRoutes/restaurantListRoute");
 const restaurant2Route = require("./userRoutes/restaurant2Route");
+const restaurant3Route = require("./userRoutes/restaurant3Route");
+const restaurant4Route = require("./userRoutes/restaurant4Route");
 //Restaurant Side Routes
 const restaurantPageRoute = require("./restaurantRoutes/restaurantPageRoute");
 
@@ -38,6 +40,8 @@ app.use("/payment", paymentRoute);
 app.use("/userorderstatus", userOrderStatusRoute);
 app.use("/restaurantlist", restaurantListRoute);
 app.use("/restaurant2", restaurant2Route);
+app.use("/restaurant3", restaurant3Route);
+app.use("/restaurant4", restaurant4Route);
 
 app.use("/restaurantpage", restaurantPageRoute);
 
