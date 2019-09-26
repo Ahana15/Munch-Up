@@ -23,7 +23,7 @@ INSERT INTO users
    name, email, password, phone_number, is_owner)
 VALUES
    (
-      'The Impasta', 'restaurant@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', true);
+      'The Impasta', 'restaurant4@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', true);
 
 
 INSERT INTO users
