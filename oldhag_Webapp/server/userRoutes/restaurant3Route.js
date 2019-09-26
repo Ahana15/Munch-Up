@@ -4,7 +4,7 @@ const database = require("../database");
 
 router.get("/", (req, res) => {
   database
-    .getMenuItems(2, 3)
+    .getMenuItems(3, 4)
     .then(items => {
       let templateVars = {
         items,
