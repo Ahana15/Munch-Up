@@ -10,7 +10,9 @@
   box-shadow: 2px 1px 8px #888888;
   border-radius: 3%;
   margin-left: 2%;
+  padding: 2%;
 }
+
 #checkout-summary {
   display: flex;
   flex: 1;
@@ -62,8 +64,9 @@
 .menu-line {
   bottom: 6px;
   border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
-  margin-left: -1.4rem;
-  margin-right: -20.4rem;
+  /* margin-left: -1.4rem;
+  margin-right: -20.4rem; */
+  width: 100%;
 }
 
 .item-price {
@@ -148,10 +151,25 @@
 }
 
 main {
-  margin-bottom: 50px;
+  margin-bottom: 5%;
 }
 
 .summary-checkout {
   width: 100%;
   text-align: center;
+  position: relative;
 }
+#checkout-summary {
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+#map {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+/* * {
+  border: 1px solid black;
+} */
