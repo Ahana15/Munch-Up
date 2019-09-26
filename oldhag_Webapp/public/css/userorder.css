@@ -2,6 +2,10 @@ body,
 html {
   margin: 0;
   padding: 0;
+  background-color: #f2f2f2;
+  background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  font-family: 'Be Vietnam', sans-serif; 
 }
 
 * {
@@ -19,8 +23,21 @@ body .container {
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
+  
 }
-
+.past-header:hover{
+  transform: scale(1.1);
+  font-weight: 600;
+}
+#order-history{
+  box-shadow: 2px 1px 8px #888888;
+  border-radius: 4%;
+  background-color: white;
+  
+}
+#order-history:hover{
+  transform: scale(1.02);
+}
 .container h4 {
   text-align: center;
 }
@@ -56,6 +73,8 @@ body .container {
 .food-list {
   width: 200px;
   text-align: center;
+  border: none;
+  box-shadow: 2px 1px 8px #888888;
 }
 
 .order-info {
@@ -63,7 +82,9 @@ body .container {
   justify-content: flex-start;
   width: 100%;
 }
-
+.fa-history{
+  color: yellowgreen;
+}
 
 @media screen and (max-width: 768px) {
   .container {
