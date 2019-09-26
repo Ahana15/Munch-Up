@@ -1,29 +1,72 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-<head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+    ​
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/registration.css" type="text/css" />
+    <link rel="stylesheet" href="/css/userHeader.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
-  ​
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/css/registration.css" type="text/css" />
-  <link rel="stylesheet" href="/css/userHeader.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- External JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- External JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>Registration</title>
+  </head>
 
+<<<<<<< HEAD
+  <body>
+    <% include partials/_otherHeader %>
+    <div class="container beeeeeep">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <img
+                  class="animated duration-3s fadeInUp"
+                  src="/images/eater.png"
+                  alt="Smiley face"
+                  height="69.5"
+                  width="58.9"
+                />
+                &nbsp &nbsp Become A Munchkin
+                <img
+                  src="/images/eater2.png"
+                  class="animated duration-3s fadeInDown"
+                  alt="Smiley face"
+                  height="69.5"
+                  width="auto"
+                />
+              </h5>
+=======
   <title>Registration</title>
 </head>
 
@@ -64,18 +107,69 @@
               <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #931621;"
                 type="submit">Register</button>
             </form>
+>>>>>>> b74dfed3fcebd48c618541664f98072d44dd7398
 
+              <form class="form-signin" action="/register" method="POST">
+                <div class="form-label-group">
+                  <input
+                    type="text"
+                    name="name"
+                    id="inputName"
+                    class="form-control"
+                    placeholder="Name"
+                    required
+                    autofocus
+                  />
+                  <label for="inputName">Name</label>
+                </div>
+                <div class="form-label-group">
+                  <input
+                    type="email"
+                    name="email"
+                    id="inputEmail"
+                    class="form-control"
+                    placeholder="Email address"
+                    required
+                  />
+                  <label for="inputEmail">Email address</label>
+                </div>
+                <div class="form-label-group">
+                  <input
+                    type="tel"
+                    name="phone_number"
+                    id="inputPhone_number"
+                    class="form-control"
+                    placeholder="Phone Number"
+                    required
+                  />
+                  <label for="inputPhone_number">Phone Number</label>
+                </div>
+                <div class="form-label-group">
+                  <input
+                    type="password"
+                    name="password"
+                    id="inputPassword"
+                    class="form-control"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="inputPassword">Password</label>
+                </div>
+                <button
+                  class="btn btn-lg btn-primary btn-block text-uppercase"
+                  style="background-color: #931621;"
+                  type="submit"
+                >
+                  Register
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-
-</body>
-
+  </body>
 </html>
-
 
 <!-- <section class="register">
     <section class="register">
