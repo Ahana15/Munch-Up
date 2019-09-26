@@ -52,7 +52,3 @@ background-color:red;
 	0%  {transform: rotate(0deg);}
   50%{transform: rotate(35deg);}	
 }
-
-.dropdown-item{
-  color: white;
-}

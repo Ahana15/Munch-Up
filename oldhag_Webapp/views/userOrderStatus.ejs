@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -33,14 +34,14 @@
 
     <!-- custom css styling -->
     <link rel="stylesheet" href="/css/userorder.css" type="text/css" />
-
+    <link rel="stylesheet" href="/css/userHeader.css" type="text/css" />
     <title>Order History</title>
   </head>
   ​
   <body>
     <% include partials/_userHeader %>
     <div class="container">
-        <h4>Your Past Orders</h4>
+        <h4><i class="fa fa-history"></i> Your Past Orders</h4>
 
       <% for (let order of orders){ %> ​
       <div class="orderHold">

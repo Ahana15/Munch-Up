@@ -46,7 +46,7 @@
 
   <div class="container">
     <div class="unaccepted">
-      <h4 id="unaccepted-header">Unaccepted Orders</h4>
+      <h4 id="unaccepted-header"><i id="unaccepted-icon" class="fa fa-history"></i>  Unaccepted Orders</h4>
       <div id="unaccepted-table-items">
         <% for (let order of notAccepted) { %>
         <div class="orderHold">
@@ -77,7 +77,7 @@
                 <div>
                   <input type="text" name="time" value="10" />
                   <input type="hidden" name="order_id" value="<%= order[0].user_order%>" />
-                  <button type="submit" id="itemsubmission">Submit</button>
+                  <button type="submit" class="btn btn-outline-primary btn-sm" id="itemsubmission">Submit</button>
                 </div>
               </form>
             </div>
@@ -88,7 +88,7 @@
    
 
     <div class="accepted">
-      <h4 id="accepted-header">Accepted Orders</h4>
+      <h4 id="accepted-header"><i id="accepted-icon" class="fa fa-check-circle"></i> Accepted Orders</h4>
       <div id="accepted-table-items">
         <% for (let order of inProgress) { %>
         <div class="orderHold">
@@ -118,7 +118,7 @@
               <form id="twilio" method="post" action="/restaurantpage">
                 <div>
                   <input type="hidden" name="completed_order_id" value="<%= order[0].user_order%>" />
-                  <button type="submit" id="itemsubmission">Complete</button>
+                  <button type="submit" class="btn btn-outline-success btn-sm" id="itemsubmission">Complete</button>
                 </div>
               </form>
             </div>
@@ -129,7 +129,7 @@
     </div>
 
     <div class="completed">
-      <h4 id="completed-header">Completed Orders</h4>
+      <h4 id="completed-header"><i id="completed-icon" class="fa fa-check-circle"></i> Completed Orders</h4>
       <div id="completed-table-items">
         <% for (let order of completedOrder) { %>
         <div class="orderHold">

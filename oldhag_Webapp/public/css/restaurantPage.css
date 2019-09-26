@@ -2,6 +2,9 @@ body,
 html {
   margin: 0;
   padding: 0;
+  background-color: #f2f2f2;
+  background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 * {
@@ -11,6 +14,7 @@ html {
 body {
   margin-top: 100px;
   display: flex;
+  font-family: 'Be Vietnam', sans-serif; 
 }
 
 body, .container {
@@ -27,8 +31,8 @@ body, .container {
   margin-top: 3%;
   cursor: pointer;
   transition-duration: 0.1s;
-  border-bottom: 2px solid black;
-  font-family: 'Be Vietnam', sans-serif;  
+  /* border-bottom: 2px solid black; */
+  
 }
 
 .container h4:hover {
@@ -111,8 +115,11 @@ body, .container {
 }
 
 input {
-  width: 30%;
+  width: 10%;
   margin-top: 5px;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-right: 10px;
 }
 
 #itemsubmission {
@@ -128,7 +135,11 @@ input {
   margin: 20px;
   box-shadow: 2px 1px 8px #888888;
   border-radius: 3%;
+  background-color: white;
   
+}
+.unaccepted:hover, .accepted:hover, .completed:hover{
+  transform: scale(1.02);
 }
 #accepted-header, #completed-header {
 
@@ -137,7 +148,7 @@ input {
   margin-top: 3%;
   cursor: pointer;
   transition-duration: 0.1s;
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
 }
 
 @media screen and (max-width: 768px) {
@@ -160,4 +171,22 @@ input {
     width: 100%;
     padding-top: 3px;
   }
+}
+#accepted-icon{
+  color: rgb(78, 78, 250);
+
+}
+
+#completed-icon{
+  color: yellowgreen;
+}
+
+#unaccepted-icon{
+  color: rgb(205, 86, 50);
+}
+
+.food-list{
+  border: none;
+  box-shadow: 2px 1px 8px #888888;
+
 }
