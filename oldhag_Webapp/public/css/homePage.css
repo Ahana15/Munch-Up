@@ -208,14 +208,15 @@ html {
   background-color: #111;
   color: #fff;
   padding: 18px;
-  font-size: 25px;
+  font-size: 35px;
   letter-spacing: 10px;
 }
 h3 {
   letter-spacing: 5px;
   text-transform: uppercase;
-  font: 20px "Lato", sans-serif;
+  font: 30px "Lato", sans-serif;
   color: #111;
+  margin-bottom: 25px;
 }
 
 .caption {
@@ -229,6 +230,7 @@ h3 {
 p {
   text-align: center;
   font-size: 20px;
+  margin: 10px;
 }
 
 
@@ -264,11 +266,19 @@ h2 {
 
   #history-container {
     margin: 0px;
-    padding: 20px;
+    padding: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 10px;
+    
+
   }
-  .caption {
-    width: 80%;
-    border-radius: 10px;
+
+  .caption p.border {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 20px;
+
   }
 
   p {
@@ -280,8 +290,22 @@ h2 {
     margin: 20px;
     padding: 10px;
   }
+
+  #section1 h3 {
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+
+  #section1 p {
+    font-size: 12px;
+    padding: 2px;
+    margin: 0px;
+  }
 }
 
+#history-content {
+  font-size: 16px;
+}
 
 
 .sliding {
