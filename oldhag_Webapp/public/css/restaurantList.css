@@ -1,47 +1,47 @@
-body{
+body {
   background: black;
 }
 .bgimg-1 {
   background-image: url("images/ramen.jpg");
-  margin:10px auto;
+  margin: 10px auto;
   min-height: 400px;
   display: flex;
   justify-content: center;
   align-content: center;
-  opacity: 0.65;
+  opacity: 0.85;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: transform .2s, opacity .2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 .bgimg-3 {
   background-image: url("images/cod.jpeg");
-  margin:10px auto;
+  margin: 10px auto;
   min-height: 400px;
   display: flex;
   justify-content: center;
   align-content: center;
-  opacity: 0.65;
+  opacity: 0.85;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: transform .2s, opacity .2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 .bgimg-4 {
   background-image: url("images/pasta.jpeg");
-  margin:10px auto;
+  margin: 10px auto;
   min-height: 400px;
   display: flex;
   justify-content: center;
   align-content: center;
-  opacity: 0.65;
+  opacity: 0.85;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: transform .2s, opacity .2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 .caption {
   display: flex;
@@ -49,20 +49,24 @@ body{
   align-content: center;
   text-align: center;
   color: #000;
-  text-decoration:none;background-color:transparent;
-  font-size:50px;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 50px;
   color: #f7f7f7;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
-.caption p{
+.caption p {
   align-self: center;
 }
-.caption:hover{
+.caption:hover {
   transform: scale(1.15);
   color: white;
 }
 
-.bgimg-1:hover, .bgimg-2:hover{
+.bgimg-1:hover,
+.bgimg-2:hover,
+.bgimg-3:hover,
+.bgimg-4:hover {
   opacity: 1;
 }
 
@@ -73,29 +77,28 @@ body{
   display: flex;
   justify-content: center;
   align-content: center;
-  opacity: 0.65;
+  opacity: 0.85;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: transform .2s, opacity .2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
-.searchbar{
+.searchbar {
   position: fixed;
   top: 100px;
   right: 20px;
-  z-index:999;
+  z-index: 999;
 }
 
 .top {
   position: fixed;
   bottom: 30px;
   right: 50px;
-  z-index:999;
-  
+  z-index: 999;
 }
-.top button{
+.top button {
   width: 50px;
   height: 50px;
   margin: 10px auto;
@@ -107,8 +110,17 @@ body{
   cursor: pointer;
 }
 
+.btn-primary {
+  background-color: rgb(52, 58, 64);
+  border-color: black;
+}
 
-Collapse
+@media only screen and (max-width: 800px) {
+  .searchbar {
+    visibility: hidden;
+  }
 
-
-
+  .top {
+    visibility: hidden;
+  }
+}
