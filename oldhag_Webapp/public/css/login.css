@@ -4,7 +4,9 @@
 }
 
 body {
-  background: #FDFFFC;
+  background-color: #f2f2f2;
+  background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .card-signin {

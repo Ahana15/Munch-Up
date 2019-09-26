@@ -12,11 +12,15 @@ VALUES
 VALUES
    (
       'Slice, Slice Baby', 'restaurant2@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', true);
- name, email, password, phone_number, is_owner)
+INSERT INTO users
+   (
+   name, email, password, phone_number, is_owner)
 VALUES
    (
       'The Codfather', 'restaurant3@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', true);
-       name, email, password, phone_number, is_owner)
+INSERT INTO users
+   (
+   name, email, password, phone_number, is_owner)
 VALUES
    (
       'The Impasta', 'restaurant@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '+14164347869', true);
