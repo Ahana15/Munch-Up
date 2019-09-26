@@ -25,6 +25,10 @@ body .container {
   justify-content: center;
   
 }
+.past-header:hover{
+  transform: scale(1.1);
+  font-weight: 600;
+}
 #order-history{
   box-shadow: 2px 1px 8px #888888;
   border-radius: 4%;
@@ -78,7 +82,9 @@ body .container {
   justify-content: flex-start;
   width: 100%;
 }
-
+.fa-history{
+  color: yellowgreen;
+}
 
 @media screen and (max-width: 768px) {
   .container {
