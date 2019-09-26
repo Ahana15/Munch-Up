@@ -7,6 +7,14 @@ $(".quantity input").change(function() {
 
 $(document).ready(function() {
   updateSumItems();
+
+  //prevent user submit the form through pressing down enter key
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
 });
 
 /* Recalculate cart */
