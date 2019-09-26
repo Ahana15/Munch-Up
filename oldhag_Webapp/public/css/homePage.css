@@ -319,3 +319,8 @@ h2 {
   opacity: 1;
   transform: translateX(0%);
 }
+
+#history {
+  width: 80%; 
+  margin:0 auto;
+}
