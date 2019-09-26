@@ -28,11 +28,13 @@ body, .container {
   cursor: pointer;
   transition-duration: 0.1s;
   border-bottom: 2px solid black;
+  font-family: 'Be Vietnam', sans-serif;  
 }
 
 .container h4:hover {
   transform: scale(1.1);
   font-weight: 600;
+  
 
 }
 
@@ -41,6 +43,7 @@ body, .container {
   justify-content: center;
   flex-wrap:wrap;
   width: 100%;
+  font-family: 'Be Vietnam', sans-serif;
 }
 
 
@@ -79,7 +82,6 @@ body, .container {
   width: 40%;
   display: flex;
   justify-content: center;
-
 }
 
 .table-header {
@@ -124,8 +126,19 @@ input {
   width: 100%;
   /* border: 2px solid rgba(42, 170, 202, 0.959); */
   margin: 20px;
+  box-shadow: 2px 1px 8px #888888;
+  border-radius: 3%;
+  
 }
+#accepted-header, #completed-header {
 
+  width: 100%;
+  text-align: center;
+  margin-top: 3%;
+  cursor: pointer;
+  transition-duration: 0.1s;
+  border-bottom: 2px solid black;
+}
 
 @media screen and (max-width: 768px) {
   .container {
