@@ -1,76 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<head>
+  <!-- Meta Information -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-8.0.1.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
 
-    <!-- External JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
 
-    <!-- custom css styling -->
-    <link rel="stylesheet" href="/css/userorder.css" type="text/css" />
-    <link rel="stylesheet" href="/css/userHeader.css" type="text/css" />
-    <title>Order History</title>
-  </head>
-  ​
-  <body>
-    <% include partials/_userHeader %>
-    <div class="container">
-        <h4><i class="fa fa-history"></i> Your Past Orders</h4>
+  <!-- External JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-      <% for (let order of orders){ %> ​
-      <div class="orderHold">
-        <button class="btn btn-outline-info food-list">
-          <%=order[0].user_order%>
-        </button>
-        <div class="order restaurant"><%=order[0].restaurant_name%></div>
-        <div class="order created_at"><%=order[0].created_at%></div>
-        <div class="order status"><%= order[0].status%></div>
-      </div>
-      <div class="order-info" id="<%=order[0].user_order%>">
-        <table class="itemTable">
-          <tr>
-            <th class="items">Item Name</th>
-            <th class="quants">Quantity</th>
-          </tr>
-          <% for (let item of order){ %>
-          <tr>
-            <td class="items"><%=item.item_name%></td>
-            <td class="quants"><%=item.quantity%></td>
-          </tr>
-          <% } %>
-        </table>
-      </div>
-      <% } %>
+  <!-- custom css styling -->
+  <link rel="stylesheet" href="/css/userorder.css" type="text/css" />
+  <link rel="stylesheet" href="/css/userHeader.css" type="text/css" />
+  <title>Order History</title>
+</head>
+​
+
+<body>
+  <% include partials/_userHeader %>
+  <div class="container" id="order-history">
+    <h4><i class="fa fa-history"></i> Your Past Orders</h4>
+
+    <% for (let order of orders){ %> ​
+    <div class="orderHold">
+      <button class="btn btn-outline-info food-list">
+        <%=order[0].user_order%>
+      </button>
+      <div class="order restaurant"><%=order[0].restaurant_name%></div>
+      <div class="order created_at"><%=order[0].created_at%></div>
+      <div class="order status"><%= order[0].status%></div>
     </div>
-  </body>
+    <div class="order-info" id="<%=order[0].user_order%>">
+      <table class="itemTable">
+        <tr>
+          <th class="items">Item Name</th>
+          <th class="quants">Quantity</th>
+        </tr>
+        <% for (let item of order){ %>
+        <tr>
+          <td class="items"><%=item.item_name%></td>
+          <td class="quants"><%=item.quantity%></td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+    <% } %>
+  </div>
+</body>
 
-  <script type="text/javascript" src="/scripts/userorderstatus.js"></script>
-  ​
+<script type="text/javascript" src="/scripts/userorderstatus.js"></script>
+​
+
 </html>
 ​
