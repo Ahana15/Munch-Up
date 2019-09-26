@@ -53,3 +53,6 @@ background-color:red;
   50%{transform: rotate(35deg);}	
 }
 
+.dropdown-item{
+  color: white;
+}
