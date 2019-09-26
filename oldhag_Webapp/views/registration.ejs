@@ -41,46 +41,30 @@
     <title>Registration</title>
   </head>
 
-  <title>Registration</title>
-</head>
-
-<body>
-  <% include partials/_otherHeader %>
-  <div class="container beeeeeep">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center"><img class="animated duration-3s fadeInUp" src="/images/eater.png"
-                alt="Smiley face" height="69.5" width="58.9">
-              &nbsp &nbsp Become A Munchkin <img src="/images/eater2.png" class="animated duration-3s fadeInDown"
-                alt="Smiley face" height="69.5" width="auto">
-            </h5>
-
-            <form class="form-signin" action="/register" method="POST">
-              <div class="form-label-group">
-                <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required
-                  autofocus>
-                <label for="inputName">Name</label>
-              </div>
-              <div class="form-label-group">
-                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address"
-                  required>
-                <label for="inputEmail">Email address</label>
-              </div>
-              <div class="form-label-group">
-                <input type="tel" name="phone_number" id="inputPhone_number" class="form-control"
-                  placeholder="Phone Number" required>
-                <label for="inputPhone_number">Phone Number</label>
-              </div>
-              <div class="form-label-group">
-                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
-                  required>
-                <label for="inputPassword">Password</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #931621;"
-                type="submit">Register</button>
-            </form>
+  <body>
+    <% include partials/_otherHeader %>
+    <div class="container beeeeeep">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">
+                <img
+                  class="animated duration-3s fadeInUp"
+                  src="/images/eater.png"
+                  alt="Smiley face"
+                  height="69.5"
+                  width="58.9"
+                />
+                &nbsp &nbsp Become A Munchkin
+                <img
+                  src="/images/eater2.png"
+                  class="animated duration-3s fadeInDown"
+                  alt="Smiley face"
+                  height="69.5"
+                  width="auto"
+                />
+              </h5>
 
               <form class="form-signin" action="/register" method="POST">
                 <div class="form-label-group">
@@ -143,20 +127,3 @@
     </div>
   </body>
 </html>
-
-<!-- <section class="register">
-    <section class="register">
-      <form action="/register" method="POST">
-        <h1>Create an Account</h1>
-        <h2>Name</h2>
-        <input type="text" name="name" placeholder="Enter your name" />
-        <h2>Email</h2>
-        <input type="email" name="email" placeholder="Email@gmail.com" />
-        <h2>Phone Number</h2>
-        <input type="tel" name="phone_number" />
-        <h2>Password</h2>
-        <input type="password" name="password" placeholder="Password" />
-        <button type="submit">Register</button>
-      </form>
-    </section>
-  </section> -->
