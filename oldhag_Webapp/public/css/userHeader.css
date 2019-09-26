@@ -53,3 +53,10 @@ background-color:red;
   50%{transform: rotate(35deg);}	
 }
 
+#navbarDropdown {
+  font-size: 23px;
+}
+
+.dropdown-item {
+  font-size: 16px;
+}

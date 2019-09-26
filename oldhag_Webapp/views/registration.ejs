@@ -41,6 +41,7 @@
     <title>Registration</title>
   </head>
 
+<<<<<<< HEAD
   <body>
     <% include partials/_otherHeader %>
     <div class="container beeeeeep">
@@ -65,6 +66,48 @@
                   width="auto"
                 />
               </h5>
+=======
+  <title>Registration</title>
+</head>
+
+<body>
+  <% include partials/_otherHeader %>
+  <div class="container beeeeeep">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center"><img class="animated duration-3s fadeInUp" src="/images/eater.png"
+                alt="Smiley face" height="69.5" width="58.9">
+              &nbsp &nbsp Become A Munchkin <img src="/images/eater2.png" class="animated duration-3s fadeInDown"
+                alt="Smiley face" height="69.5" width="auto">
+            </h5>
+
+            <form class="form-signin" action="/register" method="POST">
+              <div class="form-label-group">
+                <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required
+                  autofocus>
+                <label for="inputName">Name</label>
+              </div>
+              <div class="form-label-group">
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address"
+                  required>
+                <label for="inputEmail">Email address</label>
+              </div>
+              <div class="form-label-group">
+                <input type="tel" name="phone_number" id="inputPhone_number" class="form-control"
+                  placeholder="Phone Number" required>
+                <label for="inputPhone_number">Phone Number</label>
+              </div>
+              <div class="form-label-group">
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+                  required>
+                <label for="inputPassword">Password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-color: #931621;"
+                type="submit">Register</button>
+            </form>
+>>>>>>> b74dfed3fcebd48c618541664f98072d44dd7398
 
               <form class="form-signin" action="/register" method="POST">
                 <div class="form-label-group">
