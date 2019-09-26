@@ -1,6 +1,7 @@
 $(document).ready(function() {
   window.addEventListener("scroll", function() {
 
+    const slideInAt = window.scrollY + window.innerHeight;
 
     const section2 = document.querySelector("#section2");
     const section1DistanceToTop = window.pageYOffset + section2.getBoundingClientRect().top;
