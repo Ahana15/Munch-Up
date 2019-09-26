@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
         user_email: req.session.email,
         user_name: req.session.user_name
       };
-      res.render("restaurant1", templateVars);
+      res.render("restaurant2", templateVars);
     })
     .catch(err => console.log(err));
 });
