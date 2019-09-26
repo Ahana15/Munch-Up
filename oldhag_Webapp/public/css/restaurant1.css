@@ -162,6 +162,7 @@ body, html {
 
 .carousel-item {
   max-height: 500px;
+  transition: (.3s ease-in-out left);
 }
 
 main {

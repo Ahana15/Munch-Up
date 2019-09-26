@@ -185,11 +185,11 @@ html {
 }
 .bgimg-1 {
   background-image: url("images/homeimg1.jpg");
-  min-height: 400px;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 5%;
+  margin-top: 6%;
 }
 .bgimg-2 {
   background-image: url("https://www.killingthyme.net/wp-content/uploads/2015/10/Easy-Homemade-Ramen.jpg");
@@ -236,15 +236,20 @@ p {
 h2 {
   border-bottom: 1px solid white;
   padding-bottom: 5px;
-  width: 60%;
+  margin-bottom: 20px;
+  width: 100%;
+  margin: 20px auto;
+
 }
 
 #section1 {
   color: #777;
   background-color: white;
   text-align: center;
-  padding: 50px 80px;
+  padding: 30px 80px;
   text-align: center;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
 }
 
 #history-container {
@@ -252,7 +257,7 @@ h2 {
   background-color: #282e34;
   text-align: center;
   padding: 50px 80px;
-  text-align: justify;
+  text-align: center;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -301,11 +306,23 @@ h2 {
 
 #history-content {
   font-size: 16px;
+  text-align: left;
 }
 
 .sliding {
   opacity: 0;
   transform: translateX(-50%);
+  transition-duration: 1s;
+}
+
+.showing {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.sliding-right {
+  opacity: 0;
+  transform: translateX(100%);
   transition-duration: 1s;
 }
 
