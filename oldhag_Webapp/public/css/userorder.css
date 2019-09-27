@@ -86,6 +86,13 @@ body .container {
   color: yellowgreen;
 }
 
+.past-header {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+
 @media screen and (max-width: 768px) {
   .container {
     flex-wrap: wrap;
