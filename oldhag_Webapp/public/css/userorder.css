@@ -8,10 +8,6 @@ html {
   font-family: 'Be Vietnam', sans-serif; 
 }
 
-* {
-  /* border: 1px solid black */
-}
-
 body {
   margin-top: 100px;
   display: flex;
