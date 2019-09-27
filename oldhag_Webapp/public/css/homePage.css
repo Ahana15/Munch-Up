@@ -249,7 +249,11 @@ h2 {
   padding: 30px 80px;
   text-align: center;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-
+  
+}
+#intro-div{
+  display: flex;
+  justify-content:space-around;
 }
 
 #history-container {
