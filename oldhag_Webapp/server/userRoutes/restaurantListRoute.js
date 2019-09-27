@@ -12,14 +12,14 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   let string = req.body.search;
-  if (string.includes("soy") || string.includes("ramen")) {
-    res.redirect("/restaurantlist/#soy");
+  if (string.includes("soy") || string.includes("ramen") || string.includes("ramentic")) {
+    res.redirect("/restaurant1");
   } else if (string.includes("pizza")) {
-    res.redirect("/restaurantlist/#pizza");
+    res.redirect("/restaurant2");
   } else if (string.includes("cod")) {
-    res.redirect("/restaurantlist/#cod");
+    res.redirect("/restaurant3");
   } else if (string.includes("pasta")) {
-    res.redirect("/restaurantlist/#pasta");
+    res.redirect("/restaurant4");
   } else {
     res.redirect("/restaurantlist");
   }

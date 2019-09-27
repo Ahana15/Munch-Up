@@ -55,6 +55,7 @@ body {
   color: #f7f7f7;
   transition: transform 0.2s;
 }
+
 .caption p {
   align-self: center;
 }
