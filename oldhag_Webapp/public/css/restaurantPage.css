@@ -79,7 +79,7 @@ body, .container {
   align-items: flex-start;
   margin-bottom: 20px;
   padding: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px dotted black;
 
 }
 
@@ -116,8 +116,8 @@ body, .container {
 }
 
 input {
-  width: 10%;
-  margin-top: 5px;
+  width: 12%;
+  margin-top: 15px;
   border: none;
   border-bottom: 1px solid black;
   margin-right: 10px;
@@ -125,6 +125,7 @@ input {
 
 #itemsubmission {
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .unaccepted, .accepted, .completed{
@@ -137,7 +138,7 @@ input {
   box-shadow: 2px 1px 8px #888888;
   border-radius: 3%;
   background-color: white;
-  
+  padding-bottom: 50px;
 }
 .unaccepted:hover, .accepted:hover, .completed:hover{
   transform: scale(1.02);

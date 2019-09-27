@@ -186,8 +186,12 @@ main {
   width: 280px;
   box-shadow: 2px 1px 8px #888888;
 }
-/* * {
-  border: 1px solid black;
-} */
 
+.summary {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
 
+.orderplace {
+  margin-top: 10px;
+}
