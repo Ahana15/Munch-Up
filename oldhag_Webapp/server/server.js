@@ -13,6 +13,7 @@ const restaurant4Route = require("./userRoutes/restaurant4Route");
 //Restaurant Side Routes
 const restaurantPageRoute = require("./restaurantRoutes/restaurantPageRoute");
 
+require("dotenv").config();
 const express = require("express");
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
