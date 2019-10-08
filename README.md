@@ -16,7 +16,10 @@ A food ordering experience for multiple restaurants. Hungry clients can visit it
 - bcrypt
 - body-parser
 - cookie-session
+- nodemon
+- twilio
 
 ## Getting Started
 
+- To run the app use `npm run local`
 - Install all dependencies (using the `npm install` command).
