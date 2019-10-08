@@ -33,15 +33,15 @@ module.exports = router;
 
 //restaurant Page Set Up
 router.post("/", (req, res) => {
-  const accountSid = "AC6c33d89c431c0e398a0607ed45eed33f"; // User Account SID from www.twilio.com/console
-  const authToken = "891e10ad3d7fc8e669491004901509cf"; // User Auth Token from www.twilio.com/console
+  const accountSid = ""; // User Account SID from www.twilio.com/console
+  const authToken = ""; // User Auth Token from www.twilio.com/console
   const client = new twilio(accountSid, authToken);
   if (req.body["completed_order_id"]) {
     client.messages
       .create({
         body: `Order Completed - Please pickup from restaurant`,
-        to: "+16476568050", // Text to User
-        from: "+15878096371" // From Twilio (valid Twilio Number)
+        to: "+1", // Text to User
+        from: "+1" // From Twilio (valid Twilio Number)
       })
       .then(message => message.sid);
     database.updateOrderStatus(req.body["completed_order_id"], "Completed");
@@ -49,8 +49,8 @@ router.post("/", (req, res) => {
     client.messages
       .create({
         body: `Order Accepted - Ready in ${req.body.time} minutes`,
-        to: "+16476568050", // Text to User
-        from: "+15878096371" // From Twilio (valid Twilio Number)
+        to: "+1", // Text to User
+        from: "+1" // From Twilio (valid Twilio Number)
       })
       .then(message => message.sid);
     database.updateOrderStatus(

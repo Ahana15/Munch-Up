@@ -8,10 +8,6 @@ html {
   font-family: 'Be Vietnam', sans-serif; 
 }
 
-* {
-  /* border: 1px solid black */
-}
-
 body {
   margin-top: 100px;
   display: flex;
@@ -85,6 +81,13 @@ body .container {
 .fa-history{
   color: yellowgreen;
 }
+
+.past-header {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
 
 @media screen and (max-width: 768px) {
   .container {

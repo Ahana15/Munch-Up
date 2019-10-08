@@ -110,7 +110,7 @@ const getOrders = function(id) {
         JOIN restaurants ON (orders.restaurant_id = restaurants.id)
         JOIN items ON (items.id = orders.item_id)
       WHERE orders.user_id = $1
-      GROUP BY orders.user_order, items.name, restaurants.name, orders.created_at, users_order_statuses.status, orders.quantity, items.price
+      GROUP BY orders.user_order, items.name, orders.created_at, users_order_statuses.status, orders.quantity, items.price, restaurants.name
       ORDER BY orders.created_at DESC;
       
       `,
@@ -191,6 +191,7 @@ const groupOrders = function(orders) {
   if (items.length !== 0) {
     result.push(items);
   }
+
   return result;
 };
 exports.groupOrders = groupOrders;
